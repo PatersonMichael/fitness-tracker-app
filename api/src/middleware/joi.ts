@@ -1,6 +1,6 @@
 import Joi, { ObjectSchema } from 'joi';
 import Logging from '../lib/logging';
-import { IUserProfile } from '../models/user-profile';
+import { UserProfile } from '../models/user-profile';
 import { NextFunction, Request, Response } from 'express';
 import { Gender } from '../models/gender';
 
@@ -20,7 +20,7 @@ export const ValidateJoi = (schema: ObjectSchema) => {
 
 export const Schemas = {
     userProfile: {
-        create: Joi.object<IUserProfile>({
+        create: Joi.object<UserProfile>({
             emailAddress: Joi.string().required(),
             password: Joi.string().required(),
             lastName: Joi.string().required(),
@@ -28,7 +28,7 @@ export const Schemas = {
             birthDate: Joi.date().optional(),
             gender: Joi.string().valid(...Object.values(Gender))
         }),
-        update: Joi.object<IUserProfile>({
+        update: Joi.object<UserProfile>({
             
             emailAddress: Joi.string().required(),
             password: Joi.string().required(),

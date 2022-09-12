@@ -19,7 +19,7 @@
     },
     /* Module Resolution Options */
     "moduleResolution": "node",
-    "baseUrl": ".",
+    "baseUrl": "./",
     "esModuleInterop": true,
     /* Strict Type-Checking Options */
     "strict": true,

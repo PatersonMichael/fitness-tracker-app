@@ -1,7 +1,7 @@
 import { Document, model, Schema } from 'mongoose';
 import { Gender } from './gender';
 
-export interface IUserProfile {
+export interface UserProfile {
   emailAddress: string;
   password: string;
   lastName: string;
@@ -10,9 +10,9 @@ export interface IUserProfile {
   gender?: Gender;
 }
 
-export interface IUserProfileModel extends IUserProfile, Document { }
+export interface IUserProfileModel extends UserProfile, Document { }
 
-const userProfileSchema: Schema = new Schema<IUserProfile>({
+const userProfileSchema: Schema = new Schema<UserProfile>({
   emailAddress: { type: String, required: true, lowercase: true },
   password: { type: String, required: true },
   lastName: { type: String, required: true },
