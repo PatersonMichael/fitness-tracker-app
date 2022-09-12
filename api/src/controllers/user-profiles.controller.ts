@@ -8,7 +8,9 @@ import { Get, Post, Put, Delete, Route, Tags, Body, Path, Controller } from 'tso
 
 @Route('/api/userprofiles')
 @Tags('UserProfile')
-export class UserController extends Controller { }
+export class UserController extends Controller { 
+    
+}
 
 //@Get('/')
 export async function getUserProfiles(req: Request, res: Response): Promise<Response<any, Record<string, any>>> {

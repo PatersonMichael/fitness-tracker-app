@@ -5,6 +5,7 @@ import healthCheckRoutes from './routes/health-check.routes';
 import userProfileRoutes from './routes/user-profile.routes';
 import { config } from './config/config';
 import swaggerUi from 'swagger-ui-express';
+import morgan from 'morgan';
 
 const app = express();
 
@@ -28,11 +29,11 @@ const StartServer = (): void => {
         '/docs',
         swaggerUi.serve,
         swaggerUi.setup(undefined, {
-          swaggerOptions: {
-            url: '/swagger.json',
-          },
+            swaggerOptions: {
+                url: '/swagger.json',
+            },
         })
-      );
+    );
 
     /** Rules of our API */
     app.use((req, res, next) => {
@@ -47,20 +48,24 @@ const StartServer = (): void => {
         next();
     });
 
-    /** Log the request */
+    /*
+    // Refer to https://www.youtube.com/watch?v=72_5_YuDCNA&list=TLPQMTAwOTIwMjIFEoJYR3Ts-g&index=2
+    // Log the request 
     app.use((req, res, next) => {
-        /** Log the req */
+        // Log the req
         Logging.info(`Incomming - METHOD: [${req.method}] - HOST: [${req.hostname}] - URL: [${req.url}] - IP: [${req.socket.remoteAddress}]`);
 
         res.on('finish', () => {
-            /** Log the res */
+            // Log the res
             Logging.info(`Result - METHOD: [${req.method}] - URL: [${req.url}] - IP: [${req.socket.remoteAddress}] - STATUS: [${res.statusCode}]`);
         });
 
         next();
     });
-
-    // Refer to https://www.youtube.com/watch?v=72_5_YuDCNA&list=TLPQMTAwOTIwMjIFEoJYR3Ts-g&index=2
+    */
+   
+    // log every request to the console
+    app.use(morgan('dev'));
 
     /** Routes */
     app.use('/api/healthcheck', healthCheckRoutes);
