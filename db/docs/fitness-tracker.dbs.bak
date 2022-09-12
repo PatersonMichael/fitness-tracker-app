@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="MongoDb" id="Project-604" database="MongoDb" >
+	<schema name="fitness_tracker" >
+		<table name="activity_diary" >
+			<column name="_id" type="objectId" jt="-8" mandatory="y" />
+			<column name="user_id" type="objectId" jt="-8" mandatory="y" />
+			<column name="diary_date" type="date" jt="91" mandatory="y" />
+			<index name="_id_" unique="PRIMARY_KEY" >
+				<column name="_id" />
+			</index>
+			<fk name="fk_activity_diary_0" virtual="y" to_schema="fitness_tracker" to_table="user_profile" >
+				<fk_column name="user_id" pk="_id" />
+			</fk>
+		</table>
+		<table name="biometrics_diary" >
+			<column name="_id" type="objectId" jt="-8" mandatory="y" />
+			<column name="user_id" type="objectId" jt="-8" mandatory="y" />
+			<column name="diary_date" type="date" jt="91" mandatory="y" />
+			<index name="_id_" unique="PRIMARY_KEY" >
+				<column name="_id" />
+			</index>
+			<fk name="fk_user_bio_metrics_0" virtual="y" to_schema="fitness_tracker" to_table="user_profile" >
+				<fk_column name="user_id" pk="_id" />
+			</fk>
+		</table>
+		<table name="food_diary" >
+			<column name="_id" type="objectId" jt="-8" mandatory="y" />
+			<column name="user_id" type="objectId" jt="-8" mandatory="y" />
+			<column name="diary_date" type="date" jt="91" mandatory="y" />
+			<index name="_id_" unique="PRIMARY_KEY" >
+				<column name="_id" />
+			</index>
+			<fk name="fk_food_diary_user_profiles_0" virtual="y" to_schema="fitness_tracker" to_table="user_profile" >
+				<fk_column name="user_id" pk="_id" />
+			</fk>
+		</table>
+		<table name="recipe" prior="recipes" >
+			<column name="_id" type="objectId" jt="-8" mandatory="y" />
+			<column name="user_id" prior="user_profile_id" type="objectId" jt="-8" mandatory="y" />
+			<column name="recipe_name" type="string" jt="12" mandatory="y" />
+			<index name="_id_" unique="PRIMARY_KEY" >
+				<column name="_id" />
+			</index>
+			<fk name="fk_recipes_user_profiles_0" virtual="y" to_schema="fitness_tracker" to_table="user_profile" >
+				<fk_column name="user_id" pk="_id" />
+			</fk>
+		</table>
+		<table name="user_profile" prior="user_profiles" >
+			<column name="_id" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+			<column name="email_address" type="string" jt="12" />
+			<column name="password" type="string" jt="12" mandatory="y" />
+			<column name="last_name" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="first_name" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="birth_date" type="date" jt="91" />
+			<column name="gender" type="int" jt="4" >
+				<enumeration><![CDATA['Male','Female']]></enumeration>
+			</column>
+			<index name="_id_" unique="PRIMARY_KEY" >
+				<column name="_id" />
+			</index>
+			<index name="unq_user_profile_email_address" unique="UNIQUE_KEY" >
+				<column name="email_address" />
+			</index>
+		</table>
+	</schema>
+	<connector name="MongoDb" database="MongoDb" driver_class="com.wisecoders.dbschema.mongodb.JdbcDriver" driver_jar="mongojdbc4.7.jar" url="mongodb+srv://Cluster0User:h1jqqncjjcAdNlV4@cluster0.ipyhc.mongodb.net/?retryWrites=true&amp;w=majority" host="localhost" port="27017" user="admin" />
+	<layout name="Fitness Tracker" id="Layout-25e5" show_column_type="y" show_relation="name" >
+		<entity schema="fitness_tracker" name="activity_diary" color="BED3F4" x="688" y="80" />
+		<entity schema="fitness_tracker" name="biometrics_diary" color="C7F4BE" x="688" y="384" />
+		<entity schema="fitness_tracker" name="food_diary" color="F4DDBE" x="336" y="384" />
+		<entity schema="fitness_tracker" name="recipe" color="BEBEF4" x="48" y="384" />
+		<entity schema="fitness_tracker" name="user_profile" color="D1BEF4" x="336" y="80" />
+		<callout x="896" y="160" pointer="SV" >
+			<comment><![CDATA[Goals:
+
+biometric goal
+nutrition goal(s)
+	macro
+	micro
+fitness goals(s)]]></comment>
+		</callout>
+		<group name="activity_diary" color="ECF0F7" >
+			<entity schema="fitness_tracker" name="activity_diary" />
+		</group>
+		<group name="biometrics_diary" color="EEF7EC" >
+			<entity schema="fitness_tracker" name="biometrics_diary" />
+		</group>
+		<group name="food_diary" color="F7F2EC" >
+			<entity schema="fitness_tracker" name="food_diary" />
+		</group>
+		<group name="recipe" color="ECECF7" >
+			<entity schema="fitness_tracker" name="recipe" />
+		</group>
+		<group name="user_profile" color="F0ECF7" >
+			<entity schema="fitness_tracker" name="user_profile" />
+		</group>
+	</layout>
+</project>

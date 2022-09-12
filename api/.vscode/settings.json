@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:mongodb-models}/data/database.sqlite",
+            "name": "mongodb-models"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
