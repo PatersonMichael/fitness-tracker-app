@@ -1,0 +1,304 @@
+openapi: 3.0.1
+info:
+  version: 1.0.0
+  title: Fitness Tracker
+  description: Track nutrition and activity to monitor and improve your fitness.
+servers:
+  - url: http://localhost:5001
+paths:
+  /api/userprofiles:
+    summary: User Profiles Resource
+    get:
+      tags:
+        - User Profiles
+      summary: Get all user profiles
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserProfile'
+                x-content-type: application/json
+        '500':
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-swagger-router-controller: UserProfiles
+    post:
+      tags:
+        - User Profiles
+      summary: Post a new user profile
+      requestBody:
+        description: The user profile
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserProfile'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+                x-content-type: application/json
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'                
+        '500':
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/userprofiles/{id}:
+    get:
+      tags:
+        - User Profiles
+      summary: Get a User Profile
+      parameters:
+        - name: id
+          in: path
+          description: The identifier
+          required: true
+          schema:
+            type: string
+            description: The identifier
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+                x-content-type: application/json
+        '500':
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-swagger-router-controller: UserProfiles
+    put:
+      tags:
+        - User Profiles
+      summary: Puts the user profile
+      parameters:
+        - name: id
+          in: path
+          description: The identifier
+          required: true
+          schema:
+            type: integer
+            description: The identifier
+            format: int32
+      requestBody:
+        description: The crop.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserProfile'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+                x-content-type: application/json
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - User Profiles
+      summary: Deletes the user profile
+      parameters:
+        - name: id
+          in: path
+          description: The identifier
+          required: true
+          schema:
+            type: integer
+            description: The identifier
+            format: int32
+      responses:
+        '204':
+          description: No Content
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'      
+  /api/healthcheck:
+    summary: Healthcheck Resource
+    get:
+      tags:
+        - HealthCheck
+      summary: Get a healthcheck
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthCheck'
+              x-content-type: application/json
+        '500':
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-swagger-router-controller: HealthCheck
+  /api/authentication:
+    summary: Authentication Resource
+    post:
+      tags:
+        - Authentication
+      summary: Authenticate a User
+      requestBody:
+        description: The user credentials
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserCredential'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Authentication'
+              x-content-type: application/json
+        '500':
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-swagger-router-controller: Authentication
+components:
+  schemas:
+    Genders:
+      type: string
+      description: Enum Genders
+      enum:
+        - Male
+        - Female
+        - Unknown
+    UserProfile:
+      type: object
+      required:
+        - emailAddress
+        - password
+        - lastName
+        - firstName
+      properties:
+        emailAddress:
+          type: string
+        password:
+          type: string
+        lastName:
+          type: string
+        firstName:
+          type: string
+        birthDate:
+          type: string
+          format: date-time
+        gender:
+          $ref: '#/components/schemas/Genders'
+    HealthCheck:
+      type: object
+      properties:
+        serverTime:
+          type: string
+          format: date-time
+        serverStatus:
+          type: string
+    UserCredential:
+      type: object
+      required:
+        - emailAddress
+        - password
+      properties:
+        emailAddress:
+          type: string
+        password:
+          type: string
+    Authentication:
+      type: object
+      properties:
+        userProfileId:
+          type: string
+    Error:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          description: A human readable error message
+          type: string
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        detail:
+          type: string
+          nullable: true
+        instance:
+          type: string
+          nullable: true
+      additionalProperties: {}
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+security:
+  - ApiKey: []

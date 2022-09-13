@@ -1,8 +1,5 @@
-import CryptoJS from 'crypto-js';
 import mongoose from 'mongoose';
 import UserProfile from '../models/user-profile';
-import { config } from '../config/config';
-import { Gender } from '../models/gender';
 import { NextFunction, Request, Response } from 'express';
 import { Get, Post, Put, Delete, Route, Tags, Body, Path, Controller } from 'tsoa';
 import Logging from '../lib/logging';
@@ -34,13 +31,11 @@ export async function getUserProfileById(req: Request<{ id: string }>, res: Resp
 //@Post('/')
 export async function postUserProfile(req: Request, res: Response) {
     const { emailAddress, password, lastName, firstName, birthDate, gender } = req.body;
-    const encryptedPassword = CryptoJS.AES.encrypt(password, config.crypto.passphrase);
 
-    console.log(`The encrypted value is: ${encryptedPassword}`);
     const userProfile = new UserProfile({
         _id: new mongoose.Types.ObjectId(),
         emailAddress: emailAddress,
-        password: encryptedPassword,
+        password: password,
         lastName: lastName,
         firstName: firstName,
         birthDate: birthDate,
@@ -55,7 +50,8 @@ export async function postUserProfile(req: Request, res: Response) {
 
 //@Put('/:id')
 export async function putUserProfile(req: Request<{ id: string }>, res: Response) {
-    const userProfileId: number = parseInt(req?.params?.id);
+    const userProfileId = req.params.id;
+
     return;
 };
 
@@ -67,20 +63,3 @@ export async function deleteUserProfile(req: Request<{ id: string }>, res: Respo
         .then(() => (res.status(204).json({ message: 'Deleted' })))
         .catch((error) => res.status(500).json({ error }));
 };
-
-// function CreateUserProfile(): void {
-//     let userProfile = new UserProfile({
-//         emailAddress: 'someone@example.org',
-//         password: CryptoJS.AES.encrypt('some$password123', config.crypto.passphrase),
-//         lastName: 'Smith',
-//         firstName: 'John',
-//         birthDate: new Date(1980, 4, 15),
-//         gender: Gender.Male
-//     });
-
-//     var decrypted = CryptoJS.AES.decrypt(userProfile.password, config.crypto.passphrase).toString(CryptoJS.enc.Utf8);
-
-//     //console.log(`The encrypted value is: ${userProfile.password}`);
-//     //console.log(`The decrypted value is: ${decrypted}`);
-//     //console.log('Hello world!');
-// }

@@ -1,8 +1,8 @@
 import Joi, { ObjectSchema } from 'joi';
 import Logging from '../lib/logging';
-import { UserProfile } from '../models/user-profile';
+import  UserProfile, { IUserProfile}  from '../models/user-profile';
 import { NextFunction, Request, Response } from 'express';
-import { Gender } from '../models/gender';
+import { Genders } from '../models/genders';
 
 export const ValidateJoi = (schema: ObjectSchema) => {
     return async (req: Request, res: Response, next: NextFunction) => {
@@ -20,22 +20,21 @@ export const ValidateJoi = (schema: ObjectSchema) => {
 
 export const Schemas = {
     userProfile: {
-        create: Joi.object<UserProfile>({
-            emailAddress: Joi.string().required(),
+        create: Joi.object<IUserProfile>({
+            emailAddress: Joi.string().required().lowercase().email(),
             password: Joi.string().required(),
             lastName: Joi.string().required(),
             firstName: Joi.string().required(),
-            birthDate: Joi.date().optional(),
-            gender: Joi.string().valid(...Object.values(Gender))
+            birthDate: Joi.date().optional().less('now'),
+            gender: Joi.string().valid(...Object.values(Genders))
         }),
-        update: Joi.object<UserProfile>({
-            
-            emailAddress: Joi.string().required(),
+        update: Joi.object<IUserProfile>({            
+            emailAddress: Joi.string().required().lowercase().email(),
             password: Joi.string().required(),
             lastName: Joi.string().required(),
             firstName: Joi.string().required(),
-            birthDate: Joi.date().optional(),
-            gender: Joi.string().valid(...Object.values(Gender))
+            birthDate: Joi.date().optional().less('now'),
+            gender: Joi.string().valid(...Object.values(Genders))
         })
     }/*,
     book: {
