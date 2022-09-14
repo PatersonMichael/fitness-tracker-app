@@ -5,17 +5,18 @@ classDiagram
 direction RL
     class UserProfile {
         +ObjectId _id
-        +String UserName
-        +String Password
-        +String LastName
-        +String FirstName
-        +DateTime BirthDate
-        +Gender Gender
+        +String emailAddress
+        +String password
+        +String lastName
+        +String firstName
+        +DateTime birthDate
+        +Gender gender
     }
 
-    class Gender {
+    class Genders {
         <<enumeration>>
         Male
         Female
+        Unknown
     }
 ```
