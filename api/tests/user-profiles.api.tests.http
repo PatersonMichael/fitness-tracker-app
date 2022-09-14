@@ -1,0 +1,52 @@
+<!-- https://github.com/Huachao/vscode-restclient -->
+
+@host = http://localhost
+@port = 8088
+@apiPath = /api
+@baseURL = {{host}}:{{port}}{{apiPath}}
+
+### GET userprofiles
+GET {{baseURL}}/userprofiles
+Accept: application/json
+
+### GET userprofile by id
+@userProfileId = "6320f7a2cb396657bf6b51dd"
+GET {{baseURL}}/userprofiles/{{userProfileId}}
+Accept: application/json
+
+### POST userprofile
+POST {{baseURL}}/userprofiles
+Content-Type: application/json
+
+{
+    "emailAddress": "someone@example.org",
+    "password": "some$password123",
+    "lastName": "Smith",
+    "firstName": "John",
+    "birthDate": "1980-04-15T08:00:00.000Z",
+    "gender": "Male"
+}
+
+### PUT userprofile
+@userProfileId = "6320f7a2cb396657bf6b51dd"
+PUT {{baseURL}}/userprofiles/{{userProfileId}}
+Content-Type: application/json
+
+{
+    "emailAddress": "someone@example.org",
+    "password": "some$password123",
+    "lastName": "Smith",
+    "firstName": "John",
+    "birthDate": "1980-04-15T08:00:00.000Z",
+    "gender": "Male"
+}
+
+### DELETE userprofile
+@userProfileId = "6320f7a2cb396657bf6b51dd"
+DELETE {{baseURL}}/userprofiles/{{userProfileId}}
+Accept: application/json
+
+### CURL sample of get a userprofile
+curl --location --request GET 'http://localhost:8088/api/userprofiles/6320f7a2cb396657bf6b51dd' \
+--header 'Accept: application/json' \
+--header 'X-Api-Key: <API Key>'

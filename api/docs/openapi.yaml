@@ -7,7 +7,7 @@ servers:
   - url: http://localhost:5001
 paths:
   /api/userprofiles:
-    x-swagger-router-controller: user-profiles
+    x-swagger-router-controller: 'user-profiles'
     summary: User Profiles Resource
     get:
       tags:
@@ -66,7 +66,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
   /api/userprofiles/{id}:
-    x-swagger-router-controller: user-profiles
+    x-swagger-router-controller: 'user-profiles'
     get:
       tags:
         - User Profiles
@@ -167,7 +167,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'      
   /api/healthcheck:
-    x-swagger-router-controller: health-check
+    x-swagger-router-controller: 'health-check'
     summary: Healthcheck Resource
     get:
       tags:
@@ -188,7 +188,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'      
   /api/authentication:
-    x-swagger-router-controller: authentication  
+    x-swagger-router-controller: 'authentication'
     summary: Authentication Resource
     post:
       tags:
