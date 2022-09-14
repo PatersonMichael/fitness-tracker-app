@@ -207,6 +207,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/Authentication'
               x-content-type: application/json
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'          
         '500':
           description: Unexpected error
           content:
@@ -266,6 +272,8 @@ components:
       type: object
       properties:
         userProfileId:
+          type: string
+        token:
           type: string
     Error:
       type: object
