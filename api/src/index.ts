@@ -1,12 +1,12 @@
-import express, { } from 'express';
+import authenticationRoutes from './routes/authentication.routes';
+import healthCheckRoutes from './routes/health-check.routes';
 import Logging from './lib/logging';
 import mongoose from 'mongoose';
-import healthCheckRoutes from './routes/health-check.routes';
-import userProfileRoutes from './routes/user-profile.routes';
-import authenticationRoutes from './routes/authentication.routes';
-import { config } from './config/config';
-import swaggerUi from 'swagger-ui-express';
 import morgan from 'morgan';
+import swaggerUi from 'swagger-ui-express';
+import userProfileRoutes from './routes/user-profile.routes';
+import { config } from './config/config';
+import express, { } from 'express';
 
 const app = express();
 
@@ -36,22 +36,6 @@ const StartServer = (): void => {
 
         next();
     });
-
-    /*
-    // Refer to https://www.youtube.com/watch?v=72_5_YuDCNA&list=TLPQMTAwOTIwMjIFEoJYR3Ts-g&index=2
-    // Log the request 
-    app.use((req, res, next) => {
-        // Log the req
-        Logging.info(`Incomming - METHOD: [${req.method}] - HOST: [${req.hostname}] - URL: [${req.url}] - IP: [${req.socket.remoteAddress}]`);
-
-        res.on('finish', () => {
-            // Log the res
-            Logging.info(`Result - METHOD: [${req.method}] - URL: [${req.url}] - IP: [${req.socket.remoteAddress}] - STATUS: [${res.statusCode}]`);
-        });
-
-        next();
-    });
-    */
 
     // Swagger Configuration
     app.use(express.static('public'));

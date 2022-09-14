@@ -1,8 +1,9 @@
 import Joi, { ObjectSchema } from 'joi';
 import Logging from '../lib/logging';
-import  UserProfile, { IUserProfile}  from '../models/user-profile';
+import { IUserProfile } from '../models/user-profile';
 import { NextFunction, Request, Response } from 'express';
 import { Genders } from '../models/genders';
+import { UserCredential } from '../models/user-credential';
 
 export const ValidateJoi = (schema: ObjectSchema) => {
     return async (req: Request, res: Response, next: NextFunction) => {
@@ -13,7 +14,7 @@ export const ValidateJoi = (schema: ObjectSchema) => {
         } catch (error) {
             Logging.error(error);
 
-            return res.status(422).json({ error });
+            return res.status(400).json({ error });
         }
     };
 };
@@ -28,7 +29,7 @@ export const Schemas = {
             birthDate: Joi.date().optional().less('now'),
             gender: Joi.string().valid(...Object.values(Genders))
         }),
-        update: Joi.object<IUserProfile>({            
+        update: Joi.object<IUserProfile>({
             emailAddress: Joi.string().required().lowercase().email(),
             password: Joi.string().required(),
             lastName: Joi.string().required(),
@@ -36,19 +37,15 @@ export const Schemas = {
             birthDate: Joi.date().optional().less('now'),
             gender: Joi.string().valid(...Object.values(Genders))
         })
-    }/*,
-    book: {
-        create: Joi.object<IBook>({
-            author: Joi.string()
-                .regex(/^[0-9a-fA-F]{24}$/)
-                .required(),
-            title: Joi.string().required()
+    },
+    userCredential: {
+        create: Joi.object<UserCredential>({
+            emailAddress: Joi.string().required().lowercase().email(),
+            password: Joi.string().required()
         }),
-        update: Joi.object<IBook>({
-            author: Joi.string()
-                .regex(/^[0-9a-fA-F]{24}$/)
-                .required(),
-            title: Joi.string().required()
+        update: Joi.object<UserCredential>({
+            emailAddress: Joi.string().required().lowercase().email(),
+            password: Joi.string().required()
         })
-    }*/
+    }
 };

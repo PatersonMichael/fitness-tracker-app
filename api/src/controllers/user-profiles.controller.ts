@@ -7,7 +7,7 @@ import Logging from '../lib/logging';
 @Route('/api/userprofiles')
 @Tags('UserProfile')
 export class UserController extends Controller {
-
+    // TODO: Move functions ino this class and refactor to follow pattern as in authentication controller/router
 }
 
 //@Get('/')
@@ -42,6 +42,8 @@ export async function postUserProfile(req: Request, res: Response) {
         gender: gender
     });
 
+    // TODO: Catch/Handle errors returned from mongo schema validation, like 11000, unique violation. 
+    // Should be a 400 bad request if missing, 209 if a conflict.
     return userProfile
         .save()
         .then((userProfile) => res.status(201).json({ userProfile }))

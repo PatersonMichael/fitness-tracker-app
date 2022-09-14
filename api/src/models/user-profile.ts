@@ -1,40 +1,35 @@
-import { Document, model, Schema } from 'mongoose';
+import mongoose, { Document, Model, Schema } from 'mongoose';
 import { Genders } from './genders';
-// import isEmail from 'validator';
 import bcrypt from 'bcrypt';
 
 export interface IUserProfile {
   emailAddress: string;
   password: string;
-  hash: string;
-  salt: string;
   lastName: string;
   firstName: string;
   birthDate?: Date;
   gender?: Genders;
 }
 
-export interface IUserProfileModel extends IUserProfile, Document { }
+interface IUserProfileDocument extends IUserProfile, Document {
+  setPassword: (unhashedPassword: string) => Promise<void>;
+  checkPassword: (unhashedPassword: string) => Promise<boolean>;
+}
 
-const userProfileSchema: Schema = new Schema<IUserProfile>({
+interface IUserProfileModel extends Model<IUserProfileDocument> {
+  findByEmailAddress: (emailAddress: string) => Promise<IUserProfileDocument>;
+}
+
+const UserProfileSchema: Schema<IUserProfileDocument> = new Schema({
   emailAddress: {
     type: String,
     required: true,
     unique: true,
     lowercase: true
-    // ,validate: [isEmail, 'A valid email is required.']
   },
   password: {
     type: String,
     required: true
-  },
-  hash: {
-    type: String,
-    required: false
-  },
-  salt: {
-    type: String,
-    required: false
   },
   lastName: {
     type: String,
@@ -55,25 +50,28 @@ const userProfileSchema: Schema = new Schema<IUserProfile>({
   }
 });
 
-// Fire before the save event to hash the password 
-userProfileSchema.pre('save', async function (next) {
+UserProfileSchema.methods.setPassword = async function (unhashedPassword: string) {
+  // const hash = await bcrypt.hash(unhashedPassword, 10);
+  // this.password = hash;
+
   const salt = await bcrypt.genSalt();
-  this.password = await bcrypt.hash(this.password, salt);
+  this.password = await bcrypt.hash(unhashedPassword, salt);
+};
+
+UserProfileSchema.methods.checkPassword = async function (unhashedPassword: string) {
+  const result = await bcrypt.compare(unhashedPassword, this.password);
+  return result;
+};
+
+UserProfileSchema.statics.findByEmailAddress = async function (emailAddress: string) {
+  return await this.findOne({ emailAddress });
+};
+
+// Fire before the save event to hash the password 
+UserProfileSchema.pre('save', async function (next) {
+  await this.setPassword(this.password);
   next();
 });
 
-// Static method to login user
-userProfileSchema.statics.login = async function (emailAddress, password) {
-  const user = await this.findOne({ emailAddress });
-  if (user) {
-    const auth = await bcrypt.compare(password, user.password);
-    if (auth) {
-      return user;
-    }
-    throw Error('incorrect password');
-  }
-  throw Error('incorrect email');
-};
-
-const UserProfile = model<IUserProfileModel>('UserProfile', userProfileSchema);
+const UserProfile = mongoose.model<IUserProfileDocument, IUserProfileModel>('UserProfile', UserProfileSchema);
 export default UserProfile;

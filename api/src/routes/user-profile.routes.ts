@@ -1,8 +1,10 @@
 import { Router } from 'express';
 import { Schemas, ValidateJoi } from '../middleware/joi';
-import { getUserProfiles, getUserProfileById, postUserProfile, putUserProfile, deleteUserProfile } from '../controllers/user-profiles.controller';
+import { UserController, getUserProfiles, getUserProfileById, postUserProfile, putUserProfile, deleteUserProfile } from '../controllers/user-profiles.controller';
 
 const router = Router();
+
+// TODO: Convert this to follow the same pattern as the authentication router
 
 router.get('/', getUserProfiles);
 router.get('/:id', getUserProfileById);

@@ -1,3 +1,4 @@
 export interface Authentication {
-    userProfileId: string;    
+    userProfileId: string;
+    token: string;
 }
