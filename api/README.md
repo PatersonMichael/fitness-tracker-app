@@ -10,6 +10,11 @@
 - VS Code debugger scripts
 - Local development with Nodemon
 
+### Local Setup
+
+- Copy the .env file to the root of the api folder.
+- Run npm install
+
 ### Scripts
 
 #### `npm run start:dev`
