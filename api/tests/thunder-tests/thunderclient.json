@@ -69,12 +69,12 @@
     "method": "POST",
     "sortNum": 5000,
     "created": "2022-09-15T23:59:43.424Z",
-    "modified": "2022-09-16T02:16:45.019Z",
+    "modified": "2022-09-16T05:36:44.011Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"emailAddress\": \"imaflop@example.org\",\n  \"password\": \"dog$hit1234\",\n  \"lastName\": \"Jelly\",\n  \"firstName\": \"Bean\",\n  \"birthDate\": \"1990-11-13T08:00:00.000Z\",\n  \"gender\": \"Male\"\n}",
+      "raw": "{\n  \"emailAddress\": \"goover@example.org\",\n  \"password\": \"dog$hit1234\",\n  \"lastName\": \"Mary\",\n  \"firstName\": \"Biglamb\",\n  \"birthDate\": \"1990-11-13T08:00:00.000Z\",\n  \"gender\": \"Female\"\n}",
       "form": []
     },
     "tests": []
@@ -84,19 +84,32 @@
     "colId": "48ae159c-6883-4142-ab6a-a20fd1b241ae",
     "containerId": "",
     "name": "DELETE a user profile",
-    "url": "http://localhost:8088/api/userprofiles/{id}",
+    "url": "http://localhost:8088/api/userprofiles/63240c2c3555ad93939e15aa",
     "method": "DELETE",
     "sortNum": 40000,
     "created": "2022-09-16T00:11:08.207Z",
-    "modified": "2022-09-16T00:14:31.646Z",
+    "modified": "2022-09-16T05:41:53.959Z",
     "headers": [],
-    "params": [
-      {
-        "name": "id",
-        "value": "632101be0f0a5ec3e3a3f897",
-        "isPath": true
-      }
-    ],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "ae9d1e4c-3d4b-4181-b6d8-0706fbac28cd",
+    "colId": "48ae159c-6883-4142-ab6a-a20fd1b241ae",
+    "containerId": "",
+    "name": "POST a new partial userprofile",
+    "url": "http://localhost:8088/api/userprofiles",
+    "method": "POST",
+    "sortNum": 12500,
+    "created": "2022-09-16T05:23:53.819Z",
+    "modified": "2022-09-16T05:31:17.224Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"emailAddress\": \"notaloser@example.org\",\n  \"password\": \"cant$hart12\",\n  \"lastName\": \"Joseph\",\n  \"firstName\": \"Shartsman\"\n}",
+      "form": []
+    },
     "tests": []
   }
 ]

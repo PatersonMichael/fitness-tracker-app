@@ -25,32 +25,35 @@ const UserProfileSchema: Schema<IUserProfileDocument> = new Schema({
     type: String,
     required: true,
     unique: true,
-    lowercase: true
+    lowercase: true,
   },
   password: {
     type: String,
-    required: true
+    required: true,
   },
   lastName: {
     type: String,
-    required: true
+    required: true,
   },
   firstName: {
     type: String,
-    required: true
+    required: true,
   },
   birthDate: {
     type: Date,
-    required: false
+    required: false,
   },
   gender: {
     type: String,
     required: false,
-    enum: Object.values(Genders), default: Genders.Unknown
-  }
+    enum: Object.values(Genders),
+    default: Genders[2],
+  },
 });
 
-UserProfileSchema.methods.setPassword = async function (unhashedPassword: string) {
+UserProfileSchema.methods.setPassword = async function (
+  unhashedPassword: string,
+) {
   // const hash = await bcrypt.hash(unhashedPassword, 10);
   // this.password = hash;
 
@@ -58,20 +61,27 @@ UserProfileSchema.methods.setPassword = async function (unhashedPassword: string
   this.password = await bcrypt.hash(unhashedPassword, salt);
 };
 
-UserProfileSchema.methods.checkPassword = async function (unhashedPassword: string) {
+UserProfileSchema.methods.checkPassword = async function (
+  unhashedPassword: string,
+) {
   const result = await bcrypt.compare(unhashedPassword, this.password);
   return result;
 };
 
-UserProfileSchema.statics.findByEmailAddress = async function (emailAddress: string) {
+UserProfileSchema.statics.findByEmailAddress = async function (
+  emailAddress: string,
+) {
   return await this.findOne({ emailAddress });
 };
 
-// Fire before the save event to hash the password 
+// Fire before the save event to hash the password
 UserProfileSchema.pre('save', async function (next) {
   await this.setPassword(this.password);
   next();
 });
 
-const UserProfile = mongoose.model<IUserProfileDocument, IUserProfileModel>('UserProfile', UserProfileSchema);
+const UserProfile = mongoose.model<IUserProfileDocument, IUserProfileModel>(
+  'UserProfile',
+  UserProfileSchema,
+);
 export default UserProfile;
