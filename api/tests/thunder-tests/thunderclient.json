@@ -51,19 +51,13 @@
     "colId": "48ae159c-6883-4142-ab6a-a20fd1b241ae",
     "containerId": "",
     "name": "GET userprofile by id",
-    "url": "http://localhost:8088/api/userprofiles/{id}",
+    "url": "http://localhost:8088/api/userprofiles/6320f7a2cb396657bf6b51dd",
     "method": "GET",
     "sortNum": 20000,
     "created": "2022-09-15T23:50:57.045Z",
-    "modified": "2022-09-16T01:09:17.466Z",
+    "modified": "2022-09-16T02:19:28.716Z",
     "headers": [],
-    "params": [
-      {
-        "name": "id",
-        "value": "6323bdde54831970446ab2c2",
-        "isPath": true
-      }
-    ],
+    "params": [],
     "tests": []
   },
   {
@@ -75,12 +69,12 @@
     "method": "POST",
     "sortNum": 5000,
     "created": "2022-09-15T23:59:43.424Z",
-    "modified": "2022-09-16T00:03:46.036Z",
+    "modified": "2022-09-16T02:16:45.019Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"emailAddress\": \"whyme@example.org\",\n  \"password\": \"skanky$freak!9473\",\n  \"lastName\": \"Jane\",\n  \"firstName\": \"Mary\",\n  \"birthDate\": \"1983-06-13T08:00:00.000Z\",\n  \"gender\": \"Female\"\n}",
+      "raw": "{\n  \"emailAddress\": \"imaflop@example.org\",\n  \"password\": \"dog$hit1234\",\n  \"lastName\": \"Jelly\",\n  \"firstName\": \"Bean\",\n  \"birthDate\": \"1990-11-13T08:00:00.000Z\",\n  \"gender\": \"Male\"\n}",
       "form": []
     },
     "tests": []
@@ -103,31 +97,6 @@
         "isPath": true
       }
     ],
-    "tests": []
-  },
-  {
-    "_id": "02111dd8-22fc-4a3d-985e-26c816295a3c",
-    "colId": "48ae159c-6883-4142-ab6a-a20fd1b241ae",
-    "containerId": "",
-    "name": "PUT an existing userprofile",
-    "url": "http://localhost:8088/api/userprofiles/{id}",
-    "method": "PUT",
-    "sortNum": 12500,
-    "created": "2022-09-16T01:10:17.019Z",
-    "modified": "2022-09-16T01:21:35.663Z",
-    "headers": [],
-    "params": [
-      {
-        "name": "id",
-        "value": "6323bdde54831970446ab2c2",
-        "isPath": true
-      }
-    ],
-    "body": {
-      "type": "json",
-      "raw": "{\n  \"emailAddress\": \"whyme@example.org\",\n  \"password\": \"skanky$freak!9473\",\n  \"lastName\": \"Jane\",\n  \"firstName\": \"Mary\",\n  \"birthDate\": \"1983-06-13T08:00:00.000Z\",\n  \"gender\": \"Female\"\n}",
-      "form": []
-    },
     "tests": []
   }
 ]

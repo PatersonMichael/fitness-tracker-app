@@ -8,7 +8,7 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-09-15T23:41:53.864Z",
-    "modified": "2022-09-15T23:41:53.904Z",
+    "modified": "2022-09-16T02:09:15.294Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -22,7 +22,7 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-09-15T23:48:02.296Z",
-    "modified": "2022-09-15T23:48:03.649Z",
+    "modified": "2022-09-16T02:09:59.577Z",
     "headers": [],
     "params": [],
     "body": {
@@ -41,9 +41,12 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-09-15T23:49:36.563Z",
-    "modified": "2022-09-15T23:49:36.584Z",
+    "modified": "2022-09-16T02:09:31.507Z",
     "headers": [],
     "params": [],
+    "auth": {
+      "type": "basic"
+    },
     "tests": []
   }
 ]
