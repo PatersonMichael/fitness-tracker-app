@@ -55,12 +55,12 @@
     "method": "GET",
     "sortNum": 20000,
     "created": "2022-09-15T23:50:57.045Z",
-    "modified": "2022-09-15T23:53:43.315Z",
+    "modified": "2022-09-16T01:09:17.466Z",
     "headers": [],
     "params": [
       {
         "name": "id",
-        "value": "632101be0f0a5ec3e3a3f897",
+        "value": "6323bdde54831970446ab2c2",
         "isPath": true
       }
     ],
@@ -103,6 +103,31 @@
         "isPath": true
       }
     ],
+    "tests": []
+  },
+  {
+    "_id": "02111dd8-22fc-4a3d-985e-26c816295a3c",
+    "colId": "48ae159c-6883-4142-ab6a-a20fd1b241ae",
+    "containerId": "",
+    "name": "PUT an existing userprofile",
+    "url": "http://localhost:8088/api/userprofiles/{id}",
+    "method": "PUT",
+    "sortNum": 12500,
+    "created": "2022-09-16T01:10:17.019Z",
+    "modified": "2022-09-16T01:21:35.663Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "id",
+        "value": "6323bdde54831970446ab2c2",
+        "isPath": true
+      }
+    ],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"emailAddress\": \"whyme@example.org\",\n  \"password\": \"skanky$freak!9473\",\n  \"lastName\": \"Jane\",\n  \"firstName\": \"Mary\",\n  \"birthDate\": \"1983-06-13T08:00:00.000Z\",\n  \"gender\": \"Female\"\n}",
+      "form": []
+    },
     "tests": []
   }
 ]

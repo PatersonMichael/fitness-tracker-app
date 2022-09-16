@@ -54,7 +54,9 @@ export async function postUserProfile(req: Request, res: Response) {
 export async function putUserProfile(req: Request<{ id: string }>, res: Response) {
     const userProfileId = req.params.id;
 
-    return;
+    Logging.info(`In putUserProfile with id: ${userProfileId}`);
+
+    return res.status(500).json({message: 'Not yet implemented'});
 };
 
 //@Delete('/:id')
