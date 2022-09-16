@@ -1,5 +1,7 @@
 export enum Genders {
-  Male,
-  Female,
-  Unknown
+  Male = "Male",
+  Female = "Female",
+  Unknown = "Unknown"
 }
+
+Object.freeze(Genders);

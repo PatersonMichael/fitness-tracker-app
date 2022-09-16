@@ -53,10 +53,34 @@ export async function postUserProfile(req: Request, res: Response) {
 //@Put('/:id')
 export async function putUserProfile(req: Request<{ id: string }>, res: Response) {
     const userProfileId = req.params.id;
+    const { emailAddress, password, lastName, firstName, birthDate, gender } = req.body;
 
-    Logging.info(`In putUserProfile with id: ${userProfileId}`);
+    const userProfile = new UserProfile({
+        _id: userProfileId,
+        emailAddress: emailAddress,
+        password: password,
+        lastName: lastName,
+        firstName: firstName,
+        birthDate: birthDate,
+        gender: gender
+    });
 
-    return res.status(500).json({message: 'Not yet implemented'});
+    try {
+        userProfile
+            .replaceOne({
+                _id: userProfileId,
+                emailAddress: emailAddress,
+                password: password,
+                lastName: lastName,
+                firstName: firstName,
+                birthDate: birthDate,
+                gender: gender
+            });
+
+        return res.status(200).json({ userProfile });
+    } catch (error) {
+        res.status(500).json({ error });
+    }
 };
 
 //@Delete('/:id')

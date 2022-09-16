@@ -6,10 +6,10 @@ import { Controller, Post, Route, Tags } from 'tsoa';
 import { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 
-@Route('/api/authenticate')
-@Tags('Authentication')
+//@Route('/api/authenticate')
+//@Tags('Authentication')
 export class AuthenticationController extends Controller {
-    @Post('/')
+    //@Post('/')
     public async postAuthentication(req: Request, _res: Response, _next: NextFunction) {
         const userCredential: UserCredential = req.body;
 

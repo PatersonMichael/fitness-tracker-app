@@ -22,7 +22,7 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2022-09-15T23:48:41.228Z",
-    "modified": "2022-09-15T23:48:41.228Z",
+    "modified": "2022-09-16T01:48:25.228Z",
     "headers": [],
     "params": [],
     "body": {
@@ -51,13 +51,19 @@
     "colId": "48ae159c-6883-4142-ab6a-a20fd1b241ae",
     "containerId": "",
     "name": "GET userprofile by id",
-    "url": "http://localhost:8088/api/userprofiles/6320f7a2cb396657bf6b51dd",
+    "url": "http://localhost:8088/api/userprofiles/{id}",
     "method": "GET",
     "sortNum": 20000,
     "created": "2022-09-15T23:50:57.045Z",
-    "modified": "2022-09-16T02:19:28.716Z",
+    "modified": "2022-09-16T01:09:17.466Z",
     "headers": [],
-    "params": [],
+    "params": [
+      {
+        "name": "id",
+        "value": "6323bdde54831970446ab2c2",
+        "isPath": true
+      }
+    ],
     "tests": []
   },
   {
@@ -69,12 +75,12 @@
     "method": "POST",
     "sortNum": 5000,
     "created": "2022-09-15T23:59:43.424Z",
-    "modified": "2022-09-16T05:36:44.011Z",
+    "modified": "2022-09-16T00:03:46.036Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"emailAddress\": \"goover@example.org\",\n  \"password\": \"dog$hit1234\",\n  \"lastName\": \"Mary\",\n  \"firstName\": \"Biglamb\",\n  \"birthDate\": \"1990-11-13T08:00:00.000Z\",\n  \"gender\": \"Female\"\n}",
+      "raw": "{\n  \"emailAddress\": \"whyme@example.org\",\n  \"password\": \"skanky$freak!9473\",\n  \"lastName\": \"Jane\",\n  \"firstName\": \"Mary\",\n  \"birthDate\": \"1983-06-13T08:00:00.000Z\",\n  \"gender\": \"Female\"\n}",
       "form": []
     },
     "tests": []
@@ -84,30 +90,42 @@
     "colId": "48ae159c-6883-4142-ab6a-a20fd1b241ae",
     "containerId": "",
     "name": "DELETE a user profile",
-    "url": "http://localhost:8088/api/userprofiles/63240c2c3555ad93939e15aa",
+    "url": "http://localhost:8088/api/userprofiles/{id}",
     "method": "DELETE",
     "sortNum": 40000,
     "created": "2022-09-16T00:11:08.207Z",
-    "modified": "2022-09-16T05:41:53.959Z",
+    "modified": "2022-09-16T18:19:48.436Z",
     "headers": [],
-    "params": [],
+    "params": [
+      {
+        "name": "id",
+        "value": "6324bd25377e866a3e5c82e8",
+        "isPath": true
+      }
+    ],
     "tests": []
   },
   {
-    "_id": "ae9d1e4c-3d4b-4181-b6d8-0706fbac28cd",
+    "_id": "02111dd8-22fc-4a3d-985e-26c816295a3c",
     "colId": "48ae159c-6883-4142-ab6a-a20fd1b241ae",
     "containerId": "",
-    "name": "POST a new partial userprofile",
-    "url": "http://localhost:8088/api/userprofiles",
-    "method": "POST",
+    "name": "PUT an existing userprofile",
+    "url": "http://localhost:8088/api/userprofiles/{id}",
+    "method": "PUT",
     "sortNum": 12500,
-    "created": "2022-09-16T05:23:53.819Z",
-    "modified": "2022-09-16T05:31:17.224Z",
+    "created": "2022-09-16T01:10:17.019Z",
+    "modified": "2022-09-16T20:55:00.779Z",
     "headers": [],
-    "params": [],
+    "params": [
+      {
+        "name": "id",
+        "value": "6323bdde54831970446ab2c2",
+        "isPath": true
+      }
+    ],
     "body": {
       "type": "json",
-      "raw": "{\n  \"emailAddress\": \"notaloser@example.org\",\n  \"password\": \"cant$hart12\",\n  \"lastName\": \"Joseph\",\n  \"firstName\": \"Shartsman\"\n}",
+      "raw": "{\n  \"emailAddress\": \"whyme@example.org\",\n  \"password\": \"skanky$freak!9473\",\n  \"lastName\": \"Jane\",\n  \"firstName\": \"Mary\",\n  \"birthDate\": \"1983-06-14T08:00:00.000Z\",\n  \"gender\": \"Female\"\n}",
       "form": []
     },
     "tests": []

@@ -47,7 +47,7 @@ const UserProfileSchema: Schema<IUserProfileDocument> = new Schema({
     type: String,
     required: false,
     enum: Object.values(Genders),
-    default: Genders[2],
+    default: Genders.Unknown,
   },
 });
 
