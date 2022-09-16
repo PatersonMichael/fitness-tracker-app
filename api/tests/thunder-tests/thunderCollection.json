@@ -1,0 +1,23 @@
+[
+  {
+    "_id": "11b5fae0-c76b-4a7d-bcef-6ba7cad7439f",
+    "colName": "Health Check",
+    "created": "2022-09-15T23:42:31.195Z",
+    "sortNum": 10000,
+    "folders": []
+  },
+  {
+    "_id": "bb3148ac-217f-42e9-bd55-92e88e05d760",
+    "colName": "Authentication",
+    "created": "2022-09-15T23:48:41.227Z",
+    "sortNum": 20000,
+    "folders": []
+  },
+  {
+    "_id": "48ae159c-6883-4142-ab6a-a20fd1b241ae",
+    "colName": "User Profiles",
+    "created": "2022-09-15T23:50:11.028Z",
+    "sortNum": 30000,
+    "folders": []
+  }
+]

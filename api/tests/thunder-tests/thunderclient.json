@@ -1,0 +1,108 @@
+[
+  {
+    "_id": "5dd22c5c-87b3-439f-a3fa-ede46df492e5",
+    "colId": "11b5fae0-c76b-4a7d-bcef-6ba7cad7439f",
+    "containerId": "",
+    "name": "GET healthcheck",
+    "url": "http://localhost:8088/api/healthcheck",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-09-15T23:42:31.196Z",
+    "modified": "2022-09-15T23:42:31.196Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "abcd07f9-f3bb-47e2-9aea-6551dbbe5b58",
+    "colId": "bb3148ac-217f-42e9-bd55-92e88e05d760",
+    "containerId": "",
+    "name": "POST authentication",
+    "url": "http://localhost:8088/api/authentication",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-09-15T23:48:41.228Z",
+    "modified": "2022-09-15T23:48:41.228Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"emailAddress\": \"someone@example.org\",\n  \"password\": \"some$password123\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "8945b73b-3820-4cae-8f87-07bf07810e0b",
+    "colId": "48ae159c-6883-4142-ab6a-a20fd1b241ae",
+    "containerId": "",
+    "name": "GET userprofiles",
+    "url": "http://localhost:8088/api/userprofiles",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2022-09-15T23:50:11.029Z",
+    "modified": "2022-09-15T23:59:53.806Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "2a5440ea-3f7b-48c0-b9f9-a62e9722cb2c",
+    "colId": "48ae159c-6883-4142-ab6a-a20fd1b241ae",
+    "containerId": "",
+    "name": "GET userprofile by id",
+    "url": "http://localhost:8088/api/userprofiles/{id}",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-09-15T23:50:57.045Z",
+    "modified": "2022-09-15T23:53:43.315Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "id",
+        "value": "632101be0f0a5ec3e3a3f897",
+        "isPath": true
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "f8eabde7-3c18-41b6-a383-426ff799fc66",
+    "colId": "48ae159c-6883-4142-ab6a-a20fd1b241ae",
+    "containerId": "",
+    "name": "POST a new user profile",
+    "url": "http://localhost:8088/api/userprofiles",
+    "method": "POST",
+    "sortNum": 5000,
+    "created": "2022-09-15T23:59:43.424Z",
+    "modified": "2022-09-16T00:03:46.036Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"emailAddress\": \"whyme@example.org\",\n  \"password\": \"skanky$freak!9473\",\n  \"lastName\": \"Jane\",\n  \"firstName\": \"Mary\",\n  \"birthDate\": \"1983-06-13T08:00:00.000Z\",\n  \"gender\": \"Female\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "715830d9-4f64-493f-9cde-aef6b92401c8",
+    "colId": "48ae159c-6883-4142-ab6a-a20fd1b241ae",
+    "containerId": "",
+    "name": "DELETE a user profile",
+    "url": "http://localhost:8088/api/userprofiles/{id}",
+    "method": "DELETE",
+    "sortNum": 40000,
+    "created": "2022-09-16T00:11:08.207Z",
+    "modified": "2022-09-16T00:14:31.646Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "id",
+        "value": "632101be0f0a5ec3e3a3f897",
+        "isPath": true
+      }
+    ],
+    "tests": []
+  }
+]

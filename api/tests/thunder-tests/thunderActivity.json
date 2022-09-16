@@ -1,0 +1,49 @@
+[
+  {
+    "_id": "435c7cd2-a66a-4cd3-adf8-a8fc6c7036d5",
+    "colId": "history",
+    "containerId": "",
+    "name": "GET healthcheck",
+    "url": "http://localhost:8088/api/healthcheck",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-09-15T23:41:53.864Z",
+    "modified": "2022-09-15T23:41:53.904Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "b43c6d59-2501-4202-80a5-e315c3d93117",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:8088/api/authentication",
+    "url": "http://localhost:8088/api/authentication",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-09-15T23:48:02.296Z",
+    "modified": "2022-09-15T23:48:03.649Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"emailAddress\": \"someone@example.org\",\n  \"password\": \"some$password123\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "21734082-8a4d-49bc-9ecd-13f8124ecbf3",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:8088/api/userprofiles",
+    "url": "http://localhost:8088/api/userprofiles",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-09-15T23:49:36.563Z",
+    "modified": "2022-09-15T23:49:36.584Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]
