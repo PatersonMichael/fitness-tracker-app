@@ -22,7 +22,7 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2022-09-15T23:48:41.228Z",
-    "modified": "2022-09-16T01:48:25.228Z",
+    "modified": "2022-09-17T01:31:51.766Z",
     "headers": [],
     "params": [],
     "body": {
@@ -30,7 +30,26 @@
       "raw": "{\n  \"emailAddress\": \"someone@example.org\",\n  \"password\": \"some$password123\"\n}",
       "form": []
     },
-    "tests": []
+    "tests": [
+      {
+        "type": "res-code",
+        "custom": "",
+        "action": "equal",
+        "value": "200"
+      },
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "contains",
+        "value": "userProfileId"
+      },
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "contains",
+        "value": "token"
+      }
+    ]
   },
   {
     "_id": "8945b73b-3820-4cae-8f87-07bf07810e0b",

@@ -10,7 +10,7 @@ import jwt from 'jsonwebtoken';
 //@Tags('Authentication')
 export class AuthenticationController extends Controller {
     //@Post('/')
-    public async postAuthentication(req: Request, _res: Response, _next: NextFunction) {
+    public async postAuthentication(req: Request, _res: Response, _next: NextFunction): Promise<Authentication | null> {
         const userCredential: UserCredential = req.body;
 
         const userProfile = await UserProfile.findByEmailAddress(userCredential.emailAddress);
@@ -29,10 +29,8 @@ export class AuthenticationController extends Controller {
 
                 let authentication: Authentication = {
                     userProfileId: userProfile._id,
-                    token
+                    token: token
                 };
-
-                Logging.info(`The user was authenticated.`);
 
                 return authentication;
             }
