@@ -8,6 +8,7 @@ const login = () => {
         Login
       </div>
       <form className="flex flex-col mt-[126px]">
+        <label htmlFor="loginEmail">Email</label>
         <input
           className="bg-boxGrey w-[343px] h-[85px] placeholder-black text-[24px] p-2 font-Inter"
           type="email"
@@ -15,8 +16,11 @@ const login = () => {
           id="loginEmail"
           placeholder="@email"
         />
+        <label htmlFor="loginPass" className="mt-[47px]">
+          Password
+        </label>
         <input
-          className="bg-boxGrey w-[343px] h-[85px] mt-[47px] placeholder-black text-[24px] p-2 font-Inter"
+          className="bg-boxGrey w-[343px] h-[85px] placeholder-black text-[24px] p-2 font-Inter"
           type="password"
           name="loginPass"
           id="loginPass"
