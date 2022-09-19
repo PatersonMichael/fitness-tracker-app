@@ -9,15 +9,17 @@ const login = () => {
       </div>
       <form className="flex flex-col mt-[126px]">
         <input
-          className="bg-boxGrey w-[343px] h-[85px] placeholder-black text-[24px] p-2 text-right font-Inter"
+          className="bg-boxGrey w-[343px] h-[85px] placeholder-black text-[24px] p-2 font-Inter"
           type="email"
+          name="loginEmail"
+          id="loginEmail"
           placeholder="@email"
         />
         <input
-          className="bg-boxGrey w-[343px] h-[85px] mt-[47px] placeholder-black text-[24px] p-2 text-right font-Inter"
+          className="bg-boxGrey w-[343px] h-[85px] mt-[47px] placeholder-black text-[24px] p-2 font-Inter"
           type="password"
-          name=""
-          id=""
+          name="loginPass"
+          id="loginPass"
           placeholder="password"
         />
         <div className="flex justify-end">
