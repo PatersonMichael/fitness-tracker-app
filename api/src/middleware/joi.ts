@@ -5,6 +5,23 @@ import { NextFunction, Request, Response } from 'express';
 import { Genders } from '../models/genders';
 import { UserCredential } from '../models/user-credential';
 
+// TODO: fix this to use as a Joi extension for validating mongo objectId
+export const objectId = Joi.extend((joi) => {
+    return {
+        type: 'objectId',
+        base: joi.string(),
+        validate(value, helpers) {
+            return Joi.alternatives(
+                Joi.string().regex(/^[0-9a-fA-F]{24}$/),
+                Joi.object().keys({
+                    id: Joi.any(),
+                    _bsontype: Joi.allow('ObjectId')
+                })
+            );
+        },
+    }
+});
+
 export const ValidateJoi = (schema: ObjectSchema) => {
     return async (req: Request, res: Response, next: NextFunction) => {
         try {
@@ -22,30 +39,30 @@ export const ValidateJoi = (schema: ObjectSchema) => {
 export const Schemas = {
     userProfile: {
         create: Joi.object<IUserProfile>({
-            emailAddress: Joi.string().required().lowercase().email(),
-            password: Joi.string().required(),
-            lastName: Joi.string().required(),
-            firstName: Joi.string().required(),
+            emailAddress: Joi.string().required().lowercase().email().max(320),
+            password: Joi.string().required().min(8).max(72),
+            lastName: Joi.string().required().max(30),
+            firstName: Joi.string().required().max(30),
             birthDate: Joi.date().optional().less('now'),
             gender: Joi.string().valid(...Object.values(Genders))
         }),
         update: Joi.object<IUserProfile>({
-            emailAddress: Joi.string().required().lowercase().email(),
-            password: Joi.string().required(),
-            lastName: Joi.string().required(),
-            firstName: Joi.string().required(),
+            emailAddress: Joi.string().required().lowercase().email().max(320),
+            password: Joi.string().required().min(8).max(72),
+            lastName: Joi.string().required().max(30),
+            firstName: Joi.string().required().max(30),
             birthDate: Joi.date().optional().less('now'),
             gender: Joi.string().valid(...Object.values(Genders))
         })
     },
     userCredential: {
         create: Joi.object<UserCredential>({
-            emailAddress: Joi.string().required().lowercase().email(),
-            password: Joi.string().required()
+            emailAddress: Joi.string().required().lowercase().email().max(320),
+            password: Joi.string().required().max(72)
         }),
         update: Joi.object<UserCredential>({
-            emailAddress: Joi.string().required().lowercase().email(),
-            password: Joi.string().required()
+            emailAddress: Joi.string().required().lowercase().email().max(320),
+            password: Joi.string().required().max(72)
         })
     }
 };

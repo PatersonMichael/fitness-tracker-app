@@ -108,4 +108,3 @@ dist
 api/build
 api/.env
 db/docs/*.bak
-db/docs/*.bak
