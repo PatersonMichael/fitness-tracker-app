@@ -8,6 +8,13 @@ module.exports = {
     extend: {
       colors: {
         primary: "#ADACDD",
+        secondary: "#56f",
+        boxGrey: "#d9d9d9",
+        navGrey: "#c1c1c1;",
+      },
+      fontFamily: {
+        Poppins: ["Poppins", "sans - serif"],
+        Inter: ["Inter", "sans - serif"],
       },
     },
   },
