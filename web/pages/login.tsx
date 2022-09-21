@@ -1,10 +1,37 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import { UserProfileService } from "../services/UserProfileService";
 
-const login = () => {
+const Login = () => {
   // need to useState to collect data, then pass data
   // to UserProfileService in order to authenticateUser
   // need onChange attributes on each input to add new value to data.
+  const initialState = {
+    emailAddress: "",
+    password: "",
+  };
+  const [data, setData] = useState(initialState);
+  const userAuth = new UserProfileService(data);
+
+  const handleChange = (e: any) => {
+    setData({
+      ...data,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    console.log(data);
+
+    try {
+      userAuth.authenticateUser();
+      console.log("submitted");
+    } catch (error) {
+      console.log(error);
+      console.log("an error has occurred");
+    }
+  };
 
   return (
     <div className="container mx-auto flex flex-col items-center">
@@ -16,7 +43,9 @@ const login = () => {
         <input
           className="bg-boxGrey w-[343px] h-[85px] placeholder-black text-[24px] p-2 font-Inter"
           type="email"
-          name="loginEmail"
+          value={data.emailAddress}
+          onChange={handleChange}
+          name="emailAddress"
           id="loginEmail"
           placeholder="@email"
         />
@@ -26,14 +55,17 @@ const login = () => {
         <input
           className="bg-boxGrey w-[343px] h-[85px] placeholder-black text-[24px] p-2 font-Inter"
           type="password"
-          name="loginPass"
+          value={data.password}
+          onChange={handleChange}
+          name="password"
           id="loginPass"
           placeholder="password"
         />
         <div className="flex justify-end">
           <button
             className="bg-primary text-white font-Inter font-bold w-[163px] h-[49px] mt-[15px]"
-            type="submit"
+            // type="submit"
+            onClick={handleSubmit}
           >
             Login
           </button>
@@ -57,4 +89,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;
