@@ -2,6 +2,10 @@ import Link from "next/link";
 import React from "react";
 
 const login = () => {
+  // need to useState to collect data, then pass data
+  // to UserProfileService in order to authenticateUser
+  // need onChange attributes on each input to add new value to data.
+
   return (
     <div className="container mx-auto flex flex-col items-center">
       <div className="text-primary font-Poppins font-bold text-[48px] mt-[41px]">
