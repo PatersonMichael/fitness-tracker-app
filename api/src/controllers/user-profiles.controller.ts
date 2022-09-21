@@ -3,6 +3,7 @@ import UserProfile from '../models/user-profile';
 import { NextFunction, Request, Response } from 'express';
 import { Get, Post, Put, Delete, Route, Tags, Body, Path, Controller } from 'tsoa';
 import Logging from '../lib/logging';
+import bcrypt from 'bcrypt';
 
 @Route('/api/userprofiles')
 @Tags('UserProfile')
@@ -35,7 +36,7 @@ export async function postUserProfile(req: Request, res: Response) {
     const userProfile = new UserProfile({
         _id: new mongoose.Types.ObjectId(),
         emailAddress: emailAddress,
-        password: password,
+        password: await setPassword(password),
         lastName: lastName,
         firstName: firstName,
         birthDate: birthDate,
@@ -58,7 +59,7 @@ export async function putUserProfile(req: Request<{ id: string }>, res: Response
     const userProfile = new UserProfile({
         _id: userProfileId,
         emailAddress: emailAddress,
-        password: password,
+        password: await setPassword(password),
         lastName: lastName,
         firstName: firstName,
         birthDate: birthDate,
@@ -70,7 +71,7 @@ export async function putUserProfile(req: Request<{ id: string }>, res: Response
             .replaceOne({
                 _id: userProfileId,
                 emailAddress: emailAddress,
-                password: password,
+                password: await setPassword(password),
                 lastName: lastName,
                 firstName: firstName,
                 birthDate: birthDate,
@@ -90,4 +91,11 @@ export async function deleteUserProfile(req: Request<{ id: string }>, res: Respo
     return await UserProfile.findByIdAndDelete(userProfileId)
         .then(() => (res.status(204).json({ message: 'Deleted' })))
         .catch((error) => res.status(500).json({ error }));
+};
+
+async function setPassword(unhashedPassword: string): Promise<string> {    
+    const salt = await bcrypt.genSalt();
+    const password = await bcrypt.hash(unhashedPassword, salt);
+
+    return password;
 };

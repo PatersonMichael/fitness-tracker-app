@@ -6,21 +6,28 @@ import { Genders } from '../models/genders';
 import { UserCredential } from '../models/user-credential';
 
 // TODO: fix this to use as a Joi extension for validating mongo objectId
-export const objectId = Joi.extend((joi) => {
-    return {
-        type: 'objectId',
-        base: joi.string(),
-        validate(value, helpers) {
-            return Joi.alternatives(
-                Joi.string().regex(/^[0-9a-fA-F]{24}$/),
-                Joi.object().keys({
-                    id: Joi.any(),
-                    _bsontype: Joi.allow('ObjectId')
-                })
-            );
-        },
-    }
-});
+// export const objectId = Joi.extend((joi) => {
+//     return {
+//         type: 'objectId',
+//         base: joi.string(),
+//         validate(value, helpers) {
+//             return Joi.alternatives(
+//                 Joi.string().regex(/^[0-9a-fA-F]{24}$/),
+//                 Joi.object().keys({
+//                     id: Joi.any(),
+//                     _bsontype: Joi.allow('ObjectId')
+//                 })
+//             );
+//         },
+//     }
+// });
+
+
+// Regex pattern for mongo objectId
+const objectIdRegex = new RegExp('/^[a-f\d]{24}$/i');
+
+// Regex pattern for strong password
+const strongPasswordRegex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})');
 
 export const ValidateJoi = (schema: ObjectSchema) => {
     return async (req: Request, res: Response, next: NextFunction) => {
@@ -40,7 +47,7 @@ export const Schemas = {
     userProfile: {
         create: Joi.object<IUserProfile>({
             emailAddress: Joi.string().required().lowercase().email().max(320),
-            password: Joi.string().required().min(8).max(72),
+            password: Joi.string().required().min(8).max(72).regex(strongPasswordRegex),
             lastName: Joi.string().required().max(30),
             firstName: Joi.string().required().max(30),
             birthDate: Joi.date().optional().less('now'),
@@ -48,7 +55,7 @@ export const Schemas = {
         }),
         update: Joi.object<IUserProfile>({
             emailAddress: Joi.string().required().lowercase().email().max(320),
-            password: Joi.string().required().min(8).max(72),
+            password: Joi.string().required().min(8).max(72).regex(strongPasswordRegex),
             lastName: Joi.string().required().max(30),
             firstName: Joi.string().required().max(30),
             birthDate: Joi.date().optional().less('now'),
@@ -65,4 +72,4 @@ export const Schemas = {
             password: Joi.string().required().max(72)
         })
     }
-};
+}

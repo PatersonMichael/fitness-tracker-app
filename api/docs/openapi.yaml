@@ -5,6 +5,7 @@ info:
   description: Track nutrition and activity to monitor and improve your fitness.
 servers:
   - url: http://localhost:8088
+  - url: https://localhost:5443
 paths:
   /api/userprofiles:
     x-swagger-router-controller: 'user-profiles'
@@ -23,12 +24,19 @@ paths:
                 items:
                   $ref: '#/components/schemas/UserProfile'
                 x-content-type: application/json
+                maxItems: 100
         '500':
           description: Unexpected error
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+        default: 
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'                    
     post:
       tags:
         - User Profiles
@@ -65,6 +73,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+        default: 
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'                
   /api/userprofiles/{id}:
     x-swagger-router-controller: 'user-profiles'
     get:
@@ -77,8 +91,7 @@ paths:
           description: The identifier
           required: true
           schema:
-            type: string
-            maxLength: 24
+            $ref: '#/components/schemas/ObjectId'
       responses:
         '200':
           description: OK
@@ -92,7 +105,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'      
+                $ref: '#/components/schemas/Error'
+        default: 
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
     put:
       tags:
         - User Profiles
@@ -103,10 +122,9 @@ paths:
           description: The identifier
           required: true
           schema:
-            type: string
-            maxLength: 24
+            $ref: '#/components/schemas/ObjectId'
       requestBody:
-        description: The user profile.
+        description: The user profile
         content:
           application/json:
             schema:
@@ -137,6 +155,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+        default: 
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
     delete:
       tags:
         - User Profiles
@@ -147,8 +171,7 @@ paths:
           description: The identifier
           required: true
           schema:
-            type: string
-            maxLength: 24
+            $ref: '#/components/schemas/ObjectId'
       responses:
         '204':
           description: No Content
@@ -163,7 +186,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'      
+                $ref: '#/components/schemas/Error'
+        default: 
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
   /api/healthcheck:
     x-swagger-router-controller: 'health-check'
     summary: Healthcheck Resource
@@ -184,7 +213,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'      
+                $ref: '#/components/schemas/Error'
+        default: 
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
   /api/authentication:
     x-swagger-router-controller: 'authentication'
     summary: Authentication Resource
@@ -224,8 +259,20 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+        default: 
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
 components:
   schemas:
+    ObjectId: 
+      type: string
+      pattern: ^[0-9a-fA-F]{24}$
+      minLength: 24
+      maxLength: 24
+      example: 6320f7a2cb396657bf6b51dd  
     Genders:
       type: string
       description: Enum Genders
@@ -233,6 +280,7 @@ components:
         - Male
         - Female
         - Unknown
+      default: Unknown
     UserProfile:
       type: object
       required:
@@ -244,31 +292,41 @@ components:
         emailAddress:
           type: string
           maxLength: 320
-          format: email            
+          format: email
+          pattern: ^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$
         password:
           type: string
           minLength: 8
           maxLength: 72
           format: password
+          pattern: ^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})
         lastName:
           type: string
           maxLength: 30
+          pattern: ^[0-9a-z]+$
         firstName:
-          maxLength: 30
           type: string
+          maxLength: 30
+          pattern: ^[0-9a-z]+$
         birthDate:
           type: string
           format: date-time
+          maxLength: 25
         gender:
           $ref: '#/components/schemas/Genders'
+      additionalProperties: false
     HealthCheck:
       type: object
       properties:
         serverTime:
           type: string
           format: date-time
+          maxLength: 25
         serverStatus:
           type: string
+          maxLength: 320
+          pattern: Healthy
+      additionalProperties: false
     UserCredential:
       type: object
       required:
@@ -278,19 +336,26 @@ components:
         emailAddress:
           type: string
           maxLength: 320
-          format: email            
+          format: email
+          pattern: ^[0-9a-z]+$            
         password:
           type: string
           minLength: 8
           maxLength: 72
           format: password
+          pattern: ^[0-9a-z]+$
+      additionalProperties: false
     Authentication:
       type: object
       properties:
         userProfileId:
-          type: string
+          $ref: '#/components/schemas/ObjectId'
         token:
           type: string
+          maxLength: 320
+          format: password
+          pattern: ^{}
+      additionalProperties: false
     Error:
       type: object
       required:
@@ -299,6 +364,9 @@ components:
         message:
           description: A human readable error message
           type: string
+          maxLength: 640
+          nullable: false
+      additionalProperties: true
     ProblemDetails:
       type: object
       properties:
