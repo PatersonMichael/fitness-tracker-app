@@ -1,32 +1,29 @@
 import axios from "axios";
-
-interface profileData {
-  userid?: number;
-  email?: string;
-  password?: string;
-  firstName?: string;
-  lastName?: string;
-}
+import { AuthContext } from "../context/AuthContext";
+import { IUserInfo } from "../@types/IUserInfo";
+import { IUserAuthData } from "../@types/IUserAuthData";
 
 export class UserProfileService {
-  profileData; // field to pass user data into
+  // profileData;
 
   // Collect relevant data when instantiated
-  constructor(data: profileData) {
-    this.profileData = data;
-  }
+  // constructor(data: IUserInfo) {
+  //   this.profileData = data;
+  // }
 
-  async authenticateUser() {
+  async authenticateUser(userAuthData: IUserAuthData) {
     // POSTs user email and password to API to auth user
     try {
       const resp = await axios.post(
         "http://localhost:8088/api/authentication",
-        this.profileData
+        userAuthData
       );
       console.log(resp.data);
       console.log("User Logged in:");
+      return "Logged in!";
     } catch (error) {
       console.log(error);
+      return "An error has occured";
     }
   }
 

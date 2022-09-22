@@ -1,17 +1,20 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { UserProfileService } from "../services/UserProfileService";
+import { useRouter } from "next/router";
+import { AuthContext } from "../context/AuthContext";
 
 const Login = () => {
   // need to useState to collect data, then pass data
   // to UserProfileService in order to authenticateUser
   // need onChange attributes on each input to add new value to data.
+  const router = useRouter();
   const initialState = {
     emailAddress: "",
     password: "",
   };
   const [data, setData] = useState(initialState);
-  const userAuth = new UserProfileService(data);
+  const { authenticateUser } = new UserProfileService();
 
   const handleChange = (e: any) => {
     setData({
@@ -25,7 +28,7 @@ const Login = () => {
     console.log(data);
 
     try {
-      userAuth.authenticateUser();
+      authenticateUser(data);
       console.log("submitted");
     } catch (error) {
       console.log(error);
