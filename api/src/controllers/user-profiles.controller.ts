@@ -1,25 +1,47 @@
-import mongoose from 'mongoose';
-import UserProfile from '../models/user-profile';
-import { NextFunction, Request, Response } from 'express';
-import {
-    Get,
-    Post,
-    Put,
-    Delete,
-    Route,
-    Tags,
-    Body,
-    Path,
-    Controller,
-} from 'tsoa';
-import Logging from '../lib/logging';
 import bcrypt from 'bcrypt';
+import Logging from '../lib/logging';
+import mongoose from 'mongoose';
+import UserProfile, { IUserProfile } from '../models/user-profile';
+import { NextFunction, Request, Response } from 'express';
+import { Get, Post, Put, Delete, Route, Tags, Body, Path, Controller, } from 'tsoa';
 
 @Route('/api/userprofiles')
 @Tags('UserProfile')
 export class UserProfilesController extends Controller {
+    //@Get('/')
+    public async getUserProfiles(_req: Request, res: Response, _next: NextFunction): Promise<IUserProfile[] | null> {
+        let userProfiles: IUserProfile[] = [];
+
+        try {
+            userProfiles = await UserProfile.find().exec();
+
+            return userProfiles;
+        } catch (error) {
+            Logging.error(error);
+            throw error;
+        }
+
+        return userProfiles;
+    }
+
+    //@Get('/:id')
+    public async getUserProfileById(req: Request<{ id: string }>, res: Response, _next: NextFunction): Promise<IUserProfile | null> {
+        const userProfileId = req.params.id;
+
+        try {
+            const userProfile = await UserProfile.findById(userProfileId).exec();
+
+            return userProfile;
+        } catch (error) {
+            Logging.error(error);
+            throw error;
+        }
+
+        return null;
+    }
+
     //@Post('/')
-    public async postUserProfile(req: Request, res: Response, _next: NextFunction) {
+    public async postUserProfile(req: Request, res: Response, _next: NextFunction): Promise<IUserProfile | null> {
         const { emailAddress, password, lastName, firstName, birthDate, gender } = req.body;
 
         let userProfile = new UserProfile({
@@ -36,46 +58,15 @@ export class UserProfilesController extends Controller {
             userProfile = await userProfile.save();
 
             return userProfile;
-            /*
-             return await userProfile
-                .save()
-                .then((userProfile) => res.status(201).json({ userProfile }))
-                .catch((error) => res.status(500).json({ error })); 
-            */
-
         } catch (error) {
             // TODO: Catch/Handle errors returned from mongo schema validation, like 11000, unique violation.
             // Should be a 400 bad request if invalid, 209 if a conflict.
+            Logging.error(error);
+            throw error;
         }
 
         return null;
     }
-}
-
-//@Get('/')
-export async function getUserProfiles(
-    _req: Request,
-    res: Response,
-): Promise<Response<any, Record<string, any>>> {
-    return await UserProfile.find()
-        .then((userProfiles) => res.status(200).json({ userProfiles }))
-        .catch((error) => res.status(500).json({ error }));
-}
-
-//@Get('/:id')
-export async function getUserProfileById(
-    req: Request<{ id: string }>,
-    res: Response,
-): Promise<Response<any, Record<string, any>>> {
-    const userProfileId = req.params.id;
-
-    return await UserProfile.findById(userProfileId)
-        .then((userProfile) =>
-            userProfile
-                ? res.status(200).json({ userProfile })
-                : res.status(404).json({ message: 'not found' }),
-        )
-        .catch((error) => res.status(500).json({ error }));
 }
 
 
