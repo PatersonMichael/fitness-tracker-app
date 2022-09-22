@@ -3,13 +3,14 @@ import React, { useState } from "react";
 import { UserProfileService } from "../services/UserProfileService";
 import { useRouter } from "next/router";
 import { AuthContext } from "../context/AuthContext";
+import { IUserAuthDataRequest } from "../@types/IUserAuthData";
 
 const Login = () => {
   // need to useState to collect data, then pass data
   // to UserProfileService in order to authenticateUser
   // need onChange attributes on each input to add new value to data.
   const router = useRouter();
-  const initialState = {
+  const initialState: IUserAuthDataRequest = {
     emailAddress: "",
     password: "",
   };

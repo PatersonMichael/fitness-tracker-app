@@ -17,12 +17,12 @@ export class UserProfileService {
   async authenticateUser(userAuthData: IUserAuthDataRequest) {
     // POSTs user email and password to API to auth user
     try {
-      const res: IUserAuthDataResponse = await axios.post(
+      const res = await axios.post(
         "http://localhost:8088/api/authentication",
         userAuthData
       );
-      console.log(res.userProfileId);
-      console.log("User Logged in:");
+      console.log(res);
+      console.log("User Logged in.");
     } catch (error) {
       console.log(error);
       return "An error has occured";
