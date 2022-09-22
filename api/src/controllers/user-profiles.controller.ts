@@ -17,8 +17,39 @@ import bcrypt from 'bcrypt';
 
 @Route('/api/userprofiles')
 @Tags('UserProfile')
-export class UserController extends Controller {
-    // TODO: Move functions ino this class and refactor to follow pattern as in authentication controller/router
+export class UserProfilesController extends Controller {
+    //@Post('/')
+    public async postUserProfile(req: Request, res: Response, _next: NextFunction) {
+        const { emailAddress, password, lastName, firstName, birthDate, gender } = req.body;
+
+        let userProfile = new UserProfile({
+            _id: new mongoose.Types.ObjectId(),
+            emailAddress: emailAddress,
+            password: await setPassword(password),
+            lastName: lastName,
+            firstName: firstName,
+            birthDate: birthDate,
+            gender: gender
+        });
+
+        try {
+            userProfile = await userProfile.save();
+
+            return userProfile;
+            /*
+             return await userProfile
+                .save()
+                .then((userProfile) => res.status(201).json({ userProfile }))
+                .catch((error) => res.status(500).json({ error })); 
+            */
+
+        } catch (error) {
+            // TODO: Catch/Handle errors returned from mongo schema validation, like 11000, unique violation.
+            // Should be a 400 bad request if invalid, 209 if a conflict.
+        }
+
+        return null;
+    }
 }
 
 //@Get('/')
@@ -47,28 +78,6 @@ export async function getUserProfileById(
         .catch((error) => res.status(500).json({ error }));
 }
 
-//@Post('/')
-export async function postUserProfile(req: Request, res: Response) {
-    const { emailAddress, password, lastName, firstName, birthDate, gender } =
-        req.body;
-
-    const userProfile = new UserProfile({
-        _id: new mongoose.Types.ObjectId(),
-        emailAddress: emailAddress,
-        password: await setPassword(password),
-        lastName: lastName,
-        firstName: firstName,
-        birthDate: birthDate,
-        gender: gender
-    });
-
-    // TODO: Catch/Handle errors returned from mongo schema validation, like 11000, unique violation.
-    // Should be a 400 bad request if missing, 209 if a conflict.
-    return await userProfile
-        .save()
-        .then((userProfile) => res.status(201).json({ userProfile }))
-        .catch((error) => res.status(500).json({ error }));
-}
 
 //@Put('/:id')
 export async function putUserProfile(
