@@ -1,7 +1,10 @@
 import axios from "axios";
 import { AuthContext } from "../context/AuthContext";
 import { IUserInfo } from "../@types/IUserInfo";
-import { IUserAuthData } from "../@types/IUserAuthData";
+import {
+  IUserAuthDataRequest,
+  IUserAuthDataResponse,
+} from "../@types/IUserAuthData";
 
 export class UserProfileService {
   // profileData;
@@ -11,16 +14,15 @@ export class UserProfileService {
   //   this.profileData = data;
   // }
 
-  async authenticateUser(userAuthData: IUserAuthData) {
+  async authenticateUser(userAuthData: IUserAuthDataRequest) {
     // POSTs user email and password to API to auth user
     try {
-      const resp = await axios.post(
+      const res: IUserAuthDataResponse = await axios.post(
         "http://localhost:8088/api/authentication",
         userAuthData
       );
-      console.log(resp.data);
+      console.log(res.userProfileId);
       console.log("User Logged in:");
-      return "Logged in!";
     } catch (error) {
       console.log(error);
       return "An error has occured";
