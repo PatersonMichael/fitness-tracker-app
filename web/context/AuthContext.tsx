@@ -1,4 +1,4 @@
-import { triggerAsyncId } from "async_hooks";
+import { IAuthContext } from "../@types/IAuthContext";
 import {
   createContext,
   useContext,
@@ -7,27 +7,31 @@ import {
   useReducer,
 } from "react";
 
-interface initialState {
-  isAuthenticated: boolean;
-  user: number | null;
-  token: number | null;
-}
-const initialState: initialState = {
+// If user is not authenticated: (default)
+// isAuthenticated is false
+// userProfileId is null
+// token is null
+
+export const defaultAuthState: IAuthContext = {
   isAuthenticated: false,
-  user: null,
+  userProfileId: null,
   token: null,
 };
-export const AuthContext = createContext({});
 
-const reducer = (state: any, action: any) => {
+export const AuthContext = createContext(defaultAuthState);
+
+export const reducer = (state: IAuthContext, action: any) => {
   switch (action.type) {
     case "LOGIN":
-      localStorage.setItem("user", JSON.stringify(action.payload.user));
+      localStorage.setItem(
+        "userProfileId",
+        JSON.stringify(action.payload.userProfileId)
+      );
       localStorage.setItem("token", JSON.stringify(action.payload.token));
       return {
         ...state,
         isAuthenticated: true,
-        user: action.payload.user,
+        userProfileId: action.payload.userProfileId,
         token: action.payload.token,
       };
     case "LOGOUT":
@@ -40,11 +44,4 @@ const reducer = (state: any, action: any) => {
     default:
       return state;
   }
-};
-
-export const editAuth = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  return (
-    <AuthContext.Provider value={{ state, dispatch }}></AuthContext.Provider>
-  );
 };

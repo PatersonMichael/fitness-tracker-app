@@ -1,15 +1,18 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { UserProfileService } from "../services/UserProfileService";
 import { useRouter } from "next/router";
-import { AuthContext } from "../context/AuthContext";
 import { IUserAuthDataRequest } from "../@types/IUserAuthData";
+import { AuthContext } from "../context/AuthContext";
+import { IAuthContext } from "../@types/IAuthContext";
 
 const Login = () => {
   // need to useState to collect data, then pass data
   // to UserProfileService in order to authenticateUser
   // need onChange attributes on each input to add new value to data.
   const router = useRouter();
+  const { dispatch } = useContext(AuthContext);
+
   const initialState: IUserAuthDataRequest = {
     emailAddress: "",
     password: "",
@@ -24,13 +27,15 @@ const Login = () => {
     });
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     console.log(data);
 
     try {
-      authenticateUser(data);
+      const userAuthData: IAuthContext = await authenticateUser(data);
+      dispatch({ type: "LOGIN", payload: userAuthData });
       console.log("submitted");
+      router.push("/dashboard");
     } catch (error) {
       console.log(error);
       console.log("an error has occurred");
