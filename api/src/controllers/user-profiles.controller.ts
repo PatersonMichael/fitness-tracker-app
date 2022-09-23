@@ -24,7 +24,7 @@ export class UserProfilesController extends Controller {
         return userProfiles;
     }
 
-    //@Get('/:id')
+    //@Get('/:id') 
     public async getUserProfileById(req: Request<{ id: string }>, res: Response, _next: NextFunction): Promise<IUserProfile | null> {
         const userProfileId = req.params.id;
 
@@ -67,57 +67,62 @@ export class UserProfilesController extends Controller {
 
         return null;
     }
+
+    //@Put('/:id')
+    //public async putUserProfile(req: Request<{ id: string }>, res: Response, _next: NextFunction): Promise<IUserProfile | null> {
+    public async putUserProfile(req: Request, res: Response, _next: NextFunction): Promise<IUserProfile | null> {
+        const userProfileId = req.params.id;
+        const { emailAddress, password, lastName, firstName, birthDate, gender } = req.body;
+
+        let userProfile = new UserProfile({
+            _id: userProfileId,
+            emailAddress: emailAddress,
+            password: await setPassword(password),
+            lastName: lastName,
+            firstName: firstName,
+            birthDate: birthDate,
+            gender: gender
+        });
+
+        try {
+            await userProfile
+                .replaceOne({
+                    _id: userProfileId,
+                    emailAddress: emailAddress,
+                    password: await setPassword(password),
+                    lastName: lastName,
+                    firstName: firstName,
+                    birthDate: birthDate,
+                    gender: gender
+                });
+
+            return userProfile;
+        } catch (error) {
+            // TODO: Catch/Handle errors returned from mongo schema validation, like 11000, unique violation.
+            // Should be a 400 bad request if invalid, 209 if a conflict.
+            Logging.error(error);
+            throw error;
+        }
+
+        return null;
+    };
+
+    //@Delete('/:id')
+    public async deleteUserProfile(req: Request, res: Response, _next: NextFunction): Promise<void> {
+        const userProfileId = req.params.id;
+
+        try {
+            await UserProfile.findByIdAndDelete(userProfileId).exec();
+
+            return;
+        } catch (error) {
+            // TODO: Catch/Handle errors returned from mongo schema validation, like 11000, unique violation.
+            // Should be a 400 bad request if invalid, 209 if a conflict.
+            Logging.error(error);
+            throw error;
+        }
+    };
 }
-
-
-//@Put('/:id')
-export async function putUserProfile(
-    req: Request<{ id: string }>,
-    res: Response,
-) {
-    const userProfileId = req.params.id;
-    const { emailAddress, password, lastName, firstName, birthDate, gender } =
-        req.body;
-
-    const userProfile = new UserProfile({
-        _id: userProfileId,
-        emailAddress: emailAddress,
-        password: await setPassword(password),
-        lastName: lastName,
-        firstName: firstName,
-        birthDate: birthDate,
-        gender: gender
-    });
-
-    try {
-        await userProfile
-            .replaceOne({
-                _id: userProfileId,
-                emailAddress: emailAddress,
-                password: await setPassword(password),
-                lastName: lastName,
-                firstName: firstName,
-                birthDate: birthDate,
-                gender: gender
-            });
-
-        return res.status(200).json({ userProfile });
-    } catch (error) {
-        res.status(500).json({ error });
-    }
-};
-
-//@Delete('/:id')
-export async function deleteUserProfile(
-    req: Request<{ id: string }>,
-    res: Response,
-) {
-    const userProfileId = req.params.id;
-
-    return await UserProfile.findByIdAndDelete(userProfileId)
-        .then(() => (res.status(204).json({ message: 'Deleted' })))
-        .catch((error) => res.status(500).json({ error }));
-};
 
 async function setPassword(unhashedPassword: string): Promise<string> {
     const salt = await bcrypt.genSalt();

@@ -1,10 +1,11 @@
-import { Authentication } from './../models/authentication';
-import { UserCredential } from './../models/user-credential';
+import jwt from 'jsonwebtoken';
 import Logging from '../lib/logging';
 import UserProfile from '../models/user-profile';
+import { Authentication } from './../models/authentication';
+import { config } from '../config/config';
 import { Controller, Post, Route, Tags } from 'tsoa';
 import { NextFunction, Request, Response } from 'express';
-import jwt from 'jsonwebtoken';
+import { UserCredential } from './../models/user-credential';
 
 @Route('/api/authenticate')
 @Tags('Authentication')
@@ -19,11 +20,11 @@ export class AuthenticationController extends Controller {
             const isMatch = await userProfile.checkPassword(userCredential.password);
 
             if (isMatch) {
-                
+
                 // TODO: Determine good values to use. Reference: https://github.com/auth0/node-jsonwebtoken#readme
                 const token = jwt.sign({
-                    data: 'foobar'
-                }, 'superdupersecret', {
+                    data: userProfile._id
+                }, config.crypto.passphrase, {
                     expiresIn: '1h'
                 });
 
