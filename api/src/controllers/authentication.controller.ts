@@ -14,27 +14,33 @@ export class AuthenticationController extends Controller {
     public async postAuthentication(req: Request, _res: Response, _next: NextFunction): Promise<Authentication | null> {
         const userCredential: UserCredential = req.body;
 
-        const userProfile = await UserProfile.findByEmailAddress(userCredential.emailAddress);
+        try {
+            const userProfile = await UserProfile.findByEmailAddress(userCredential.emailAddress);
 
-        if (userProfile) {
-            const isMatch = await userProfile.checkPassword(userCredential.password);
+            if (userProfile) {
+                const isMatch = await userProfile.checkPassword(userCredential.password);
 
-            if (isMatch) {
+                if (isMatch) {
+                    // TODO: Determine good values to use. Reference: https://github.com/auth0/node-jsonwebtoken#readme
+                    const token = jwt.sign({
+                        data: userProfile._id
+                    }, config.crypto.passphrase, {
+                        expiresIn: '1h'
+                    });
 
-                // TODO: Determine good values to use. Reference: https://github.com/auth0/node-jsonwebtoken#readme
-                const token = jwt.sign({
-                    data: userProfile._id
-                }, config.crypto.passphrase, {
-                    expiresIn: '1h'
-                });
+                    let authentication: Authentication = {
+                        userProfileId: userProfile._id,
+                        token: token
+                    };
 
-                let authentication: Authentication = {
-                    userProfileId: userProfile._id,
-                    token: token
-                };
-
-                return authentication;
+                    return authentication;
+                }
             }
+        } catch (error) {
+            // TODO: Catch/Handle errors returned from mongo schema validation, like 11000, unique violation.
+            // Should be a 400 bad request if invalid, 209 if a conflict.
+            Logging.error(error);
+            throw error;
         }
 
         Logging.warning(`The user was not authenticated.`);

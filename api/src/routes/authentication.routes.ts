@@ -8,11 +8,15 @@ router.post('/', ValidateJoi(Schemas.userCredential.create), async (req, res, _n
     const controller = new AuthenticationController();
     const response = await controller.postAuthentication(req, res, _next);
 
-    if (response !== null) {
-        return res.status(200).send(response);
-    }
+    try {
+        if (response !== null) {
+            return res.status(200).send(response);
+        }
 
-    return res.status(401).json({ message: 'Unauthorized' });
+        return res.status(401).json({ message: 'Unauthorized' });
+    } catch (error) {
+        return res.status(500).json({ message: 'An exception has occurred' })
+    }
 });
 
 export default router;
