@@ -3,7 +3,7 @@
 
 # // TODO: Need to add repo secrets and bind to .env variables. Use dynamic .env creation and assignment.
 
-name: Node.js CI
+name: api-node-ci
 
 on:
   push:
