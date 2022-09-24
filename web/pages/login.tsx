@@ -1,10 +1,13 @@
 import Link from "next/link";
 import React, { useContext, useState } from "react";
-import { UserProfileService } from "../services/UserProfileService";
+// import { UserProfileService } from "../services/UserProfileService";
 import { useRouter } from "next/router";
 import { IUserAuthDataRequest } from "../@types/IUserAuthData";
 import { AuthContext } from "../context/AuthContext";
 import { IAuthContext } from "../@types/IAuthContext";
+import { loginUser } from "../pages/api/controllers/UserProfile";
+import axios from "axios";
+// import axios from "axios";
 
 const Login = () => {
   // need to useState to collect data, then pass data
@@ -18,7 +21,7 @@ const Login = () => {
     password: "",
   };
   const [data, setData] = useState(initialState);
-  const { authenticateUser } = new UserProfileService();
+  // const { authenticateUser } = new UserProfileService();
 
   const handleChange = (e: any) => {
     setData({
@@ -32,13 +35,22 @@ const Login = () => {
     console.log(data);
 
     try {
-      const userAuthData: IAuthContext = await authenticateUser(data);
-      dispatch({ type: "LOGIN", payload: userAuthData });
+      await loginUser(data);
+      // dispatch({ type: "LOGIN", payload: userAuthData });
       console.log("submitted");
-      router.push("/dashboard");
+      // router.push("/dashboard");
     } catch (error) {
       console.log(error);
       console.log("an error has occurred");
+    }
+  };
+
+  const handleCheckUser = async (e: any) => {
+    e.preventDefaut();
+    try {
+      const user = await axios.get("/api/middleware/auth");
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -77,6 +89,12 @@ const Login = () => {
             onClick={handleSubmit}
           >
             Login
+          </button>
+          <button
+            className="bg-primary text-white font-Inter font-bold w-[163px] h-[49px] mt-[15px]"
+            onClick={handleCheckUser}
+          >
+            Check User
           </button>
         </div>
       </form>
