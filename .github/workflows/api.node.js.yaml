@@ -28,8 +28,9 @@ jobs:
         node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
-    steps:
-    - working-directory: ./api
+    steps:    
+    - name: Set working directory
+      working-directory: ./api
     - uses: actions/checkout@v3      
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
