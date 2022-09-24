@@ -37,7 +37,7 @@ jobs:
         cache: 'npm'
     - name: Set working directory
       working-directory: ./api        
-      run: echo {pwd}
+      run: echo ${pwd}
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test --if-present
