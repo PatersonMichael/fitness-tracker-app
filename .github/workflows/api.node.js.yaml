@@ -3,9 +3,10 @@
 
 # // TODO: Need to add repo secrets and bind to .env variables. Use dynamic .env creation and assignment.
 
-name: api-node-ci
+name: fitness-tracker-api
 
 on:
+  workflow_dispatch:    
   push:
     branches: 
       - "main"
