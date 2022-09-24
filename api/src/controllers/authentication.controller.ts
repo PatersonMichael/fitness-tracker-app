@@ -21,19 +21,25 @@ export class AuthenticationController extends Controller {
                 const isMatch = await userProfile.checkPassword(userCredential.password);
 
                 if (isMatch) {
-                    // TODO: Determine good values to use. Reference: https://github.com/auth0/node-jsonwebtoken#readme
+
+                    // Reference: https://github.com/auth0/node-jsonwebtoken#readme
                     const token = jwt.sign({
-                        data: userProfile._id
+                        userProfileId: userProfile.id
                     }, config.crypto.passphrase, {
                         expiresIn: '1h'
                     });
 
                     let authentication: Authentication = {
-                        userProfileId: userProfile._id,
                         token: token
                     };
+                    
+                    /* 
+                    // Verify the token
+                    const isVerified = jwt.verify(token, config.crypto.passphrase);
+                    Logging.info(`The token verification is: ${JSON.stringify(isVerified)})`);
+                    */
 
-                    return authentication;
+                    return authentication; 
                 }
             }
         } catch (error) {
