@@ -22,7 +22,7 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2022-09-15T23:48:41.228Z",
-    "modified": "2022-09-21T04:58:11.421Z",
+    "modified": "2022-09-23T06:08:56.737Z",
     "headers": [],
     "params": [],
     "body": {
@@ -74,7 +74,7 @@
     "method": "GET",
     "sortNum": 20000,
     "created": "2022-09-15T23:50:57.045Z",
-    "modified": "2022-09-16T01:09:17.466Z",
+    "modified": "2022-09-23T06:01:36.985Z",
     "headers": [],
     "params": [
       {
@@ -113,12 +113,12 @@
     "method": "DELETE",
     "sortNum": 40000,
     "created": "2022-09-16T00:11:08.207Z",
-    "modified": "2022-09-16T18:19:48.436Z",
+    "modified": "2022-09-23T05:59:44.632Z",
     "headers": [],
     "params": [
       {
         "name": "id",
-        "value": "6324bd25377e866a3e5c82e8",
+        "value": "6324dfce81b0ad05c77e76df",
         "isPath": true
       }
     ],

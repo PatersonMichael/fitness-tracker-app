@@ -6,7 +6,7 @@ import morgan from 'morgan';
 import swaggerUi from 'swagger-ui-express';
 import userProfileRoutes from './routes/user-profile.routes';
 import { config } from './config/config';
-import express, { } from 'express';
+import express, { Request, Response } from 'express';
 
 const app = express();
 
@@ -57,6 +57,12 @@ const StartServer = (): void => {
     app.use('/api/userprofiles', userProfileRoutes);
     app.use('/api/authentication', authenticationRoutes);
 
+    app.get('/', async(_req: Request, res: Response): Promise<Response> => {
+        return res.status(200).send({ 
+            message: `Welcome to the API. Endpoints available at http://localhost:${config.server.port}/api` 
+        });
+    });
+
     // Error handling
     app.use((_req, res, _next) => {
         const error = new Error('Not found');
@@ -69,6 +75,6 @@ const StartServer = (): void => {
     });
 
     app.listen(config.server.port, async () => {
-        Logging.info(`Server is running on port ${config.server.port}`);
+        Logging.info(`Server is running on http://localhost:${config.server.port}`);
     });
 };
