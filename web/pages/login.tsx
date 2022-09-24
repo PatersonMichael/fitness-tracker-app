@@ -5,8 +5,9 @@ import { useRouter } from "next/router";
 import { IUserAuthDataRequest } from "../@types/IUserAuthData";
 import { AuthContext } from "../context/AuthContext";
 import { IAuthContext } from "../@types/IAuthContext";
-import { loginUser } from "../pages/api/controllers/UserProfile";
+// import { loginUser } from "../pages/api/controllers/UserProfile";
 import axios from "axios";
+import authService from "./api/services/auth.service";
 // import axios from "axios";
 
 const Login = () => {
@@ -35,10 +36,9 @@ const Login = () => {
     console.log(data);
 
     try {
-      await loginUser(data);
-      // dispatch({ type: "LOGIN", payload: userAuthData });
+      authService.login(data);
       console.log("submitted");
-      // router.push("/dashboard");
+      router.push("/dashboard");
     } catch (error) {
       console.log(error);
       console.log("an error has occurred");

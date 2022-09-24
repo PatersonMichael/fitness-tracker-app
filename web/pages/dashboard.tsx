@@ -1,20 +1,28 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { UserProfileService } from "../services/UserProfileService";
-
+import authService from "./api/services/auth.service";
+import { useRouter } from "next/router";
 // use AuthContext to conditionally render the dashboard features.
 
-const dashboard = ({ state }: any) => {
-  const { getUser } = new UserProfileService();
+const Dashboard = ({ state }: any) => {
+  const router = useRouter();
 
-  try {
-    const userData = getUser(state.userProfileId);
-    console.log(userData);
-  } catch (error) {
-    console.log(error);
+  async function handleLogout() {
+    authService.logout();
+    router.push("/");
   }
 
-  return <div>Hello, </div>;
+  return (
+    <div>
+      Hello,
+      <button
+        className="bg-primary text-white font-Inter font-bold w-[163px] h-[49px] mt-[15px]"
+        onClick={handleLogout}
+      >
+        Log Out
+      </button>
+    </div>
+  );
 };
 
-export default dashboard;
+export default Dashboard;

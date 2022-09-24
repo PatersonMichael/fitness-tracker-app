@@ -21,10 +21,10 @@ export async function authenticateUser(userAuthData: IUserAuthDataRequest) {
       userAuthData
     );
     if (resp.status === 200) {
-      // console.log(resp.data);
+      console.log(resp.data.token);
 
-      const storedAuth = await axios.post("/api/auth/login", resp.data);
-      console.log(storedAuth);
+      // const storedAuth = await axios.post("/api/auth/login", resp.data);
+      // console.log(storedAuth);
     }
   } catch (error) {
     console.log(error);

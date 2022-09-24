@@ -9,7 +9,8 @@ import { IUserAuthDataRequest } from "../../../@types/IUserAuthData";
 // Auth
 // Takes email and password, returns cookie that contains fetched userProfileId and Token from API
 export async function loginUser(userAuthData: IUserAuthDataRequest) {
-  await authenticateUser(userAuthData);
+  const response = await authenticateUser(userAuthData);
+
   console.log("authenticating user!");
 }
 
