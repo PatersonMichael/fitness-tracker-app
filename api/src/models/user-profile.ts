@@ -74,11 +74,12 @@ UserProfileSchema.statics.findByEmailAddress = async function (
   return await this.findOne({ emailAddress });
 };
 
-// Fire before the save event to hash the password
-UserProfileSchema.pre('save', async function (next) {
-  await this.setPassword(this.password);
-  next();
-});
+// // Fire before the save event to hash the password
+// UserProfileSchema.pre('save', async function (next) {
+//   console.log(`The pre save event about to fire.`)
+//   await this.setPassword(this.password);
+//   next();
+// });
 
 const UserProfile = mongoose.model<IUserProfileDocument, IUserProfileModel>(
   'UserProfile',
