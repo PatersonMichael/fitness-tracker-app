@@ -20,8 +20,9 @@
     "prettier-watch:win32": "onchange \"src/**/*.ts\" -- prettier --write {{changed}}",
     "prettier-watch:darwin:linux": "onchange 'src/**/*.ts' -- prettier --write {{changed}}",
     "prettier-watch:default": "onchange 'src/**/*.ts' -- prettier --write {{changed}}",
-    "test": "jest",
-    "test:dev": "jest --watchAll",
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "test:dev": "jest --watchAll",    
+    "test:e2e": "npx playwright test",
     "swagger": "tsoa spec-and-routes"
   },
   "husky": {
