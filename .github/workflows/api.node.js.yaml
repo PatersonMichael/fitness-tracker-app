@@ -17,11 +17,16 @@ on:
       - "main"
     paths:
       - "api"
-
+env:
+  TARGET_PATH: "./api"
+  
 jobs:
   build-api:
 
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: env.TARGET_PATH
 
     strategy:
       matrix:
@@ -35,9 +40,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: Set working directory
-      working-directory: ./api        
-      run: echo ${pwd}
-    - run: npm ci
+    
+    - run: npm ci      
     - run: npm run build --if-present
     - run: npm test --if-present
