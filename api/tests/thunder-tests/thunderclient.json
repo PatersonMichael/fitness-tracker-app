@@ -8,10 +8,29 @@
     "method": "GET",
     "sortNum": 10000,
     "created": "2022-09-15T23:42:31.196Z",
-    "modified": "2022-09-15T23:42:31.196Z",
+    "modified": "2022-09-27T18:54:23.391Z",
     "headers": [],
     "params": [],
-    "tests": []
+    "tests": [
+      {
+        "type": "res-code",
+        "custom": "",
+        "action": "equal",
+        "value": "200"
+      },
+      {
+        "type": "Content-Type",
+        "custom": "",
+        "action": "contains",
+        "value": "application/json"
+      },
+      {
+        "type": "json-query",
+        "custom": "json.serverStatus",
+        "action": "equal",
+        "value": "Running"
+      }
+    ]
   },
   {
     "_id": "abcd07f9-f3bb-47e2-9aea-6551dbbe5b58",
@@ -22,7 +41,7 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2022-09-15T23:48:41.228Z",
-    "modified": "2022-09-27T15:56:33.917Z",
+    "modified": "2022-09-27T21:31:00.209Z",
     "headers": [],
     "params": [],
     "body": {
@@ -42,8 +61,15 @@
         "custom": "",
         "action": "contains",
         "value": "token"
+      },
+      {
+        "type": "set-env-var",
+        "custom": "json.token",
+        "action": "setto",
+        "value": "{{token}}"
       }
-    ]
+    ],
+    "docs": "Upon successful execution, the jwt will be set to the {{token}} environment variable."
   },
   {
     "_id": "8945b73b-3820-4cae-8f87-07bf07810e0b",
@@ -54,10 +80,28 @@
     "method": "GET",
     "sortNum": 30000,
     "created": "2022-09-15T23:50:11.029Z",
-    "modified": "2022-09-15T23:59:53.806Z",
-    "headers": [],
+    "modified": "2022-09-27T21:25:57.492Z",
+    "headers": [
+      {
+        "name": "x-access-token",
+        "value": "{{token}}"
+      }
+    ],
     "params": [],
-    "tests": []
+    "tests": [
+      {
+        "type": "Content-Type",
+        "custom": "",
+        "action": "contains",
+        "value": "application/json"
+      },
+      {
+        "type": "res-code",
+        "custom": "",
+        "action": "equal",
+        "value": "200"
+      }
+    ]
   },
   {
     "_id": "2a5440ea-3f7b-48c0-b9f9-a62e9722cb2c",
@@ -68,7 +112,7 @@
     "method": "GET",
     "sortNum": 20000,
     "created": "2022-09-15T23:50:57.045Z",
-    "modified": "2022-09-27T14:10:24.344Z",
+    "modified": "2022-09-27T21:27:56.307Z",
     "headers": [
       {
         "name": "Accept",
@@ -76,7 +120,7 @@
       },
       {
         "name": "x-access-token",
-        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyUHJvZmlsZUlkIjoiNjMyMGY3YTJjYjM5NjY1N2JmNmI1MWRkIiwiaWF0IjoxNjY0Mjg3ODA4LCJleHAiOjE2NjQyOTE0MDh9.tnATkP4Lm7groPr4WKuq0dfemvqTmMO34Zg-M4kdAEI"
+        "value": "{{token}}"
       }
     ],
     "params": [
@@ -86,7 +130,20 @@
         "isPath": true
       }
     ],
-    "tests": []
+    "tests": [
+      {
+        "type": "res-code",
+        "custom": "",
+        "action": "equal",
+        "value": "200"
+      },
+      {
+        "type": "Content-Type",
+        "custom": "",
+        "action": "contains",
+        "value": "application/json"
+      }
+    ]
   },
   {
     "_id": "f8eabde7-3c18-41b6-a383-426ff799fc66",
@@ -97,15 +154,28 @@
     "method": "POST",
     "sortNum": 5000,
     "created": "2022-09-15T23:59:43.424Z",
-    "modified": "2022-09-16T00:03:46.036Z",
+    "modified": "2022-09-27T18:45:12.005Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"emailAddress\": \"whyme@example.org\",\n  \"password\": \"skanky$freak!9473\",\n  \"lastName\": \"Jane\",\n  \"firstName\": \"Mary\",\n  \"birthDate\": \"1983-06-13T08:00:00.000Z\",\n  \"gender\": \"Female\"\n}",
+      "raw": "{\n  \"emailAddress\": \"{{#email}}\",\n  \"password\": \"Skanky$freak!9473\",\n  \"lastName\": \"Jane\",\n  \"firstName\": \"Mary\",\n  \"birthDate\": \"1983-06-13T08:00:00.000Z\",\n  \"gender\": \"Female\"\n}",
       "form": []
     },
-    "tests": []
+    "tests": [
+      {
+        "type": "res-code",
+        "custom": "",
+        "action": "equal",
+        "value": "201"
+      },
+      {
+        "type": "Content-Type",
+        "custom": "",
+        "action": "contains",
+        "value": "application/json"
+      }
+    ]
   },
   {
     "_id": "715830d9-4f64-493f-9cde-aef6b92401c8",
@@ -116,8 +186,13 @@
     "method": "DELETE",
     "sortNum": 40000,
     "created": "2022-09-16T00:11:08.207Z",
-    "modified": "2022-09-23T05:59:44.632Z",
-    "headers": [],
+    "modified": "2022-09-27T21:29:28.173Z",
+    "headers": [
+      {
+        "name": "x-access-token",
+        "value": "{{token}}"
+      }
+    ],
     "params": [
       {
         "name": "id",
@@ -125,7 +200,14 @@
         "isPath": true
       }
     ],
-    "tests": []
+    "tests": [
+      {
+        "type": "res-code",
+        "custom": "",
+        "action": "equal",
+        "value": "204"
+      }
+    ]
   },
   {
     "_id": "02111dd8-22fc-4a3d-985e-26c816295a3c",
@@ -136,8 +218,13 @@
     "method": "PUT",
     "sortNum": 12500,
     "created": "2022-09-16T01:10:17.019Z",
-    "modified": "2022-09-21T04:53:49.018Z",
-    "headers": [],
+    "modified": "2022-09-27T21:27:36.418Z",
+    "headers": [
+      {
+        "name": "x-access-token",
+        "value": "{{token}}"
+      }
+    ],
     "params": [
       {
         "name": "id",
@@ -150,7 +237,20 @@
       "raw": "{\n  \"emailAddress\": \"whyme@example.org\",\n  \"password\": \"skanky$Freak!9473\",\n  \"lastName\": \"Jane\",\n  \"firstName\": \"Mary\",\n  \"birthDate\": \"1983-06-14T08:00:00.000Z\",\n  \"gender\": \"Female\"\n}",
       "form": []
     },
-    "tests": []
+    "tests": [
+      {
+        "type": "res-code",
+        "custom": "",
+        "action": "equal",
+        "value": "200"
+      },
+      {
+        "type": "Content-Type",
+        "custom": "",
+        "action": "contains",
+        "value": "application/json"
+      }
+    ]
   },
   {
     "_id": "4f09acff-a3ec-4358-9661-256338b0386c",
@@ -161,7 +261,7 @@
     "method": "GET",
     "sortNum": 25000,
     "created": "2022-09-27T00:32:40.026Z",
-    "modified": "2022-09-27T14:23:17.325Z",
+    "modified": "2022-09-27T21:28:34.116Z",
     "headers": [
       {
         "name": "Accept",
@@ -169,7 +269,7 @@
       },
       {
         "name": "x-access-token",
-        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyUHJvZmlsZUlkIjoiNjMyMGY3YTJjYjM5NjY1N2JmNmI1MWRkIiwiaWF0IjoxNjY0Mjg3ODA4LCJleHAiOjE2NjQyOTE0MDh9.tnATkP4Lm7groPr4WKuq0dfemvqTmMO34Zg-M4kdAEI"
+        "value": "{{token}}"
       }
     ],
     "params": [
@@ -179,6 +279,67 @@
         "isPath": true
       }
     ],
-    "tests": []
+    "tests": [
+      {
+        "type": "res-code",
+        "custom": "",
+        "action": "equal",
+        "value": "400"
+      },
+      {
+        "type": "json-query",
+        "custom": "json.message",
+        "action": "equal",
+        "value": "Invalid parameter value"
+      }
+    ]
+  },
+  {
+    "_id": "15f472e3-ce53-4e04-99c1-a14416486ce6",
+    "colId": "48ae159c-6883-4142-ab6a-a20fd1b241ae",
+    "containerId": "",
+    "name": "GET userprofile by id Unauthorized",
+    "url": "http://localhost:8088/api/userprofiles/{id}",
+    "method": "GET",
+    "sortNum": 22500,
+    "created": "2022-09-27T18:57:42.335Z",
+    "modified": "2022-09-27T19:08:42.078Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "application/json"
+      },
+      {
+        "name": "x-access-token",
+        "value": "invalid-token"
+      }
+    ],
+    "params": [
+      {
+        "name": "id",
+        "value": "6323bdde54831970446ab2c2",
+        "isPath": true
+      }
+    ],
+    "tests": [
+      {
+        "type": "res-code",
+        "custom": "",
+        "action": "equal",
+        "value": "401"
+      },
+      {
+        "type": "Content-Type",
+        "custom": "",
+        "action": "contains",
+        "value": "application/json"
+      },
+      {
+        "type": "json-query",
+        "custom": "json.message",
+        "action": "equal",
+        "value": "Unauthorized"
+      }
+    ]
   }
 ]
