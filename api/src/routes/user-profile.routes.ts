@@ -1,14 +1,14 @@
+import { RouteGuard } from './../middleware/auth';
+import { Route } from 'tsoa';
 import express from 'express';
 import { Schemas, ValidateSchema, ValidateParamObjectId } from '../middleware/joi';
 import { UserProfilesController } from '../controllers/user-profiles.controller';
-import Joi, { ObjectSchema } from 'joi';
-import Logging from '../lib/logging';
 
 const router = express.Router();
 
 // TODO: Add authentication middleware
 
-router.get('/', async (req, res, next) => {
+router.get('/', RouteGuard.verifyToken, async (req, res, next) => {
     const controller = new UserProfilesController();
 
     try {
@@ -22,7 +22,7 @@ router.get('/', async (req, res, next) => {
     }
 });
 
-router.get('/:id', ValidateParamObjectId, async (req, res, next) => {
+router.get('/:id', RouteGuard.verifyToken, ValidateParamObjectId, async (req, res, next) => {
     const controller = new UserProfilesController();
 
     try {
@@ -55,7 +55,7 @@ router.post('/', ValidateSchema(Schemas.userProfile.create), async (req, res, ne
     }
 });
 
-router.put('/:id', ValidateParamObjectId, ValidateSchema(Schemas.userProfile.update), async (req, res, next) => {
+router.put('/:id', RouteGuard.verifyToken, ValidateParamObjectId, ValidateSchema(Schemas.userProfile.update), async (req, res, next) => {
     const controller = new UserProfilesController();
 
     // TODO: Catch/Handle errors returned from mongo schema validation, like 11000, unique violation.
@@ -72,7 +72,7 @@ router.put('/:id', ValidateParamObjectId, ValidateSchema(Schemas.userProfile.upd
     }
 });
 
-router.delete('/:id', ValidateParamObjectId, async (req, res, next) => {
+router.delete('/:id', RouteGuard.verifyToken, ValidateParamObjectId, async (req, res, next) => {
     const controller = new UserProfilesController();
 
     try {

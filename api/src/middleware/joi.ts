@@ -61,7 +61,7 @@ export const ValidateParamObjectId = (req: Request, res: Response, next: NextFun
     
     const { value, error } = Joi.string().required().regex(objectIdRegex).validate(objectIdValue);
     if (error) {
-        return res.status(400).json({ message: 'Invalid parameter value' })
+        return res.status(400).json({ message: 'Invalid parameter value' });        
     }
 
     next();

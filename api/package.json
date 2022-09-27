@@ -21,7 +21,7 @@
     "prettier-watch:darwin:linux": "onchange 'src/**/*.ts' -- prettier --write {{changed}}",
     "prettier-watch:default": "onchange 'src/**/*.ts' -- prettier --write {{changed}}",
     "test": "echo \"Error: no test specified\" && exit 0",
-    "test:dev": "jest --watchAll",    
+    "test:dev": "jest --watchAll",
     "test:e2e": "npx playwright test",
     "swagger": "tsoa spec-and-routes"
   },
@@ -72,6 +72,7 @@
     "crypto-js": "^4.1.1",
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
+    "express-jwt": "^7.7.5",
     "joi": "^17.6.0",
     "joi-objectid": "^4.0.2",
     "jsonwebtoken": "^8.5.1",
