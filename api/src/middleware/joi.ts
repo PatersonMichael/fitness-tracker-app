@@ -5,31 +5,13 @@ import { NextFunction, Request, Response } from 'express';
 import { Genders } from '../models/genders';
 import { UserCredential } from '../models/user-credential';
 
-// TODO: fix this to use as a Joi extension for validating mongo objectId
-// export const objectId = Joi.extend((joi) => {
-//     return {
-//         type: 'objectId',
-//         base: joi.string(),
-//         validate(value, helpers) {
-//             return Joi.alternatives(
-//                 Joi.string().regex(/^[0-9a-fA-F]{24}$/),
-//                 Joi.object().keys({
-//                     id: Joi.any(),
-//                     _bsontype: Joi.allow('ObjectId')
-//                 })
-//             );
-//         },
-//     }
-// });
-
-
-// Regex pattern for mongo objectId
-const objectIdRegex = new RegExp('/^[a-f\d]{24}$/i');
-
 // Regex pattern for strong password
 const strongPasswordRegex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})');
 
-export const ValidateJoi = (schema: ObjectSchema) => {
+// Regex for mongodb objectId
+const objectIdRegex = new RegExp('^[0-9a-fA-F]{24}$');
+
+export const ValidateSchema = (schema: ObjectSchema) => {
     return async (req: Request, res: Response, next: NextFunction) => {
         try {
             await schema.validateAsync(req.body);
@@ -72,4 +54,15 @@ export const Schemas = {
             password: Joi.string().required().max(72)
         })
     }
-}
+};
+
+export const ValidateParamObjectId = (req: Request, res: Response, next: NextFunction) => {
+    const objectIdValue = req.params.id;
+    
+    const { value, error } = Joi.string().required().regex(objectIdRegex).validate(objectIdValue);
+    if (error) {
+        return res.status(400).json({ message: 'Invalid parameter value' })
+    }
+
+    next();
+};
