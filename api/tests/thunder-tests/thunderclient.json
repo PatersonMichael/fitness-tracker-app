@@ -74,8 +74,22 @@
     "method": "GET",
     "sortNum": 20000,
     "created": "2022-09-15T23:50:57.045Z",
+<<<<<<< HEAD
     "modified": "2022-09-22T03:16:09.112Z",
     "headers": [],
+=======
+    "modified": "2022-09-24T21:42:40.677Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "application/json"
+      },
+      {
+        "name": "x-access-token",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyUHJvZmlsZUlkIjoiNjMyMGY3YTJjYjM5NjY1N2JmNmI1MWRkIiwiaWF0IjoxNjY0MDUxOTY2LCJleHAiOjE2NjQwNTU1NjZ9.8sMvv1l6JLjLIkG6TndWv5nxeLHchk9-_uthqEVcYts"
+      }
+    ],
+>>>>>>> main
     "params": [
       {
         "name": "id",
@@ -147,6 +161,35 @@
       "raw": "{\n  \"emailAddress\": \"whyme@example.org\",\n  \"password\": \"skanky$Freak!9473\",\n  \"lastName\": \"Jane\",\n  \"firstName\": \"Mary\",\n  \"birthDate\": \"1983-06-14T08:00:00.000Z\",\n  \"gender\": \"Female\"\n}",
       "form": []
     },
+    "tests": []
+  },
+  {
+    "_id": "4f09acff-a3ec-4358-9661-256338b0386c",
+    "colId": "48ae159c-6883-4142-ab6a-a20fd1b241ae",
+    "containerId": "",
+    "name": "GET userprofile by id Bad Request",
+    "url": "http://localhost:8088/api/userprofiles/{id}",
+    "method": "GET",
+    "sortNum": 25000,
+    "created": "2022-09-27T00:32:40.026Z",
+    "modified": "2022-09-27T00:33:12.889Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "application/json"
+      },
+      {
+        "name": "x-access-token",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyUHJvZmlsZUlkIjoiNjMyMGY3YTJjYjM5NjY1N2JmNmI1MWRkIiwiaWF0IjoxNjY0MDUxOTY2LCJleHAiOjE2NjQwNTU1NjZ9.8sMvv1l6JLjLIkG6TndWv5nxeLHchk9-_uthqEVcYts"
+      }
+    ],
+    "params": [
+      {
+        "name": "id",
+        "value": "x",
+        "isPath": true
+      }
+    ],
     "tests": []
   }
 ]

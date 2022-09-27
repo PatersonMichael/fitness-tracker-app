@@ -1,6 +1,9 @@
 # Fitness Tracker Application
 The greatest fitness tracker the world will see
 
+## Build Status
+[![fitness-tracker-api](https://github.com/PatersonMichael/fitness-tracker-app/actions/workflows/api.node.js.yaml/badge.svg)](https://github.com/PatersonMichael/fitness-tracker-app/actions/workflows/api.node.js.yaml)
+
 ## Solution Structure
 
 | Folder      | Description          | Readme 
