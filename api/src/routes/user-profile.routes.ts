@@ -1,17 +1,19 @@
 import express from 'express';
-import { Schemas, ValidateJoi } from '../middleware/joi';
+import { Schemas, ValidateSchema, ValidateParamObjectId } from '../middleware/joi';
 import { UserProfilesController } from '../controllers/user-profiles.controller';
+import Joi, { ObjectSchema } from 'joi';
+import Logging from '../lib/logging';
 
 const router = express.Router();
 
 // TODO: Add authentication middleware
 
-router.get('/', async (req, res, _next) => {
+router.get('/', async (req, res, next) => {
     const controller = new UserProfilesController();
 
     try {
-        const response = await controller.getUserProfiles(req, res, _next);
-        
+        const response = await controller.getUserProfiles(req, res, next);
+
         if (response !== null) {
             return res.status(200).send(response);
         }
@@ -20,11 +22,11 @@ router.get('/', async (req, res, _next) => {
     }
 });
 
-router.get('/:id', async (req, res, _next) => {
+router.get('/:id', ValidateParamObjectId, async (req, res, next) => {
     const controller = new UserProfilesController();
 
     try {
-        const response = await controller.getUserProfileById(req, res, _next);
+        const response = await controller.getUserProfileById(req, res, next);
 
         if (response !== null) {
             return res.status(200).send(response);
@@ -37,13 +39,13 @@ router.get('/:id', async (req, res, _next) => {
     }
 });
 
-router.post('/', ValidateJoi(Schemas.userProfile.create), async (req, res, _next) => {
+router.post('/', ValidateSchema(Schemas.userProfile.create), async (req, res, next) => {
     const controller = new UserProfilesController();
 
     // TODO: Catch/Handle errors returned from mongo schema validation, like 11000, unique violation.
     // Should be a 400 bad request if invalid, 209 if a conflict.
     try {
-        const response = await controller.postUserProfile(req, res, _next);
+        const response = await controller.postUserProfile(req, res, next);
 
         if (response !== null) {
             return res.status(201).send(response);
@@ -53,13 +55,13 @@ router.post('/', ValidateJoi(Schemas.userProfile.create), async (req, res, _next
     }
 });
 
-router.put('/:id', ValidateJoi(Schemas.userProfile.update), async (req, res, _next) => {
+router.put('/:id', ValidateParamObjectId, ValidateSchema(Schemas.userProfile.update), async (req, res, next) => {
     const controller = new UserProfilesController();
 
     // TODO: Catch/Handle errors returned from mongo schema validation, like 11000, unique violation.
     // Should be a 400 bad request if invalid, 209 if a conflict.
     try {
-        const response = await controller.putUserProfile(req, res, _next);
+        const response = await controller.putUserProfile(req, res, next);
 
         if (response !== null) {
             return res.status(200).send(response);
@@ -70,11 +72,11 @@ router.put('/:id', ValidateJoi(Schemas.userProfile.update), async (req, res, _ne
     }
 });
 
-router.delete('/:id', async (req, res, _next) => {
+router.delete('/:id', ValidateParamObjectId, async (req, res, next) => {
     const controller = new UserProfilesController();
 
     try {
-        await controller.deleteUserProfile(req, res, _next);
+        await controller.deleteUserProfile(req, res, next);
 
         return res.status(204).json({ message: 'Deleted' })
     } catch (error) {

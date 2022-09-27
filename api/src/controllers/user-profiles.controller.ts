@@ -9,7 +9,7 @@ import { Get, Post, Put, Delete, Route, Tags, Body, Path, Controller, } from 'ts
 @Tags('UserProfile')
 export class UserProfilesController extends Controller {
     //@Get('/')
-    public async getUserProfiles(_req: Request, res: Response, _next: NextFunction): Promise<IUserProfile[] | null> {
+    public async getUserProfiles(_req: Request, _res: Response, _next: NextFunction): Promise<IUserProfile[] | null> {
         let userProfiles: IUserProfile[] = [];
 
         try {
@@ -25,7 +25,7 @@ export class UserProfilesController extends Controller {
     }
 
     //@Get('/:id') 
-    public async getUserProfileById(req: Request<{ id: string }>, res: Response, _next: NextFunction): Promise<IUserProfile | null> {
+    public async getUserProfileById(req: Request, _res: Response, _next: NextFunction): Promise<IUserProfile | null> {
         const userProfileId = req.params.id;
 
         try {
@@ -41,7 +41,7 @@ export class UserProfilesController extends Controller {
     }
 
     //@Post('/')
-    public async postUserProfile(req: Request, res: Response, _next: NextFunction): Promise<IUserProfile | null> {
+    public async postUserProfile(req: Request, _res: Response, _next: NextFunction): Promise<IUserProfile | null> {
         const { emailAddress, password, lastName, firstName, birthDate, gender } = req.body;
 
         let userProfile = new UserProfile({
@@ -70,7 +70,7 @@ export class UserProfilesController extends Controller {
 
     //@Put('/:id')
     //public async putUserProfile(req: Request<{ id: string }>, res: Response, _next: NextFunction): Promise<IUserProfile | null> {
-    public async putUserProfile(req: Request, res: Response, _next: NextFunction): Promise<IUserProfile | null> {
+    public async putUserProfile(req: Request, _res: Response, _next: NextFunction): Promise<IUserProfile | null> {
         const userProfileId = req.params.id;
         const { emailAddress, password, lastName, firstName, birthDate, gender } = req.body;
 
