@@ -74,10 +74,6 @@
     "method": "GET",
     "sortNum": 20000,
     "created": "2022-09-15T23:50:57.045Z",
-<<<<<<< HEAD
-    "modified": "2022-09-22T03:16:09.112Z",
-    "headers": [],
-=======
     "modified": "2022-09-24T21:42:40.677Z",
     "headers": [
       {
@@ -89,7 +85,6 @@
         "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyUHJvZmlsZUlkIjoiNjMyMGY3YTJjYjM5NjY1N2JmNmI1MWRkIiwiaWF0IjoxNjY0MDUxOTY2LCJleHAiOjE2NjQwNTU1NjZ9.8sMvv1l6JLjLIkG6TndWv5nxeLHchk9-_uthqEVcYts"
       }
     ],
->>>>>>> main
     "params": [
       {
         "name": "id",

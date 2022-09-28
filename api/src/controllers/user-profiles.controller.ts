@@ -18,19 +18,13 @@ import {
 @Route('/api/userprofiles')
 @Tags('UserProfile')
 export class UserProfilesController extends Controller {
-<<<<<<< HEAD
   //@Get('/')
   public async getUserProfiles(
     _req: Request,
-    res: Response,
+    _res: Response,
     _next: NextFunction,
   ): Promise<IUserProfile[] | null> {
     let userProfiles: IUserProfile[] = [];
-=======
-    //@Get('/')
-    public async getUserProfiles(_req: Request, _res: Response, _next: NextFunction): Promise<IUserProfile[] | null> {
-        let userProfiles: IUserProfile[] = [];
->>>>>>> main
 
     try {
       userProfiles = await UserProfile.find().exec();
@@ -41,19 +35,13 @@ export class UserProfilesController extends Controller {
       throw error;
     }
 
-<<<<<<< HEAD
     return userProfiles;
   }
-=======
-    //@Get('/:id') 
-    public async getUserProfileById(req: Request, _res: Response, _next: NextFunction): Promise<IUserProfile | null> {
-        const userProfileId = req.params.id;
->>>>>>> main
 
   //@Get('/:id')
   public async getUserProfileById(
-    req: Request<{ id: string }>,
-    res: Response,
+    req: Request,
+    _res: Response,
     _next: NextFunction,
   ): Promise<IUserProfile | null> {
     const userProfileId = req.params.id;
@@ -67,19 +55,13 @@ export class UserProfilesController extends Controller {
       throw error;
     }
 
-<<<<<<< HEAD
     return null;
   }
-=======
-    //@Post('/')
-    public async postUserProfile(req: Request, _res: Response, _next: NextFunction): Promise<IUserProfile | null> {
-        const { emailAddress, password, lastName, firstName, birthDate, gender } = req.body;
->>>>>>> main
 
   //@Post('/')
   public async postUserProfile(
     req: Request,
-    res: Response,
+    _res: Response,
     _next: NextFunction,
   ): Promise<IUserProfile | null> {
     const { emailAddress, password, lastName, firstName, birthDate, gender } =
@@ -106,22 +88,14 @@ export class UserProfilesController extends Controller {
       throw error;
     }
 
-<<<<<<< HEAD
     return null;
   }
-=======
-    //@Put('/:id')
-    //public async putUserProfile(req: Request<{ id: string }>, res: Response, _next: NextFunction): Promise<IUserProfile | null> {
-    public async putUserProfile(req: Request, _res: Response, _next: NextFunction): Promise<IUserProfile | null> {
-        const userProfileId = req.params.id;
-        const { emailAddress, password, lastName, firstName, birthDate, gender } = req.body;
->>>>>>> main
 
   //@Put('/:id')
   //public async putUserProfile(req: Request<{ id: string }>, res: Response, _next: NextFunction): Promise<IUserProfile | null> {
   public async putUserProfile(
     req: Request,
-    res: Response,
+    _res: Response,
     _next: NextFunction,
   ): Promise<IUserProfile | null> {
     const userProfileId = req.params.id;
