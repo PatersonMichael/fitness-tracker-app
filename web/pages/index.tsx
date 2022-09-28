@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { useReducer } from "react";
-import { AuthContext } from "../context/AuthContext";
 
 function HomePage() {
   return (

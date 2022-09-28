@@ -32,6 +32,12 @@ class AuthService {
 
     return null;
   }
+
+  checkUser() {
+    if (localStorage.getItem("user")) {
+      return true;
+    }
+  }
 }
 
 export default new AuthService();

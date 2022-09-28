@@ -1,13 +1,16 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { AuthContext, reducer, defaultAuthState } from "../context/AuthContext";
-import { useEffect, useReducer, useState } from "react";
-import { IAuthContext } from "../@types/IAuthContext";
+import { useEffect, useState } from "react";
 import userService from "./api/services/user.service";
 import authService from "./api/services/auth.service";
+import NavBar from "../components/NavBar";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <div>
+      <Component {...pageProps} />
+    </div>
+  );
 }
 
 export default MyApp;

@@ -1,11 +1,7 @@
 import Link from "next/link";
 import React, { useContext, useState } from "react";
-// import { UserProfileService } from "../services/UserProfileService";
 import { useRouter } from "next/router";
 import { IUserAuthDataRequest } from "../@types/IUserAuthData";
-import { AuthContext } from "../context/AuthContext";
-import { IAuthContext } from "../@types/IAuthContext";
-// import { loginUser } from "../pages/api/controllers/UserProfile";
 import axios from "axios";
 import authService from "./api/services/auth.service";
 // import axios from "axios";
@@ -15,7 +11,6 @@ const Login = () => {
   // to UserProfileService in order to authenticateUser
   // need onChange attributes on each input to add new value to data.
   const router = useRouter();
-  const { dispatch } = useContext(AuthContext);
 
   const initialState: IUserAuthDataRequest = {
     emailAddress: "",
@@ -89,12 +84,6 @@ const Login = () => {
             onClick={handleSubmit}
           >
             Login
-          </button>
-          <button
-            className="bg-primary text-white font-Inter font-bold w-[163px] h-[49px] mt-[15px]"
-            onClick={handleCheckUser}
-          >
-            Check User
           </button>
         </div>
       </form>
