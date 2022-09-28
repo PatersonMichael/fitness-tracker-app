@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "_id": "54d91405-1a2b-42b5-84c3-07eda5a946d2",
+    "name": "Localhost",
+    "default": true,
+    "sortNum": 10000,
+    "created": "2022-09-27T21:25:06.187Z",
+    "modified": "2022-09-27T21:42:03.304Z",
+    "data": [
+      {
+        "name": "token",
+        "value": ""
+      }
+    ]
+  }
+]
