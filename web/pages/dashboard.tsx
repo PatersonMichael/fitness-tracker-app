@@ -13,7 +13,7 @@ const Dashboard = () => {
     userService.getUser().then((res) => {
       setUserData(res.data);
     });
-  });
+  }, []);
 
   return (
     <div>
