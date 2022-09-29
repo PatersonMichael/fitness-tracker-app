@@ -1,6 +1,6 @@
 export default function authHeader() {
   //checks localStorage for user
-  const userStr = localStorage.getItem("user");
+  const userStr = localStorage.getItem("userToken");
   let user = null;
   // If a user exists and there is an access token, return token as header
   if (userStr) {

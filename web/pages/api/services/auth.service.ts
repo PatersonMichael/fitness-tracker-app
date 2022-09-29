@@ -1,27 +1,45 @@
 import axios from "axios";
 import { IUserAuthDataRequest } from "../../../@types/IUserAuthData";
+import { IUserInfo } from "../../../@types/IUserInfo";
+import { useRouter } from "next/router";
+import { unstable_renderSubtreeIntoContainer } from "react-dom";
 
 const API_URL = "http://localhost:8088/api/";
 
 class AuthService {
-  login(userAuthData: IUserAuthDataRequest) {
+  // router = useRouter();
+  async login(userAuthData: IUserAuthDataRequest) {
     // POST userAuthData, save JWT to localStorage
-    return axios
-      .post(`${API_URL}authentication`, userAuthData)
-      .then((response) => {
-        if (response.data.token) {
-          localStorage.setItem("user", JSON.stringify(response.data));
-        }
+    try {
+      await axios
+        .post(`${API_URL}authentication`, userAuthData)
+        .then((response) => {
+          if (response.data.token) {
+            localStorage.setItem("userToken", JSON.stringify(response.data));
+          } else if (response.status === 401) {
+            console.log(response.data.message);
 
-        return response.data;
-      });
+            return response.data.message;
+          }
+
+          return response.data;
+        });
+    } catch (error) {
+      // console.log("error msg: " + error);
+    }
   }
 
   logout() {
     // remove JWT from localStorage
-    localStorage.removeItem("user");
+    localStorage.removeItem("userToken");
+    setTimeout(() => {
+      location.reload();
+    }, 1000);
   }
 
+  register(signUpData: IUserInfo) {
+    return axios.post(`${API_URL}userprofiles`, signUpData);
+  }
   //register()
   //POST {sign up data}
 

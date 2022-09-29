@@ -1,7 +1,7 @@
 import jwt_decode from "jwt-decode";
 
 export default function getUserProfileId() {
-  const userStr = localStorage.getItem("user");
+  const userStr = localStorage.getItem("userToken");
   let user = null;
   let payload: any = null;
 

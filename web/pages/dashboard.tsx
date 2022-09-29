@@ -4,23 +4,26 @@ import { useRouter } from "next/router";
 import NavBar from "../components/NavBar";
 import UserWelcome from "../components/UserWelcome";
 import userService from "./api/services/user.service";
+import { IUserInfoNoPass } from "../@types/IUserInfo";
+import routeGuard from "../authentication/routeGuard";
 // use AuthContext to conditionally render the dashboard features.
 
-const Dashboard = () => {
-  const [userData, setUserData] = useState({});
-
-  useEffect(() => {
-    userService.getUser().then((res) => {
-      setUserData(res.data);
-    });
-  }, []);
+const Dashboard = ({ user }: any) => {
+  // const initialState: IUserInfoNoPass = {
+  //   firstName: "",
+  //   lastName: "",
+  //   emailAddress: "",
+  // };
+  console.log(user);
 
   return (
     <div>
       <NavBar />
-      <UserWelcome userData={userData} />
+      <h1 className="font-Poppins ml-[43px] pt-[58px] font-bold text-[32px]">
+        Hello, {user.firstName}!
+      </h1>
     </div>
   );
 };
 
-export default Dashboard;
+export default routeGuard(Dashboard);

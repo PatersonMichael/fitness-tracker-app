@@ -5,6 +5,7 @@ import { validateLogin } from "../validators/validator";
 import authService from "./api/services/auth.service";
 import { useRouter } from "next/router";
 import { unstable_renderSubtreeIntoContainer } from "react-dom";
+import getUserProfileId from "./api/services/getUserProfileId";
 
 function LoginRefactor() {
   const initialValues: IUserAuthDataRequest = {
@@ -36,8 +37,12 @@ function LoginRefactor() {
     } else {
       console.log(value);
       setCredentialStatus("Success!");
-      authService.login(value);
-      router.push("/dashboard");
+      try {
+        authService.login(value);
+        router.push("/dashboard");
+      } catch (error: any) {
+        console.log(error);
+      }
     }
   };
 

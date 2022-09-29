@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useReducer } from "react";
+import { useEffect } from "react";
 
 function HomePage() {
   return (

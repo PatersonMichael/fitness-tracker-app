@@ -2,8 +2,15 @@
 
 export interface IUserInfo {
   userid?: number;
-  emailAddress?: string;
+  emailAddress: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+}
+export interface IUserInfoNoPass {
+  userid?: number;
+  emailAddress: string;
   password?: string;
-  firstName?: string;
-  lastName?: string;
+  firstName: string;
+  lastName: string;
 }

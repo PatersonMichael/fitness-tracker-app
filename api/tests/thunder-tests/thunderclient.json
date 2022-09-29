@@ -60,8 +60,13 @@
     "method": "GET",
     "sortNum": 30000,
     "created": "2022-09-15T23:50:11.029Z",
-    "modified": "2022-09-15T23:59:53.806Z",
-    "headers": [],
+    "modified": "2022-09-28T22:17:44.482Z",
+    "headers": [
+      {
+        "name": "x-access-token",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyUHJvZmlsZUlkIjoiNjMyYjhhNGMxMDA1Y2U2ZTUxZDQ3NzUzIiwiaWF0IjoxNjY0NDAzMTUwLCJleHAiOjE2NjQ0MDY3NTB9.C-fjk38q4MvDcQHHkmvX-RuYmil5PPdw6yiCMl5oymU"
+      }
+    ],
     "params": [],
     "tests": []
   },
@@ -70,11 +75,11 @@
     "colId": "48ae159c-6883-4142-ab6a-a20fd1b241ae",
     "containerId": "",
     "name": "GET userprofile by id",
-    "url": "http://localhost:8088/api/userprofiles/632b8a4c1005ce6e51d47753",
+    "url": "http://localhost:8088/api/userprofiles/6334e7851f60cdced6f92d46",
     "method": "GET",
     "sortNum": 20000,
     "created": "2022-09-15T23:50:57.045Z",
-    "modified": "2022-09-28T03:44:10.590Z",
+    "modified": "2022-09-29T00:37:05.785Z",
     "headers": [
       {
         "name": "Accept",
@@ -82,7 +87,7 @@
       },
       {
         "name": "x-access-token",
-        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyUHJvZmlsZUlkIjoiNjMyYjhhNGMxMDA1Y2U2ZTUxZDQ3NzUzIiwiaWF0IjoxNjY0MzM2MzI3LCJleHAiOjE2NjQzMzk5Mjd9.qt3KzTkzeeOcMidmVKqAg3rh7RT6V_zRFWvaX_U6Hy4"
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyUHJvZmlsZUlkIjoiNjMzNGU4MDcxZjYwY2RjZWQ2ZjkyZDRjIiwiaWF0IjoxNjY0NDExNjk2LCJleHAiOjE2NjQ0MTUyOTZ9.NChLGGJKZkv8gN3CbCrjfQQARY5EeOMQjUDR3JoYqic"
       }
     ],
     "params": [],
