@@ -17,7 +17,7 @@ export interface IUserProfile {
     temperatureUnit: string; // Fahrenheit, Celsius
     waterUnit: string; // Cups, Fluid Ounces, Milliliters
     activityLevel: string; // Not Very Active, Lightly Active, Moderately Active, Very Active, Extremely Active
-    timezone: string; // TODO: Find list of values
+    timezone: string; // TODO: Find list of values. Pacific Time (Pacific Time (US & Canada))
   }
 }
 

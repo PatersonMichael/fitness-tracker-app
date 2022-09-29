@@ -1,0 +1,357 @@
+{
+	"tables": {
+		"6e3b71b6-c181-450f-bb4f-535e8b446d7b": {
+			"id": "6e3b71b6-c181-450f-bb4f-535e8b446d7b",
+			"visible": true,
+			"name": "userProfiles",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "effe9d35-7caa-4a69-ab9d-09f5ed320296",
+					"name": "_id",
+					"datatype": "ObjectId",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": ""
+				},
+				{
+					"id": "7e4a7235-5e10-430a-91f5-ebc5dd6cd422",
+					"name": "emailAddress",
+					"datatype": "String",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				},
+				{
+					"id": "bcd3078a-99b9-4d2d-bb80-422febdf7aec",
+					"name": "password",
+					"datatype": "String",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				},
+				{
+					"id": "e7aa90ef-5605-4205-aeab-751a80f6b36f",
+					"name": "lastName",
+					"datatype": "String",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				},
+				{
+					"id": "cc51c015-3769-4eb3-bbe1-ca4167e7b1d4",
+					"name": "firstName",
+					"datatype": "String",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				},
+				{
+					"id": "e6507d10-3324-4d24-acd3-de656bcf573e",
+					"name": "birthDate",
+					"datatype": "Date",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				},
+				{
+					"id": "42eba30f-76e1-475f-a6dd-f09552e349b6",
+					"name": "gender",
+					"datatype": "String",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				},
+				{
+					"id": "aaed7ace-b4b9-4df1-9735-e4c4a23bb938",
+					"name": "preferences",
+					"datatype": "0c4d3589-f7a5-444b-8b93-a92d30d59bf8",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				}
+			],
+			"relations": [],
+			"lines": [],
+			"keys": [
+				{
+					"id": "53bd98f8-4083-4d2a-a73d-633f3c9938ca",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "na",
+					"cols": [
+						{
+							"id": "544de211-a6a1-4411-aca3-a7a11c578e11",
+							"colid": "effe9d35-7caa-4a69-ab9d-09f5ed320296"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"others": "",
+			"customCode": ""
+		},
+		"0c4d3589-f7a5-444b-8b93-a92d30d59bf8": {
+			"id": "0c4d3589-f7a5-444b-8b93-a92d30d59bf8",
+			"visible": true,
+			"name": "preferences",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "dff80cbf-7f66-41a0-9497-aa0319d2d859",
+					"name": "weightUnit",
+					"datatype": "String",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				},
+				{
+					"id": "91d52a09-8d15-43ba-acec-547fa8ffa546",
+					"name": "heightUnit",
+					"datatype": "String",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				},
+				{
+					"id": "ba087cde-694b-4d61-8602-1219392c3055",
+					"name": "distanceUnit",
+					"datatype": "String",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				},
+				{
+					"id": "27718e4f-f7e3-4565-9cc0-8d5400b6c6b6",
+					"name": "energyUnit",
+					"datatype": "String",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				},
+				{
+					"id": "78cea4ca-49d2-458e-9720-4783f8c7d5b4",
+					"name": "temperatureUnit",
+					"datatype": "String",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				},
+				{
+					"id": "efeb80c3-a699-42d4-af11-60c9f6c16f62",
+					"name": "waterUnit",
+					"datatype": "String",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				},
+				{
+					"id": "ec5b5c3b-8386-43c9-8fa0-77a38bf43807",
+					"name": "activityLevel",
+					"datatype": "String",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				},
+				{
+					"id": "aaaf54ba-2ccb-4034-b863-4fccc79237e2",
+					"name": "timezone",
+					"datatype": "String",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"ref": "",
+					"options": ""
+				}
+			],
+			"relations": [],
+			"lines": [],
+			"keys": [
+				{
+					"id": "f4ab63ca-f3ca-4787-a672-ed1da4c63f81",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "na",
+					"cols": []
+				}
+			],
+			"indexes": [],
+			"embeddable": true,
+			"generate": true,
+			"generateCustomCode": true,
+			"others": ""
+		}
+	},
+	"relations": {},
+	"notes": {},
+	"lines": {},
+	"model": {
+		"name": "fitness-tracker-mongoose",
+		"id": "32f44dd6-6ffd-422d-bc21-45da2e3a3d92",
+		"activeDiagram": "96763943-7a25-47ca-9a01-29236efd68c1",
+		"desc": "",
+		"path": "",
+		"type": "MONGOOSE",
+		"version": 1,
+		"parentTableInFkCols": true,
+		"caseConvention": "under",
+		"replaceSpace": "_",
+		"color": "transparent",
+		"sideSelections": true,
+		"isDirty": true,
+		"storedin": {
+			"major": 4,
+			"minor": 6,
+			"extra": 6
+		},
+		"embeddedInParentsIsDisplayed": true,
+		"schemaContainerIsDisplayed": false,
+		"cardinalityIsDisplayed": false,
+		"estimatedSizeIsDisplayed": false,
+		"writeFileParam": false,
+		"def_coltopk": true,
+		"def_others": ""
+	},
+	"otherObjects": {},
+	"diagrams": {
+		"96763943-7a25-47ca-9a01-29236efd68c1": {
+			"name": "Main Diagram",
+			"description": "",
+			"id": "96763943-7a25-47ca-9a01-29236efd68c1",
+			"keysgraphics": true,
+			"linegraphics": "detailed",
+			"zoom": 1,
+			"background": "transparent",
+			"lineColor": "transparent",
+			"isOpen": true,
+			"main": true,
+			"diagramItems": {
+				"6e3b71b6-c181-450f-bb4f-535e8b446d7b": {
+					"referencedItemId": "6e3b71b6-c181-450f-bb4f-535e8b446d7b",
+					"x": 732,
+					"y": 137,
+					"gHeight": 315,
+					"gWidth": 251,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true
+				},
+				"0c4d3589-f7a5-444b-8b93-a92d30d59bf8": {
+					"referencedItemId": "0c4d3589-f7a5-444b-8b93-a92d30d59bf8",
+					"x": 1150,
+					"y": 272,
+					"gHeight": 171,
+					"gWidth": 229,
+					"color": "#ffffff",
+					"background": "#8bc34a",
+					"resized": false,
+					"autoExpand": true
+				}
+			},
+			"scroll": {
+				"x": 0,
+				"y": 0
+			},
+			"type": "erd"
+		}
+	},
+	"order": [],
+	"collapsedTreeItems": []
+}
