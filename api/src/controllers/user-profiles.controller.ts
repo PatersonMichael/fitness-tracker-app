@@ -20,8 +20,6 @@ export class UserProfilesController extends Controller {
             Logging.error(error);
             throw error;
         }
-
-        return userProfiles;
     }
 
     //@Get('/:id') 
@@ -36,22 +34,19 @@ export class UserProfilesController extends Controller {
             Logging.error(error);
             throw error;
         }
-
-        return null;
     }
 
     //@Post('/')
-    public async postUserProfile(req: Request, _res: Response, _next: NextFunction): Promise<IUserProfile | null> {
-        const { emailAddress, password, lastName, firstName, birthDate, gender } = req.body;
-
+    public async postUserProfile(req: Request, _res: Response, _next: NextFunction): Promise<IUserProfile | null> {        
         let userProfile = new UserProfile({
             _id: new mongoose.Types.ObjectId(),
-            emailAddress: emailAddress,
-            password: await setPassword(password),
-            lastName: lastName,
-            firstName: firstName,
-            birthDate: birthDate,
-            gender: gender
+            emailAddress: req.body.emailAddress,
+            password: await setPassword(req.body.password),
+            lastName: req.body.lastName,
+            firstName: req.body.firstName,
+            birthDate: req.body.birthDate,
+            gender: req.body.gender,
+            preferences : req.body.preferences
         });
 
         try {
@@ -64,36 +59,34 @@ export class UserProfilesController extends Controller {
             Logging.error(error);
             throw error;
         }
-
-        return null;
     }
 
-    //@Put('/:id')
-    //public async putUserProfile(req: Request<{ id: string }>, res: Response, _next: NextFunction): Promise<IUserProfile | null> {
+    //@Put('/:id')    
     public async putUserProfile(req: Request, _res: Response, _next: NextFunction): Promise<IUserProfile | null> {
-        const userProfileId = req.params.id;
-        const { emailAddress, password, lastName, firstName, birthDate, gender } = req.body;
+        const userProfileId = req.params.id;        
 
         let userProfile = new UserProfile({
             _id: userProfileId,
-            emailAddress: emailAddress,
-            password: await setPassword(password),
-            lastName: lastName,
-            firstName: firstName,
-            birthDate: birthDate,
-            gender: gender
+            emailAddress: req.body.emailAddress,
+            password: await setPassword(req.body.password),
+            lastName: req.body.lastName,
+            firstName: req.body.firstName,
+            birthDate: req.body.birthDate,
+            gender: req.body.gender,
+            preferences : req.body.preferences
         });
 
         try {
             await userProfile
                 .replaceOne({
                     _id: userProfileId,
-                    emailAddress: emailAddress,
-                    password: await setPassword(password),
-                    lastName: lastName,
-                    firstName: firstName,
-                    birthDate: birthDate,
-                    gender: gender
+                    emailAddress: req.body.emailAddress,
+                    password: await setPassword(req.body.password),
+                    lastName: req.body.lastName,
+                    firstName: req.body.firstName,
+                    birthDate: req.body.birthDate,
+                    gender: req.body.gender,
+                    preferences : req.body.preferences
                 });
 
             return userProfile;
@@ -103,8 +96,6 @@ export class UserProfilesController extends Controller {
             Logging.error(error);
             throw error;
         }
-
-        return null;
     };
 
     //@Delete('/:id')

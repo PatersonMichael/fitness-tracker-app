@@ -9,6 +9,16 @@ export interface IUserProfile {
   firstName: string;
   birthDate?: Date;
   gender?: Genders;
+  preferences?: {
+    weightUnit: string; // Pounds, Kilograms, Stone
+    heightUnit: string; // Inches, Centimeters
+    distanceUnit: string; // Miles, Kilometers
+    energyUnit: string; // Calories, Kilocalories
+    temperatureUnit: string; // Fahrenheit, Celsius
+    waterUnit: string; // Cups, Fluid Ounces, Milliliters
+    activityLevel: string; // Not Very Active, Lightly Active, Moderately Active, Very Active, Extremely Active
+    timezone: string; // TODO: Find list of values
+  }
 }
 
 interface IUserProfileDocument extends IUserProfile, Document {
@@ -49,28 +59,55 @@ const UserProfileSchema: Schema<IUserProfileDocument> = new Schema({
     enum: Object.values(Genders),
     default: Genders.Unknown,
   },
+  preferences: {
+    type: Object,
+    required: false,
+    weightUnit: {
+      type: String,
+      required: false
+    },
+    heightUnit: {
+      type: String,
+      required: false
+    },
+    distanceUnit: {
+      type: String,
+      required: false
+    },
+    energyUnit: {
+      type: String,
+      required: false
+    },
+    temperatureUnit: {
+      type: String,
+      required: false
+    },
+    waterUnit: {
+      type: String,
+      required: false
+    },
+    activityLevel: {
+      type: String,
+      required: false
+    },
+    timezone: {
+      type: String,
+      required: false
+    }
+  }
 });
 
-UserProfileSchema.methods.setPassword = async function (
-  unhashedPassword: string,
-) {
-  // const hash = await bcrypt.hash(unhashedPassword, 10);
-  // this.password = hash;
-
+UserProfileSchema.methods.setPassword = async function (unhashedPassword: string) {
   const salt = await bcrypt.genSalt();
   this.password = await bcrypt.hash(unhashedPassword, salt);
 };
 
-UserProfileSchema.methods.checkPassword = async function (
-  unhashedPassword: string,
-) {
+UserProfileSchema.methods.checkPassword = async function (unhashedPassword: string) {
   const result = await bcrypt.compare(unhashedPassword, this.password);
   return result;
 };
 
-UserProfileSchema.statics.findByEmailAddress = async function (
-  emailAddress: string,
-) {
+UserProfileSchema.statics.findByEmailAddress = async function (emailAddress: string) {
   return await this.findOne({ emailAddress });
 };
 
