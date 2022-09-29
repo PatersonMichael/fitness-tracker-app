@@ -2,6 +2,18 @@ import mongoose, { Document, Model, Schema } from 'mongoose';
 import { Genders } from './genders';
 import bcrypt from 'bcrypt';
 
+export interface UserProfilePreferences {
+  weightUnit: string;      // Pounds, Kilograms, Stone
+  heightUnit: string;      // Inches, Centimeters
+  distanceUnit: string;    // Miles, Kilometers
+  energyUnit: string;      // Calories, Kilocalories
+  temperatureUnit: string; // Fahrenheit, Celsius
+  waterUnit: string;       // Cups, Fluid Ounces, Milliliters
+  activityLevel: string;   // Not Very Active, Lightly Active, Moderately Active, Very Active, Extremely Active
+  // TODO: Find source for these
+  timezone: string;        // Pacific Time (Pacific Time (US & Canada))
+};
+
 export interface IUserProfile {
   emailAddress: string;
   password: string;
@@ -9,26 +21,17 @@ export interface IUserProfile {
   firstName: string;
   birthDate?: Date;
   gender?: Genders;
-  preferences?: {
-    weightUnit: string; // Pounds, Kilograms, Stone
-    heightUnit: string; // Inches, Centimeters
-    distanceUnit: string; // Miles, Kilometers
-    energyUnit: string; // Calories, Kilocalories
-    temperatureUnit: string; // Fahrenheit, Celsius
-    waterUnit: string; // Cups, Fluid Ounces, Milliliters
-    activityLevel: string; // Not Very Active, Lightly Active, Moderately Active, Very Active, Extremely Active
-    timezone: string; // TODO: Find list of values. Pacific Time (Pacific Time (US & Canada))
-  }
-}
+  preferences?: UserProfilePreferences
+};
 
 interface IUserProfileDocument extends IUserProfile, Document {
   setPassword: (unhashedPassword: string) => Promise<void>;
   checkPassword: (unhashedPassword: string) => Promise<boolean>;
-}
+};
 
 interface IUserProfileModel extends Model<IUserProfileDocument> {
   findByEmailAddress: (emailAddress: string) => Promise<IUserProfileDocument>;
-}
+};
 
 const UserProfileSchema: Schema<IUserProfileDocument> = new Schema({
   emailAddress: {

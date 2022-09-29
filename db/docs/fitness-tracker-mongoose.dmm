@@ -131,6 +131,18 @@
 							"colid": "effe9d35-7caa-4a69-ab9d-09f5ed320296"
 						}
 					]
+				},
+				{
+					"id": "9ee22f5d-9ad0-4074-b11a-f6a26b4dafdb",
+					"isPk": false,
+					"using": "na",
+					"name": "unq_user_profile_email_address",
+					"cols": [
+						{
+							"id": "cfad6093-b1ef-46e5-9376-acbdf6ac514b",
+							"colid": "7e4a7235-5e10-430a-91f5-ebc5dd6cd422"
+						}
+					]
 				}
 			],
 			"indexes": [],
@@ -302,11 +314,12 @@
 		},
 		"embeddedInParentsIsDisplayed": true,
 		"schemaContainerIsDisplayed": false,
-		"cardinalityIsDisplayed": false,
+		"cardinalityIsDisplayed": true,
 		"estimatedSizeIsDisplayed": false,
 		"writeFileParam": false,
 		"def_coltopk": true,
-		"def_others": ""
+		"def_others": "",
+		"lastSaved": "9/29/2022"
 	},
 	"otherObjects": {},
 	"diagrams": {
@@ -324,8 +337,8 @@
 			"diagramItems": {
 				"6e3b71b6-c181-450f-bb4f-535e8b446d7b": {
 					"referencedItemId": "6e3b71b6-c181-450f-bb4f-535e8b446d7b",
-					"x": 732,
-					"y": 137,
+					"x": 115,
+					"y": 117,
 					"gHeight": 315,
 					"gWidth": 251,
 					"color": "#ffffff",
@@ -335,8 +348,8 @@
 				},
 				"0c4d3589-f7a5-444b-8b93-a92d30d59bf8": {
 					"referencedItemId": "0c4d3589-f7a5-444b-8b93-a92d30d59bf8",
-					"x": 1150,
-					"y": 272,
+					"x": 533,
+					"y": 252,
 					"gHeight": 171,
 					"gWidth": 229,
 					"color": "#ffffff",
