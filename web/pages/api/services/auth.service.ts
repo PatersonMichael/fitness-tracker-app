@@ -8,16 +8,16 @@ const API_URL = "http://localhost:8088/api/";
 
 class AuthService {
   // router = useRouter();
-  async login(userAuthData: IUserAuthDataRequest) {
+  login(userAuthData: IUserAuthDataRequest) {
     // POST userAuthData, save JWT to localStorage
     try {
-      await axios
+      return axios
         .post(`${API_URL}authentication`, userAuthData)
         .then((response) => {
           if (response.data.token) {
             localStorage.setItem("userToken", JSON.stringify(response.data));
           } else if (response.status === 401) {
-            console.log(response.data.message);
+            // console.log(response.data.message);
 
             return response.data.message;
           }
@@ -32,9 +32,9 @@ class AuthService {
   logout() {
     // remove JWT from localStorage
     localStorage.removeItem("userToken");
-    setTimeout(() => {
-      location.reload();
-    }, 1000);
+    // setTimeout(() => {
+    //   location.reload();
+    // }, 1000);
   }
 
   register(signUpData: IUserInfo) {

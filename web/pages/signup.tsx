@@ -61,9 +61,7 @@ function SignUp() {
         <div className="text-primary font-Poppins font-bold text-[48px] mt-[41px]">
           Sign Up
         </div>
-        <p className="text-red-700 font-Inter font-bold absolute mt-[30vh]">
-          {credentialStatus}
-        </p>
+        <p className="text-red-700 font-Inter font-bold">{credentialStatus}</p>
         <form className="flex flex-col mt-[126px]" onSubmit={handleSubmit}>
           <label htmlFor="signUpFirstName" className="">
             First Name

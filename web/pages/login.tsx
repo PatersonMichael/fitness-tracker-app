@@ -35,14 +35,38 @@ function LoginRefactor() {
       setCredentialStatus("Invalid Credentials");
       setIsLogging(false);
     } else {
-      console.log(value);
-      setCredentialStatus("Success!");
-      try {
-        authService.login(value);
-        router.push("/dashboard");
-      } catch (error: any) {
-        console.log(error);
-      }
+      // console.log(value);
+      authUser(value);
+
+      // try {
+      //   const response = authService.login(value);
+      //   if(response.status === 200){
+
+      //   }
+      //   router.push("/dashboard");
+      // } catch (error: any) {
+      //   console.log(error);
+      // }
+    }
+  };
+
+  const authUser = async (userAuthDataRequest: IUserAuthDataRequest) => {
+    try {
+      await authService
+        .login(userAuthDataRequest)
+        ?.then((res) => {
+          if (res.token) {
+            setCredentialStatus("Success!");
+          }
+          router.push("/dashboard");
+        })
+        .catch((error) => {
+          console.log(error);
+          setCredentialStatus("Invalid Credentials");
+          setIsLogging(false);
+        });
+    } catch (error) {
+      // console.log(error);
     }
   };
 
@@ -53,10 +77,10 @@ function LoginRefactor() {
         <div className="text-primary font-Poppins font-bold text-[48px] mt-[41px]">
           Login
         </div>
-        <p className="text-red-700 font-Inter font-bold absolute mt-[30vh]">
-          {credentialStatus}
-        </p>
         <form className="flex flex-col mt-[126px]" onSubmit={handleSubmit}>
+          <p className="text-red-700 font-Inter font-bold text-center">
+            {credentialStatus}
+          </p>
           <label htmlFor="loginEmail">Email</label>
           <input
             className="bg-boxGrey w-[343px] h-[85px] placeholder-black text-[24px] p-2 font-Inter"
