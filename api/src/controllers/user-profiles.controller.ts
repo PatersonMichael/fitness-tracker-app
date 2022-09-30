@@ -3,130 +3,161 @@ import Logging from '../lib/logging';
 import mongoose from 'mongoose';
 import UserProfile, { IUserProfile } from '../models/user-profile';
 import { NextFunction, Request, Response } from 'express';
-import { Get, Post, Put, Delete, Route, Tags, Body, Path, Controller, } from 'tsoa';
+import {
+  Get,
+  Post,
+  Put,
+  Delete,
+  Route,
+  Tags,
+  Body,
+  Path,
+  Controller,
+} from 'tsoa';
 
 @Route('/api/userprofiles')
 @Tags('UserProfile')
 export class UserProfilesController extends Controller {
-    //@Get('/')
-    public async getUserProfiles(_req: Request, _res: Response, _next: NextFunction): Promise<IUserProfile[] | null> {
-        let userProfiles: IUserProfile[] = [];
+  //@Get('/')
+  public async getUserProfiles(
+    _req: Request,
+    _res: Response,
+    _next: NextFunction,
+  ): Promise<IUserProfile[] | null> {
+    let userProfiles: IUserProfile[] = [];
 
-        try {
-            userProfiles = await UserProfile.find().exec();
+    try {
+      userProfiles = await UserProfile.find().exec();
 
-            return userProfiles;
-        } catch (error) {
-            Logging.error(error);
-            throw error;
-        }
-
-        return userProfiles;
+      return userProfiles;
+    } catch (error) {
+      Logging.error(error);
+      throw error;
     }
 
-    //@Get('/:id') 
-    public async getUserProfileById(req: Request, _res: Response, _next: NextFunction): Promise<IUserProfile | null> {
-        const userProfileId = req.params.id;
+    return userProfiles;
+  }
 
-        try {
-            const userProfile = await UserProfile.findById(userProfileId).exec();
+  //@Get('/:id')
+  public async getUserProfileById(
+    req: Request,
+    _res: Response,
+    _next: NextFunction,
+  ): Promise<IUserProfile | null> {
+    const userProfileId = req.params.id;
 
-            return userProfile;
-        } catch (error) {
-            Logging.error(error);
-            throw error;
-        }
+    try {
+      const userProfile = await UserProfile.findById(userProfileId).exec();
 
-        return null;
+      return userProfile;
+    } catch (error) {
+      Logging.error(error);
+      throw error;
     }
 
-    //@Post('/')
-    public async postUserProfile(req: Request, _res: Response, _next: NextFunction): Promise<IUserProfile | null> {
-        const { emailAddress, password, lastName, firstName, birthDate, gender } = req.body;
+    return null;
+  }
 
-        let userProfile = new UserProfile({
-            _id: new mongoose.Types.ObjectId(),
-            emailAddress: emailAddress,
-            password: await setPassword(password),
-            lastName: lastName,
-            firstName: firstName,
-            birthDate: birthDate,
-            gender: gender
-        });
+  //@Post('/')
+  public async postUserProfile(
+    req: Request,
+    _res: Response,
+    _next: NextFunction,
+  ): Promise<IUserProfile | null> {
+    const { emailAddress, password, lastName, firstName, birthDate, gender } =
+      req.body;
 
-        try {
-            userProfile = await userProfile.save();
+    let userProfile = new UserProfile({
+      _id: new mongoose.Types.ObjectId(),
+      emailAddress: emailAddress,
+      password: await setPassword(password),
+      lastName: lastName,
+      firstName: firstName,
+      birthDate: birthDate,
+      gender: gender,
+    });
 
-            return userProfile;
-        } catch (error) {
-            // TODO: Catch/Handle errors returned from mongo schema validation, like 11000, unique violation.
-            // Should be a 400 bad request if invalid, 209 if a conflict.
-            Logging.error(error);
-            throw error;
-        }
+    try {
+      userProfile = await userProfile.save();
 
-        return null;
+      return userProfile;
+    } catch (error) {
+      // TODO: Catch/Handle errors returned from mongo schema validation, like 11000, unique violation.
+      // Should be a 400 bad request if invalid, 209 if a conflict.
+      Logging.error(error);
+      throw error;
     }
 
-    //@Put('/:id')
-    //public async putUserProfile(req: Request<{ id: string }>, res: Response, _next: NextFunction): Promise<IUserProfile | null> {
-    public async putUserProfile(req: Request, _res: Response, _next: NextFunction): Promise<IUserProfile | null> {
-        const userProfileId = req.params.id;
-        const { emailAddress, password, lastName, firstName, birthDate, gender } = req.body;
+    return null;
+  }
 
-        let userProfile = new UserProfile({
-            _id: userProfileId,
-            emailAddress: emailAddress,
-            password: await setPassword(password),
-            lastName: lastName,
-            firstName: firstName,
-            birthDate: birthDate,
-            gender: gender
-        });
+  //@Put('/:id')
+  //public async putUserProfile(req: Request<{ id: string }>, res: Response, _next: NextFunction): Promise<IUserProfile | null> {
+  public async putUserProfile(
+    req: Request,
+    _res: Response,
+    _next: NextFunction,
+  ): Promise<IUserProfile | null> {
+    const userProfileId = req.params.id;
+    const { emailAddress, password, lastName, firstName, birthDate, gender } =
+      req.body;
 
-        try {
-            await userProfile
-                .replaceOne({
-                    _id: userProfileId,
-                    emailAddress: emailAddress,
-                    password: await setPassword(password),
-                    lastName: lastName,
-                    firstName: firstName,
-                    birthDate: birthDate,
-                    gender: gender
-                });
+    let userProfile = new UserProfile({
+      _id: userProfileId,
+      emailAddress: emailAddress,
+      password: await setPassword(password),
+      lastName: lastName,
+      firstName: firstName,
+      birthDate: birthDate,
+      gender: gender,
+    });
 
-            return userProfile;
-        } catch (error) {
-            // TODO: Catch/Handle errors returned from mongo schema validation, like 11000, unique violation.
-            // Should be a 400 bad request if invalid, 209 if a conflict.
-            Logging.error(error);
-            throw error;
-        }
+    try {
+      await userProfile.replaceOne({
+        _id: userProfileId,
+        emailAddress: emailAddress,
+        password: await setPassword(password),
+        lastName: lastName,
+        firstName: firstName,
+        birthDate: birthDate,
+        gender: gender,
+      });
 
-        return null;
-    };
+      return userProfile;
+    } catch (error) {
+      // TODO: Catch/Handle errors returned from mongo schema validation, like 11000, unique violation.
+      // Should be a 400 bad request if invalid, 209 if a conflict.
+      Logging.error(error);
+      throw error;
+    }
 
-    //@Delete('/:id')
-    public async deleteUserProfile(req: Request, res: Response, _next: NextFunction): Promise<void> {
-        const userProfileId = req.params.id;
+    return null;
+  }
 
-        try {
-            await UserProfile.findByIdAndDelete(userProfileId).exec();
+  //@Delete('/:id')
+  public async deleteUserProfile(
+    req: Request,
+    res: Response,
+    _next: NextFunction,
+  ): Promise<void> {
+    const userProfileId = req.params.id;
 
-            return;
-        } catch (error) {
-            // TODO: Catch/Handle errors returned from mongo schema validation, like 11000, unique violation.
-            // Should be a 400 bad request if invalid, 209 if a conflict.
-            Logging.error(error);
-            throw error;
-        }
-    };
+    try {
+      await UserProfile.findByIdAndDelete(userProfileId).exec();
+
+      return;
+    } catch (error) {
+      // TODO: Catch/Handle errors returned from mongo schema validation, like 11000, unique violation.
+      // Should be a 400 bad request if invalid, 209 if a conflict.
+      Logging.error(error);
+      throw error;
+    }
+  }
 }
 
 async function setPassword(unhashedPassword: string): Promise<string> {
-    const salt = await bcrypt.genSalt();
-    const password = await bcrypt.hash(unhashedPassword, salt);
+  const salt = await bcrypt.genSalt();
+  const password = await bcrypt.hash(unhashedPassword, salt);
 
-    return password;
-};
+  return password;
+}
