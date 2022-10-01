@@ -9,11 +9,6 @@ import routeGuard from "../authentication/routeGuard";
 // use AuthContext to conditionally render the dashboard features.
 
 const Dashboard = ({ user }: any) => {
-  // const initialState: IUserInfoNoPass = {
-  //   firstName: "",
-  //   lastName: "",
-  //   emailAddress: "",
-  // };
   console.log(user);
 
   return (
