@@ -14,12 +14,8 @@ paths:
       tags:
         - User Profiles
       summary: Get all user profiles
-      parameters:
-        - in: header
-          name: x-access-token
-          schema:
-            type: string
-          required: true        
+      security:
+        - apiKey: []              
       responses:
         '200':
           description: OK
@@ -47,12 +43,6 @@ paths:
       tags:
         - User Profiles
       summary: Post a new user profile
-      parameters:
-        - in: header
-          name: x-access-token
-          schema:
-            type: string
-          required: true      
       requestBody:
         description: The user profile
         content:
@@ -97,12 +87,9 @@ paths:
       tags:
         - User Profiles
       summary: Get a User Profile
+      security:
+        - apiKey: []      
       parameters:
-        - in: header
-          name: x-access-token
-          schema:
-            type: string
-          required: true
         - name: id
           in: path
           description: The identifier
@@ -133,12 +120,9 @@ paths:
       tags:
         - User Profiles
       summary: Puts the user profile
+      security:
+        - apiKey: []      
       parameters:
-        - in: header
-          name: x-access-token
-          schema:
-            type: string
-          required: true
         - name: id
           in: path
           description: The identifier
@@ -187,12 +171,9 @@ paths:
       tags:
         - User Profiles
       summary: Deletes the user profile
+      security:
+        - apiKey: []      
       parameters:
-        - in: header
-          name: x-access-token
-          schema:
-            type: string
-          required: true
         - name: id
           in: path
           description: The identifier
@@ -435,9 +416,9 @@ components:
           nullable: true
       additionalProperties: {}
   securitySchemes:
-    ApiKey:
+    apiKey:
       type: apiKey
-      in: header
-      name: X-Api-Key
-security:
-  - ApiKey: []
+      in: header      
+      name: x-access-token
+## security:
+##  - apiKey: []
