@@ -305,7 +305,7 @@
 					"id": "0639c7f0-57a6-45a6-824c-770a00a05ea1",
 					"list": false,
 					"name": "birthDate",
-					"nn": true,
+					"nn": false,
 					"param": "",
 					"pk": false,
 					"after": "",
@@ -326,7 +326,7 @@
 					"id": "81c28078-85c2-4e13-a658-e2ac63a287f5",
 					"list": false,
 					"name": "gender",
-					"nn": true,
+					"nn": false,
 					"param": "",
 					"pk": false,
 					"after": "",
@@ -347,7 +347,7 @@
 					"id": "00d7a97f-dd86-4485-a09b-6eb53d35e20b",
 					"list": false,
 					"name": "__v",
-					"nn": true,
+					"nn": false,
 					"param": "",
 					"pk": false,
 					"after": "",
@@ -569,7 +569,7 @@
 		"color": "transparent",
 		"background": "transparent",
 		"sideSelections": true,
-		"isDirty": false,
+		"isDirty": true,
 		"storedin": {
 			"major": 4,
 			"minor": 6,
@@ -582,7 +582,7 @@
 		"def_rowformat": "na",
 		"reversed": true,
 		"def_others": "",
-		"lastSaved": "9/29/2022",
+		"lastSaved": "Thu Sep 29 2022 18:23:44 GMT-0700 (Pacific Daylight Time)",
 		"embeddedInParentsIsDisplayed": true,
 		"schemaContainerIsDisplayed": false,
 		"cardinalityIsDisplayed": false,
@@ -597,8 +597,8 @@
 			"description": "",
 			"diagramItems": {
 				"deb5caf4-3a2c-4a23-ae3a-4c631f7e3a90": {
-					"x": 177,
-					"y": 85,
+					"x": 50,
+					"y": 92,
 					"gHeight": 44,
 					"gWidth": 150,
 					"background": "#03a9f4",
@@ -608,8 +608,8 @@
 					"autoExpand": true
 				},
 				"2dffbdc3-323a-4f85-aba7-a071df7faac0": {
-					"x": 469,
-					"y": 85,
+					"x": 342,
+					"y": 92,
 					"gHeight": 44,
 					"gWidth": 150,
 					"background": "#03a9f4",
@@ -619,8 +619,8 @@
 					"autoExpand": true
 				},
 				"706db917-5055-4ff2-b373-7c027da839db": {
-					"x": 731,
-					"y": 85,
+					"x": 604,
+					"y": 92,
 					"gHeight": 44,
 					"gWidth": 150,
 					"background": "#03a9f4",
@@ -630,8 +630,8 @@
 					"autoExpand": true
 				},
 				"2fc75d7c-1790-4b8e-ba64-bf611dbb0d47": {
-					"x": 177,
-					"y": 205,
+					"x": 50,
+					"y": 212,
 					"gHeight": 44,
 					"gWidth": 150,
 					"background": "#03a9f4",
@@ -641,8 +641,8 @@
 					"autoExpand": true
 				},
 				"8df7d676-73a1-49af-bfa2-536670826436": {
-					"x": 519,
-					"y": 205,
+					"x": 392,
+					"y": 212,
 					"gHeight": 333,
 					"gWidth": 250,
 					"background": "#03a9f4",
@@ -653,8 +653,8 @@
 				},
 				"2041e9c5-aa26-4d96-bf9a-99c469fc33bf": {
 					"referencedItemId": "2041e9c5-aa26-4d96-bf9a-99c469fc33bf",
-					"x": 915,
-					"y": 373,
+					"x": 788,
+					"y": 380,
 					"gHeight": 171,
 					"gWidth": 228,
 					"color": "#ffffff",

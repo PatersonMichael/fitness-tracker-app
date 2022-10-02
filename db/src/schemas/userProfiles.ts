@@ -8,19 +8,12 @@ updated_at: { bsonType: 'date' }
 // Select the database to use.
 use('fitness_tracker');
 
-db.createcollection('userprofiles', {
+db.createCollection('userprofiles', {
     validator: {
         $jsonSchema: {
             bsonType: 'object',
             title: 'userprofiles',
-            required: [
-                'emailAddress',
-                'password',
-                'lastName',
-                'firstName',
-                'birthDate',
-                'gender'
-            ],
+            required: ['emailAddress', 'password', 'lastName', 'firstName'],
             properties: {
                 emailAddress: {
                     bsonType: 'string'
@@ -39,6 +32,9 @@ db.createcollection('userprofiles', {
                 },
                 gender: {
                     bsonType: 'string'
+                },
+                __v: {
+                    bsonType: 'double'
                 },
                 preferences: {
                     bsonType: 'object',
@@ -74,6 +70,7 @@ db.createcollection('userprofiles', {
         }
     }
 });
-
-db.getCollection('userprofiles').createIndex({ 'emailAddress': 1 }, { name: 'unq_user_profile_email_address', unique: true });
-
+db.userprofiles.createIndex({'emailAddress': 1}, {
+    name: "unq_user_profile_email_address",
+    unique: true
+})

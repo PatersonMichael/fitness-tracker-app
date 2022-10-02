@@ -91,7 +91,7 @@
 				{
 					"id": "42eba30f-76e1-475f-a6dd-f09552e349b6",
 					"name": "gender",
-					"datatype": "String",
+					"datatype": "37cf3fba-8159-4882-9300-d837c2de3ebf",
 					"param": "",
 					"pk": false,
 					"nn": false,
@@ -155,7 +155,7 @@
 		"0c4d3589-f7a5-444b-8b93-a92d30d59bf8": {
 			"id": "0c4d3589-f7a5-444b-8b93-a92d30d59bf8",
 			"visible": true,
-			"name": "preferences",
+			"name": "userProfilePeferences",
 			"desc": "",
 			"estimatedSize": "",
 			"cols": [
@@ -319,9 +319,22 @@
 		"writeFileParam": false,
 		"def_coltopk": true,
 		"def_others": "",
-		"lastSaved": "9/29/2022"
+		"lastSaved": "Thu Sep 29 2022 11:45:37 GMT-0700 (Pacific Daylight Time)"
 	},
-	"otherObjects": {},
+	"otherObjects": {
+		"37cf3fba-8159-4882-9300-d837c2de3ebf": {
+			"id": "37cf3fba-8159-4882-9300-d837c2de3ebf",
+			"visible": true,
+			"name": "genders",
+			"desc": "",
+			"type": "Enum",
+			"code": "",
+			"lines": [],
+			"generate": true,
+			"generateCustomCode": true,
+			"enumValues": "Male, Female, Unknown"
+		}
+	},
 	"diagrams": {
 		"96763943-7a25-47ca-9a01-29236efd68c1": {
 			"name": "Main Diagram",
@@ -340,7 +353,7 @@
 					"x": 115,
 					"y": 117,
 					"gHeight": 315,
-					"gWidth": 251,
+					"gWidth": 296,
 					"color": "#ffffff",
 					"background": "#03a9f4",
 					"resized": false,
@@ -354,6 +367,17 @@
 					"gWidth": 229,
 					"color": "#ffffff",
 					"background": "#8bc34a",
+					"resized": false,
+					"autoExpand": true
+				},
+				"37cf3fba-8159-4882-9300-d837c2de3ebf": {
+					"referencedItemId": "37cf3fba-8159-4882-9300-d837c2de3ebf",
+					"x": 537,
+					"y": 137,
+					"gHeight": 44,
+					"gWidth": 150,
+					"color": "#eee",
+					"background": "#9c27b0",
 					"resized": false,
 					"autoExpand": true
 				}
