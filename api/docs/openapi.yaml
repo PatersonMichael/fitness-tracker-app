@@ -14,6 +14,12 @@ paths:
       tags:
         - User Profiles
       summary: Get all user profiles
+      parameters:
+        - in: header
+          name: x-access-token
+          schema:
+            type: string
+          required: true        
       responses:
         '200':
           description: OK
@@ -31,16 +37,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-        default: 
+        default:
           description: Unexpected error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'                    
+                $ref: '#/components/schemas/Error'
     post:
       tags:
         - User Profiles
       summary: Post a new user profile
+      parameters:
+        - in: header
+          name: x-access-token
+          schema:
+            type: string
+          required: true      
       requestBody:
         description: The user profile
         content:
@@ -66,19 +78,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'                
+                $ref: '#/components/schemas/Error'
         '500':
           description: Unexpected error
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-        default: 
+        default:
           description: Unexpected error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'                
+                $ref: '#/components/schemas/Error'
   /api/userprofiles/{id}:
     x-swagger-router-controller: 'user-profiles'
     get:
@@ -86,6 +98,11 @@ paths:
         - User Profiles
       summary: Get a User Profile
       parameters:
+        - in: header
+          name: x-access-token
+          schema:
+            type: string
+          required: true
         - name: id
           in: path
           description: The identifier
@@ -106,7 +123,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-        default: 
+        default:
           description: Unexpected error
           content:
             application/json:
@@ -117,6 +134,11 @@ paths:
         - User Profiles
       summary: Puts the user profile
       parameters:
+        - in: header
+          name: x-access-token
+          schema:
+            type: string
+          required: true
         - name: id
           in: path
           description: The identifier
@@ -155,7 +177,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-        default: 
+        default:
           description: Unexpected error
           content:
             application/json:
@@ -166,6 +188,11 @@ paths:
         - User Profiles
       summary: Deletes the user profile
       parameters:
+        - in: header
+          name: x-access-token
+          schema:
+            type: string
+          required: true
         - name: id
           in: path
           description: The identifier
@@ -187,7 +214,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-        default: 
+        default:
           description: Unexpected error
           content:
             application/json:
@@ -214,7 +241,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-        default: 
+        default:
           description: Unexpected error
           content:
             application/json:
@@ -246,20 +273,20 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'              
+                $ref: '#/components/schemas/Error'
         '401':
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'          
+                $ref: '#/components/schemas/Error'
         '500':
           description: Unexpected error
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-        default: 
+        default:
           description: Unexpected error
           content:
             application/json:
@@ -267,12 +294,12 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
-    ObjectId: 
+    ObjectId:
       type: string
       pattern: ^[0-9a-fA-F]{24}$
       minLength: 24
       maxLength: 24
-      example: 6320f7a2cb396657bf6b51dd  
+      example: 6320f7a2cb396657bf6b51dd
     Genders:
       type: string
       description: Enum Genders
@@ -281,6 +308,26 @@ components:
         - Female
         - Unknown
       default: Unknown
+    UserProfilePreferences:
+      type: object
+      properties:
+        weightUnit:
+          type: string
+        heightUnit:
+          type: string
+        distanceUnit:
+          type: string
+        energyUnit:
+          type: string
+        temperatureUnit:
+          type: string
+        waterUnit:
+          type: string
+        activityLevel:
+          type: string
+        timezone:
+          type: string
+      additionalProperties: false
     UserProfile:
       type: object
       required:
@@ -314,6 +361,8 @@ components:
           maxLength: 25
         gender:
           $ref: '#/components/schemas/Genders'
+        preferences:
+          $ref: '#/components/schemas/UserProfilePreferences'
       additionalProperties: false
     HealthCheck:
       type: object
@@ -337,7 +386,7 @@ components:
           type: string
           maxLength: 320
           format: email
-          pattern: ^[0-9a-z]+$            
+          pattern: ^[0-9a-z]+$
         password:
           type: string
           minLength: 8
@@ -348,8 +397,6 @@ components:
     Authentication:
       type: object
       properties:
-        userProfileId:
-          $ref: '#/components/schemas/ObjectId'
         token:
           type: string
           maxLength: 320

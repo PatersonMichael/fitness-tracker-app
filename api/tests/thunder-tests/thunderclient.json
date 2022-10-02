@@ -41,12 +41,12 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2022-09-15T23:48:41.228Z",
-    "modified": "2022-09-29T00:37:10.013Z",
+    "modified": "2022-10-02T00:34:44.982Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"emailAddress\": \"ronald.mcdonald@mickyd.com\",\n  \"password\": \"GoFuckYourself$1234\"\n}",
+      "raw": "{\n  \"emailAddress\": \"someone@example.org\",\n  \"password\": \"Some$Password123\"\n}",
       "form": []
     },
     "tests": [
