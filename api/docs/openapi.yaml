@@ -1,19 +1,26 @@
 openapi: 3.0.1
 info:
-  version: 1.0.0
   title: Fitness Tracker
   description: Track nutrition and activity to monitor and improve your fitness.
+  version: 1.0.0
 servers:
   - url: http://localhost:8088
   - url: https://localhost:5443
+tags:
+  - name: Health Check
+    description: System Health Resource
+  - name: Authentication
+    description: Authentication Resource
+  - name: User Profile
+    description: User Profiles Resource  
 paths:
   /api/userprofiles:
     x-swagger-router-controller: 'user-profiles'
-    summary: User Profiles Resource
     get:
       tags:
-        - User Profiles
+        - User Profile
       summary: Get all user profiles
+      operationId: getUserProfiles
       security:
         - apiKey: []              
       responses:
@@ -41,8 +48,9 @@ paths:
                 $ref: '#/components/schemas/Error'
     post:
       tags:
-        - User Profiles
+        - User Profile
       summary: Post a new user profile
+      operationId: postUserProfile
       requestBody:
         description: The user profile
         content:
@@ -85,8 +93,9 @@ paths:
     x-swagger-router-controller: 'user-profiles'
     get:
       tags:
-        - User Profiles
+        - User Profile
       summary: Get a User Profile
+      operationId: getUserProfileById
       security:
         - apiKey: []      
       parameters:
@@ -118,8 +127,9 @@ paths:
                 $ref: '#/components/schemas/Error'
     put:
       tags:
-        - User Profiles
+        - User Profile
       summary: Puts the user profile
+      operationId: putUserProfile
       security:
         - apiKey: []      
       parameters:
@@ -169,8 +179,9 @@ paths:
                 $ref: '#/components/schemas/Error'
     delete:
       tags:
-        - User Profiles
+        - User Profile
       summary: Deletes the user profile
+      operationId: deleteUserProfile
       security:
         - apiKey: []      
       parameters:
@@ -203,11 +214,11 @@ paths:
                 $ref: '#/components/schemas/Error'
   /api/healthcheck:
     x-swagger-router-controller: 'health-check'
-    summary: Healthcheck Resource
     get:
       tags:
-        - HealthCheck
+        - Health Check
       summary: Get a healthcheck
+      operationId: getHealthCheck
       responses:
         '200':
           description: OK
@@ -230,11 +241,11 @@ paths:
                 $ref: '#/components/schemas/Error'
   /api/authentication:
     x-swagger-router-controller: 'authentication'
-    summary: Authentication Resource
     post:
       tags:
         - Authentication
       summary: Authenticate a User
+      operationId: postAuthentication
       requestBody:
         description: The user credentials
         content:
@@ -375,6 +386,9 @@ components:
           format: password
           pattern: ^[0-9a-z]+$
       additionalProperties: false
+      example:
+        emailAddress: 'someone@example.org'
+        password: 'Some$Password123'
     Authentication:
       type: object
       properties:
