@@ -6,6 +6,7 @@ import authService from "./api/services/auth.service";
 import { useRouter } from "next/router";
 import { unstable_renderSubtreeIntoContainer } from "react-dom";
 import getUserProfileId from "./api/services/getUserProfileId";
+import Head from "next/head";
 
 function LoginRefactor() {
     const initialValues: IUserAuthDataRequest = {
@@ -72,6 +73,9 @@ function LoginRefactor() {
 
     return (
         <div>
+            <Head>
+                <title>Login - Fitness Tracker App</title>
+            </Head>
             <div className="container mx-auto flex flex-col items-center">
                 {/* <pre>{JSON.stringify(formValues, undefined, 2)}</pre> */}
                 <div className="text-primary font-Poppins font-bold text-[48px] mt-[41px]">
