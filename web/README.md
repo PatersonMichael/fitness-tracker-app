@@ -2,16 +2,17 @@
 
 ### Features
 
-- React component based design
-- Server Side Rendering using NextJs
-- Http requests made using Axios Js
-- Testing with Jest
-- Styling with TailwindCSS
+-   React component based design
+-   Server Side Rendering using NextJs
+-   Http requests made using Axios Js
+-   Testing with Playwright
+-   Styling with TailwindCSS
 
 ### Local Setup
 
-- Copy the `.env` file to the root of the web folder.
-- Run npm install
+-   Copy the `.env` file to the root of the web folder.
+-   Run npm install
+-   Make sure you have Playwright testing installed
 
 ### Scripts
 
@@ -26,7 +27,6 @@ Generates an optimized version of the app for production.
 #### `npm run start`
 
 Starts the app in production by first running "next build" to build an optimized version of the app.
-
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -52,8 +52,8 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+-   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
