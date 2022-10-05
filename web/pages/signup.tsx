@@ -4,6 +4,7 @@ import { validateSignUp } from "../validators/validator";
 import authService from "./api/services/auth.service";
 import { useRouter } from "next/router";
 import { IUserInfo } from "../@types/IUserInfo";
+import { IErrorResponse } from "../@types/IValidationErrorDetails";
 import displayValidationErrors from "../validators/displayValidationErrors";
 
 function SignUp() {
@@ -12,6 +13,28 @@ function SignUp() {
         lastName: "",
         emailAddress: "",
         password: "",
+    };
+    const errorDisplay = {
+        firstName: {
+            isError: false,
+            errorType: "firstName",
+            message: "",
+        } as IErrorResponse,
+        lastName: {
+            isError: false,
+            errorType: "lastName",
+            message: "",
+        } as IErrorResponse,
+        emailAddress: {
+            isError: false,
+            errorType: "emailAddress",
+            message: "",
+        } as IErrorResponse,
+        password: {
+            isError: false,
+            errorType: "password",
+            message: "",
+        } as IErrorResponse,
     };
 
     const router = useRouter();
@@ -23,6 +46,7 @@ function SignUp() {
     const [toolTipOn, setToolTipOn] = useState(false);
 
     const [credentialStatus, setCredentialStatus] = useState("");
+    const [errorDisplayState, setErrorDisplayState] = useState(errorDisplay);
 
     const handleChange = (e: any) => {
         const { name, value } = e.target;
@@ -35,9 +59,17 @@ function SignUp() {
         const { error, value } = validateSignUp(formValues);
         if (error) {
             // console.log(error.details);
-            setCredentialStatus("Invalid Credentials");
+            setCredentialStatus("There are problems with your form");
             setIsLogging(false);
-            console.log(displayValidationErrors(error.details));
+            const errorValidationResponse = displayValidationErrors(
+                error.details
+            );
+            errorValidationResponse.forEach((error) => {
+                // console.log(error.errorType + " : " + error.message);
+                errorDisplay[error.errorType] = error;
+                setErrorDisplayState(errorDisplay);
+            });
+            console.log(errorDisplayState);
         } else {
             console.log(value);
             authService.register(value);
@@ -51,7 +83,7 @@ function SignUp() {
     };
 
     if (toolTipOn === true) {
-        toolTip = `At least 1 lowercase, uppercase, number, and symbol.`;
+        toolTip = `Min 8 characters, 1 lowercase, \nuppercase, number, and symbol.`;
     } else {
         toolTip = "";
     }
@@ -67,7 +99,7 @@ function SignUp() {
                     className="flex flex-col mt-[126px]"
                     onSubmit={handleSubmit}
                 >
-                    <p className="text-red-700 font-Inter font-bold text-center ">
+                    <p className="text-red-700 font-Inter font-bold text-center mb-2">
                         {credentialStatus}
                     </p>
                     <label htmlFor="signUpFirstName" className="">
@@ -83,6 +115,9 @@ function SignUp() {
                         placeholder="First name"
                         disabled={isLogging}
                     />
+                    <p className="text-[14px] w-[75vw] text-red-700">
+                        {errorDisplayState.firstName.message}
+                    </p>
                     <label htmlFor="signUpLastName" className="mt-[47px]">
                         Last Name
                     </label>
@@ -96,6 +131,9 @@ function SignUp() {
                         placeholder="Last name"
                         disabled={isLogging}
                     />
+                    <p className="text-[14px] w-[75vw] text-red-700">
+                        {errorDisplayState.lastName.message}
+                    </p>
                     <label htmlFor="loginEmail" className="mt-[47px]">
                         Email
                     </label>
@@ -109,6 +147,9 @@ function SignUp() {
                         placeholder="@email"
                         disabled={isLogging}
                     />
+                    <p className="text-[14px] w-[75vw] text-red-700">
+                        {errorDisplayState.emailAddress.message}
+                    </p>
                     <label htmlFor="loginPass" className="mt-[47px]">
                         Password
                     </label>
@@ -127,6 +168,9 @@ function SignUp() {
                         onMouseLeave={togglePasswordTooltip}
                     />
                     <div>
+                        <p className="text-[14px] w-[75vw] text-red-700">
+                            {errorDisplayState.password.message}
+                        </p>
                         <p className="text-[12px]">{toolTip}</p>
                     </div>
                     <div className="flex justify-end">

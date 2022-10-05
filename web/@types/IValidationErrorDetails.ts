@@ -7,6 +7,6 @@ export interface IValidationErrorDetails {
 
 export interface IErrorResponse {
     isError: boolean;
-    errorType: string;
+    errorType: "firstName" | "lastName" | "password" | "emailAddress";
     message: string;
 }
