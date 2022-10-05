@@ -4,32 +4,40 @@ import { IUserInfo } from "../@types/IUserInfo";
 
 // Regex pattern for strong password
 const strongPasswordRegex = new RegExp(
-  "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})"
+    "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})"
 );
 
 const validator = (schema: any) => (payload: any) =>
-  schema.validate(payload, { abortEarly: false });
+    schema.validate(payload, { abortEarly: false });
 
 const loginSchema = Joi.object<IUserAuthDataRequest>({
-  emailAddress: Joi.string()
-    .required()
-    .lowercase()
-    .email({ tlds: false })
-    .max(320),
-  password: Joi.string().required().max(72).min(8),
+    emailAddress: Joi.string()
+        .required()
+        .lowercase()
+        .email({ tlds: false })
+        .max(320),
+    password: Joi.string().required().max(72).min(8),
 });
 
 export const validateLogin = validator(loginSchema);
 
 const signUpSchema = Joi.object<IUserInfo>({
-  emailAddress: Joi.string()
-    .required()
-    .lowercase()
-    .email({ tlds: false })
-    .max(320),
-  password: Joi.string().required().min(8).max(72).regex(strongPasswordRegex),
-  lastName: Joi.string().required().max(30),
-  firstName: Joi.string().required().max(30),
+    emailAddress: Joi.string()
+        .required()
+        .lowercase()
+        .email({ tlds: false })
+        .max(320),
+    password: Joi.string()
+        .required()
+        .min(8)
+        .max(72)
+        .regex(strongPasswordRegex)
+        .messages({
+            "string.pattern.base":
+                "Password must contain at least 8 characters, 1 lowercase, 1 uppercase, 1 number, and 1 symbol.",
+        }),
+    lastName: Joi.string().required().max(30),
+    firstName: Joi.string().required().max(30),
 });
 
 export const validateSignUp = validator(signUpSchema);

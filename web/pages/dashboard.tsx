@@ -9,16 +9,16 @@ import routeGuard from "../authentication/routeGuard";
 // use AuthContext to conditionally render the dashboard features.
 
 const Dashboard = ({ user }: any) => {
-  console.log(user);
+    // console.log(user);
 
-  return (
-    <div>
-      <NavBar />
-      <h1 className="font-Poppins ml-[43px] pt-[58px] font-bold text-[32px]">
-        Hello, {user.firstName}!
-      </h1>
-    </div>
-  );
+    return (
+        <div>
+            <NavBar />
+            <h1 className="font-Poppins ml-[43px] pt-[58px] font-bold text-[32px]">
+                Hello, {user.firstName}!
+            </h1>
+        </div>
+    );
 };
 
 export default routeGuard(Dashboard);
