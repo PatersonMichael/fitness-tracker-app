@@ -114,6 +114,7 @@ function SignUp() {
                         onChange={handleChange}
                         placeholder="First name"
                         disabled={isLogging}
+                        required
                     />
                     <p className="text-[14px] w-[75vw] text-red-700">
                         {errorDisplayState.firstName.message}
@@ -130,6 +131,7 @@ function SignUp() {
                         onChange={handleChange}
                         placeholder="Last name"
                         disabled={isLogging}
+                        required
                     />
                     <p className="text-[14px] w-[75vw] text-red-700">
                         {errorDisplayState.lastName.message}
@@ -146,6 +148,7 @@ function SignUp() {
                         onChange={handleChange}
                         placeholder="@email"
                         disabled={isLogging}
+                        required
                     />
                     <p className="text-[14px] w-[75vw] text-red-700">
                         {errorDisplayState.emailAddress.message}
@@ -166,6 +169,7 @@ function SignUp() {
                         disabled={isLogging}
                         onMouseEnter={togglePasswordTooltip}
                         onMouseLeave={togglePasswordTooltip}
+                        required
                     />
                     <div>
                         <p className="text-[14px] w-[75vw] text-red-700">
