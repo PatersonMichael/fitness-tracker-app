@@ -69,7 +69,7 @@ function SignUp() {
                 errorDisplay[error.errorType] = error;
                 setErrorDisplayState(errorDisplay);
             });
-            console.log(errorDisplayState);
+            // console.log(errorDisplayState);
         } else {
             console.log(value);
             authService.register(value);
@@ -178,7 +178,7 @@ function SignUp() {
                             className="bg-primary text-white font-Inter font-bold w-[163px] h-[49px] mt-[15px]"
                             disabled={isLogging}
                         >
-                            Login
+                            Sign Up
                         </button>
                     </div>
                 </form>
