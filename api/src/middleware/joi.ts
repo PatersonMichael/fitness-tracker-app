@@ -33,7 +33,17 @@ export const Schemas = {
             lastName: Joi.string().required().max(30),
             firstName: Joi.string().required().max(30),
             birthDate: Joi.date().optional().less('now'),
-            gender: Joi.string().valid(...Object.values(Genders))
+            gender: Joi.string().valid(...Object.values(Genders)),
+            preferences: Joi.object({
+                weightUnit: Joi.string().optional(),
+                heightUnit: Joi.string().optional(),
+                distanceUnit: Joi.string().optional(),
+                energyUnit: Joi.string().optional(),
+                temperatureUnit: Joi.string().optional(),
+                waterUnit: Joi.string().optional(),
+                activityLevel: Joi.string().optional(),
+                timezone: Joi.string().optional()
+            }).optional()
         }),
         update: Joi.object<IUserProfile>({
             emailAddress: Joi.string().required().lowercase().email().max(320),
@@ -41,7 +51,17 @@ export const Schemas = {
             lastName: Joi.string().required().max(30),
             firstName: Joi.string().required().max(30),
             birthDate: Joi.date().optional().less('now'),
-            gender: Joi.string().valid(...Object.values(Genders))
+            gender: Joi.string().valid(...Object.values(Genders)),
+            preferences: Joi.object({
+                weightUnit: Joi.string().optional(),
+                heightUnit: Joi.string().optional(),
+                distanceUnit: Joi.string().optional(),
+                energyUnit: Joi.string().optional(),
+                temperatureUnit: Joi.string().optional(),
+                waterUnit: Joi.string().optional(),
+                activityLevel: Joi.string().optional(),
+                timezone: Joi.string().optional()
+            }).optional()
         })
     },
     userCredential: {
@@ -58,10 +78,10 @@ export const Schemas = {
 
 export const ValidateParamObjectId = (req: Request, res: Response, next: NextFunction) => {
     const objectIdValue = req.params.id;
-    
+
     const { value, error } = Joi.string().required().regex(objectIdRegex).validate(objectIdValue);
     if (error) {
-        return res.status(400).json({ message: 'Invalid parameter value' });        
+        return res.status(400).json({ message: 'Invalid parameter value' });
     }
 
     next();

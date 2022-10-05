@@ -1,19 +1,28 @@
 openapi: 3.0.1
 info:
-  version: 1.0.0
   title: Fitness Tracker
   description: Track nutrition and activity to monitor and improve your fitness.
+  version: 1.0.0
 servers:
   - url: http://localhost:8088
   - url: https://localhost:5443
+tags:
+  - name: Health Check
+    description: System Health Resource
+  - name: Authentication
+    description: Authentication Resource
+  - name: User Profile
+    description: User Profiles Resource  
 paths:
   /api/userprofiles:
     x-swagger-router-controller: 'user-profiles'
-    summary: User Profiles Resource
     get:
       tags:
-        - User Profiles
+        - User Profile
       summary: Get all user profiles
+      operationId: getUserProfiles
+      security:
+        - apiKey: []              
       responses:
         '200':
           description: OK
@@ -23,7 +32,6 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/UserProfile'
-                x-content-type: application/json
                 maxItems: 100
         '500':
           description: Unexpected error
@@ -31,22 +39,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-        default: 
+        default:
           description: Unexpected error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'                    
+                $ref: '#/components/schemas/Error'
     post:
       tags:
-        - User Profiles
+        - User Profile
       summary: Post a new user profile
+      operationId: postUserProfile
       requestBody:
         description: The user profile
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/UserProfile'
+        required: true
       responses:
         '201':
           description: Created
@@ -54,7 +64,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserProfile'
-                x-content-type: application/json
         '400':
           description: Bad Request
           content:
@@ -66,32 +75,35 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'                
+                $ref: '#/components/schemas/Error'
         '500':
           description: Unexpected error
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-        default: 
+        default:
           description: Unexpected error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'                
+                $ref: '#/components/schemas/Error'
   /api/userprofiles/{id}:
     x-swagger-router-controller: 'user-profiles'
     get:
       tags:
-        - User Profiles
+        - User Profile
       summary: Get a User Profile
+      operationId: getUserProfileById
+      security:
+        - apiKey: []      
       parameters:
         - name: id
           in: path
           description: The identifier
-          required: true
           schema:
             $ref: '#/components/schemas/ObjectId'
+          required: true
       responses:
         '200':
           description: OK
@@ -99,14 +111,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserProfile'
-                x-content-type: application/json
         '500':
           description: Unexpected error
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-        default: 
+        default:
           description: Unexpected error
           content:
             application/json:
@@ -114,21 +125,25 @@ paths:
                 $ref: '#/components/schemas/Error'
     put:
       tags:
-        - User Profiles
+        - User Profile
       summary: Puts the user profile
+      operationId: putUserProfile
+      security:
+        - apiKey: []      
       parameters:
         - name: id
           in: path
           description: The identifier
-          required: true
           schema:
             $ref: '#/components/schemas/ObjectId'
+          required: true
       requestBody:
         description: The user profile
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/UserProfile'
+        required: true
       responses:
         '200':
           description: OK
@@ -136,7 +151,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserProfile'
-                x-content-type: application/json
         '400':
           description: Bad Request
           content:
@@ -155,7 +169,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-        default: 
+        default:
           description: Unexpected error
           content:
             application/json:
@@ -163,15 +177,18 @@ paths:
                 $ref: '#/components/schemas/Error'
     delete:
       tags:
-        - User Profiles
+        - User Profile
       summary: Deletes the user profile
+      operationId: deleteUserProfile
+      security:
+        - apiKey: []      
       parameters:
         - name: id
           in: path
           description: The identifier
-          required: true
           schema:
             $ref: '#/components/schemas/ObjectId'
+          required: true
       responses:
         '204':
           description: No Content
@@ -187,7 +204,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-        default: 
+        default:
           description: Unexpected error
           content:
             application/json:
@@ -195,11 +212,11 @@ paths:
                 $ref: '#/components/schemas/Error'
   /api/healthcheck:
     x-swagger-router-controller: 'health-check'
-    summary: Healthcheck Resource
     get:
       tags:
-        - HealthCheck
+        - Health Check
       summary: Get a healthcheck
+      operationId: getHealthCheck
       responses:
         '200':
           description: OK
@@ -207,14 +224,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HealthCheck'
-              x-content-type: application/json
         '500':
           description: Unexpected error
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-        default: 
+        default:
           description: Unexpected error
           content:
             application/json:
@@ -222,17 +238,18 @@ paths:
                 $ref: '#/components/schemas/Error'
   /api/authentication:
     x-swagger-router-controller: 'authentication'
-    summary: Authentication Resource
     post:
       tags:
         - Authentication
       summary: Authenticate a User
+      operationId: postAuthentication
       requestBody:
         description: The user credentials
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/UserCredential'
+        required: true
       responses:
         '200':
           description: OK
@@ -240,26 +257,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Authentication'
-              x-content-type: application/json
         '400':
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'              
+                $ref: '#/components/schemas/Error'
         '401':
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'          
+                $ref: '#/components/schemas/Error'
         '500':
           description: Unexpected error
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-        default: 
+        default:
           description: Unexpected error
           content:
             application/json:
@@ -267,12 +283,12 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
-    ObjectId: 
+    ObjectId:
       type: string
       pattern: ^[0-9a-fA-F]{24}$
       minLength: 24
       maxLength: 24
-      example: 6320f7a2cb396657bf6b51dd  
+      example: 6320f7a2cb396657bf6b51dd
     Genders:
       type: string
       description: Enum Genders
@@ -281,6 +297,26 @@ components:
         - Female
         - Unknown
       default: Unknown
+    UserProfilePreferences:
+      type: object
+      properties:
+        weightUnit:
+          type: string
+        heightUnit:
+          type: string
+        distanceUnit:
+          type: string
+        energyUnit:
+          type: string
+        temperatureUnit:
+          type: string
+        waterUnit:
+          type: string
+        activityLevel:
+          type: string
+        timezone:
+          type: string
+      additionalProperties: false
     UserProfile:
       type: object
       required:
@@ -314,6 +350,8 @@ components:
           maxLength: 25
         gender:
           $ref: '#/components/schemas/Genders'
+        preferences:
+          $ref: '#/components/schemas/UserProfilePreferences'
       additionalProperties: false
     HealthCheck:
       type: object
@@ -337,7 +375,7 @@ components:
           type: string
           maxLength: 320
           format: email
-          pattern: ^[0-9a-z]+$            
+          pattern: ^[0-9a-z]+$
         password:
           type: string
           minLength: 8
@@ -345,11 +383,12 @@ components:
           format: password
           pattern: ^[0-9a-z]+$
       additionalProperties: false
+      example:
+        emailAddress: 'someone@example.org'
+        password: 'Some$Password123'
     Authentication:
       type: object
       properties:
-        userProfileId:
-          $ref: '#/components/schemas/ObjectId'
         token:
           type: string
           maxLength: 320
@@ -388,9 +427,9 @@ components:
           nullable: true
       additionalProperties: {}
   securitySchemes:
-    ApiKey:
+    apiKey:
       type: apiKey
-      in: header
-      name: X-Api-Key
-security:
-  - ApiKey: []
+      in: header      
+      name: x-access-token
+## security:
+##  - apiKey: []

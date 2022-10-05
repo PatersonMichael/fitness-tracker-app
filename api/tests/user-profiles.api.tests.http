@@ -5,6 +5,16 @@
 @apiPath = /api
 @baseURL = {{host}}:{{port}}{{apiPath}}
 
+### POST authentication
+POST {{baseURL}}/authentication
+Accept: application/json
+Content-Type: application/json
+
+{
+    "emailAddress": "someone@example.org",
+    "password": "Some$Password123"
+}
+
 ### GET userprofiles
 GET {{baseURL}}/userprofiles
 Accept: application/json
@@ -20,7 +30,7 @@ Content-Type: application/json
 
 {
     "emailAddress": "someone@example.org",
-    "password": "some$password123",
+    "password": "Some$Password123",
     "lastName": "Smith",
     "firstName": "John",
     "birthDate": "1980-04-15T08:00:00.000Z",
@@ -34,7 +44,7 @@ Content-Type: application/json
 
 {
     "emailAddress": "someone@example.org",
-    "password": "some$password123",
+    "password": "Some$Password123",
     "lastName": "Smith",
     "firstName": "John",
     "birthDate": "1980-04-15T08:00:00.000Z",

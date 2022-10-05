@@ -10,7 +10,7 @@ Pounds, Kilograms, Stone
 
 Inches, Centimeters
 
-### 🧭 Distance Unit
+### 📏 Distance Unit
 
 Miles, Kilometers
 
@@ -63,13 +63,16 @@ Should the weight measurements and similar be stored to express each of the unit
 
 ```json
 {
-  "weightUnit": "pounds",
-  "heightUnit": "inches",
-  "distanceUnit": "miles",
-  "energyUnit": "calories",
-  "temperatureUnit": "fahrenheit",
-  "waterUnit": "ounces",
-  "activityLevel": "lightly active"
+  "preferences": {
+    "weightUnit": "pounds",
+    "heightUnit": "inches",
+    "distanceUnit": "miles",
+    "energyUnit": "calories",
+    "temperatureUnit": "fahrenheit",
+    "waterUnit": "ounces",
+    "activityLevel": "lightly active",
+    "timezone": ""
+  }
 }
 ```
 
@@ -77,19 +80,23 @@ Should the weight measurements and similar be stored to express each of the unit
 
 ```json
 {
-  "height": {
-    "inches": 72,
-    "centimeters": 182.88
-  },
-  "startingWeight": {
-    "pounds": 190,
-    "kilograms": 86.18,
-    "stone": 13.85
-  },
-  "currentWeight": {
-    "pounds": 185,
-    "kilograms": 83.91,
-    "stone": 13.21
+  "healthProfile": {
+    "height": {
+      "inches": 72,
+      "centimeters": 182.88
+    },
+    "startingWeight": {
+      "pounds": 190,
+      "kilograms": 86.18,
+      "stone": 13.85,
+      "date": "2022-03-14T18:30:12.293Z"
+    },
+    "currentWeight": {
+      "pounds": 185,
+      "kilograms": 83.91,
+      "stone": 13.21,
+      "date": "2022-09-14T07:30:00.200Z"
+    }
   }
 }
 ```
@@ -98,6 +105,6 @@ Should the weight measurements and similar be stored to express each of the unit
 
 ```json
 {
-    "timezone": ""
+  "timezone": ""
 }
 ```
