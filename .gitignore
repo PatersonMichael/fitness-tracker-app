@@ -108,3 +108,4 @@ dist
 api/build
 api/.env
 db/docs/*.bak
+tests/test-client/scratch
