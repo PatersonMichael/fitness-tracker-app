@@ -6,8 +6,6 @@ import { UserProfilesController } from '../controllers/user-profiles.controller'
 
 const router = express.Router();
 
-// TODO: Add authentication middleware
-
 router.get('/', RouteGuard.verifyToken, async (req, res, next) => {
     const controller = new UserProfilesController();
 

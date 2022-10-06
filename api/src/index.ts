@@ -1,12 +1,13 @@
 import authenticationRoutes from './routes/authentication.routes';
+import express, { Request, Response } from 'express';
 import healthCheckRoutes from './routes/health-check.routes';
 import Logging from './lib/logging';
 import mongoose from 'mongoose';
 import morgan from 'morgan';
 import swaggerUi from 'swagger-ui-express';
+import timeZoneRoutes from './routes/time-zone.routes';
 import userProfileRoutes from './routes/user-profile.routes';
 import { config } from './config/config';
-import express, { Request, Response } from 'express';
 
 const app = express();
 
@@ -54,8 +55,9 @@ const StartServer = (): void => {
 
     // Routes
     app.use('/api/healthcheck', healthCheckRoutes);
-    app.use('/api/userprofiles', userProfileRoutes);
     app.use('/api/authentication', authenticationRoutes);
+    app.use('/api/userprofiles', userProfileRoutes);
+    app.use('/api/timezones', timeZoneRoutes);
 
     app.get('/', async(_req: Request, res: Response): Promise<Response> => {
         return res.status(200).send({ 

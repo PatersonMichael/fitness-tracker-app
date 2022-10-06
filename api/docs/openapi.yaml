@@ -12,7 +12,9 @@ tags:
   - name: Authentication
     description: Authentication Resource
   - name: User Profile
-    description: User Profiles Resource  
+    description: User Profiles Resource
+  - name: Time Zone
+    description: Time Zone Resource
 paths:
   /api/userprofiles:
     x-swagger-router-controller: 'user-profiles'
@@ -281,6 +283,73 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+  /api/timezones:
+    x-swagger-router-controller: 'time-zones'    
+    get:
+      tags:
+        - Time Zone
+      summary: Get all time zones
+      operationId: getTimeZones
+      security:
+        - apiKey: []              
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TimeZone'
+                maxItems: 100
+        '500':
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/timezones/{id}:
+    x-swagger-router-controller: 'time-zones'
+    get:
+      tags:
+        - Time Zone
+      summary: Get a Time Zone
+      operationId: getTimeZoneById
+      security:
+        - apiKey: []      
+      parameters:
+        - name: id
+          in: path
+          description: The identifier
+          schema:
+            $ref: '#/components/schemas/ObjectId'
+          required: true
+          example: 633e5bc407a2e1cfc6546323
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeZone'
+        '500':
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'                
 components:
   schemas:
     ObjectId:
@@ -395,6 +464,20 @@ components:
           format: password
           pattern: ^{}
       additionalProperties: false
+    TimeZone:
+      type: object
+      properties:
+        countryName:
+          type: string
+        countryCode2:
+          type: string
+        timeZone:
+          type: string
+        utcOffset:
+          type: string
+        description:
+          type: string
+      additionalProperties: false
     Error:
       type: object
       required:
@@ -425,7 +508,7 @@ components:
         instance:
           type: string
           nullable: true
-      additionalProperties: {}
+      additionalProperties: {}      
   securitySchemes:
     apiKey:
       type: apiKey

@@ -1,0 +1,1787 @@
+[
+    {
+        "countryName": "Afghanistan",
+        "countryCode2": "AF",
+        "timeZone": "Afghanistan Standard Time",
+        "utcOffset": "(UTC+04:30)",
+        "description": "Kabul"
+    },
+    {
+        "countryName": "Åland Islands",
+        "countryCode2": "AX",
+        "timeZone": "FLE Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius"
+    },
+    {
+        "countryName": "Albania",
+        "countryCode2": "AL",
+        "timeZone": "Central Europe Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Belgrade, Bratislava, Budapest, Ljubljana, Prague"
+    },
+    {
+        "countryName": "Algeria",
+        "countryCode2": "DZ",
+        "timeZone": "W. Central Africa Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "West Central Africa"
+    },
+    {
+        "countryName": "American Samoa",
+        "countryCode2": "AS",
+        "timeZone": "UTC-11",
+        "utcOffset": "(UTC-11:00)",
+        "description": "Coordinated Universal Time-11"
+    },
+    {
+        "countryName": "Andorra",
+        "countryCode2": "AD",
+        "timeZone": "W. Europe Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
+    },
+    {
+        "countryName": "Angola",
+        "countryCode2": "AO",
+        "timeZone": "W. Central Africa Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "West Central Africa"
+    },
+    {
+        "countryName": "Anguilla",
+        "countryCode2": "AI",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Antarctica",
+        "countryCode2": "AQ",
+        "timeZone": "Pacific SA Standard Time",
+        "utcOffset": "(UTC-03:00)",
+        "description": "Santiago"
+    },
+    {
+        "countryName": "Antigua and Barbuda",
+        "countryCode2": "AG",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Argentina",
+        "countryCode2": "AR",
+        "timeZone": "Argentina Standard Time",
+        "utcOffset": "(UTC-03:00)",
+        "description": "City of Buenos Aires"
+    },
+    {
+        "countryName": "Armenia",
+        "countryCode2": "AM",
+        "timeZone": "Caucasus Standard Time",
+        "utcOffset": "(UTC+04:00)",
+        "description": "Yerevan"
+    },
+    {
+        "countryName": "Aruba",
+        "countryCode2": "AW",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Australia",
+        "countryCode2": "AU",
+        "timeZone": "AUS Eastern Standard Time",
+        "utcOffset": "(UTC+10:00)",
+        "description": "Canberra, Melbourne, Sydney"
+    },
+    {
+        "countryName": "Austria",
+        "countryCode2": "AT",
+        "timeZone": "W. Europe Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
+    },
+    {
+        "countryName": "Azerbaijan",
+        "countryCode2": "AZ",
+        "timeZone": "Azerbaijan Standard Time",
+        "utcOffset": "(UTC+04:00)",
+        "description": "Baku"
+    },
+    {
+        "countryName": "Bahamas, The",
+        "countryCode2": "BS",
+        "timeZone": "Eastern Standard Time",
+        "utcOffset": "(UTC-05:00)",
+        "description": "Eastern Time (US & Canada)"
+    },
+    {
+        "countryName": "Bahrain",
+        "countryCode2": "BH",
+        "timeZone": "Arab Standard Time",
+        "utcOffset": "(UTC+03:00)",
+        "description": "Kuwait, Riyadh"
+    },
+    {
+        "countryName": "Bangladesh",
+        "countryCode2": "BD",
+        "timeZone": "Bangladesh Standard Time",
+        "utcOffset": "(UTC+06:00)",
+        "description": "Dhaka"
+    },
+    {
+        "countryName": "Barbados",
+        "countryCode2": "BB",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Belarus",
+        "countryCode2": "BY",
+        "timeZone": "Belarus Standard Time",
+        "utcOffset": "(UTC+03:00)",
+        "description": "Minsk"
+    },
+    {
+        "countryName": "Belgium",
+        "countryCode2": "BE",
+        "timeZone": "Romance Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Brussels, Copenhagen, Madrid, Paris"
+    },
+    {
+        "countryName": "Belize",
+        "countryCode2": "BZ",
+        "timeZone": "Central America Standard Time",
+        "utcOffset": "(UTC-06:00)",
+        "description": "Central America"
+    },
+    {
+        "countryName": "Benin",
+        "countryCode2": "BJ",
+        "timeZone": "W. Central Africa Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "West Central Africa"
+    },
+    {
+        "countryName": "Bermuda",
+        "countryCode2": "BM",
+        "timeZone": "Atlantic Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Atlantic Time (Canada)"
+    },
+    {
+        "countryName": "Bhutan",
+        "countryCode2": "BT",
+        "timeZone": "Bangladesh Standard Time",
+        "utcOffset": "(UTC+06:00)",
+        "description": "Dhaka"
+    },
+    {
+        "countryName": "Bolivarian Republic of Venezuela",
+        "countryCode2": "VE",
+        "timeZone": "Venezuela Standard Time",
+        "utcOffset": "(UTC-04:30)",
+        "description": "Caracas"
+    },
+    {
+        "countryName": "Bolivia",
+        "countryCode2": "BO",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Bonaire, Sint Eustatius and Saba",
+        "countryCode2": "BQ",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Bosnia and Herzegovina",
+        "countryCode2": "BA",
+        "timeZone": "Central European Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Sarajevo, Skopje, Warsaw, Zagreb"
+    },
+    {
+        "countryName": "Botswana",
+        "countryCode2": "BW",
+        "timeZone": "South Africa Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Harare, Pretoria"
+    },
+    {
+        "countryName": "Bouvet Island",
+        "countryCode2": "BV",
+        "timeZone": "utcOffset",
+        "utcOffset": "(UTC)",
+        "description": "Coordinated Universal Time"
+    },
+    {
+        "countryName": "Brazil",
+        "countryCode2": "BR",
+        "timeZone": "E. South America Standard Time",
+        "utcOffset": "(UTC-03:00)",
+        "description": "Brasilia"
+    },
+    {
+        "countryName": "British Indian Ocean Territory",
+        "countryCode2": "IO",
+        "timeZone": "Central Asia Standard Time",
+        "utcOffset": "(UTC+06:00)",
+        "description": "Astana"
+    },
+    {
+        "countryName": "Brunei",
+        "countryCode2": "BN",
+        "timeZone": "Singapore Standard Time",
+        "utcOffset": "(UTC+08:00)",
+        "description": "Kuala Lumpur, Singapore"
+    },
+    {
+        "countryName": "Bulgaria",
+        "countryCode2": "BG",
+        "timeZone": "FLE Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius"
+    },
+    {
+        "countryName": "Burkina Faso",
+        "countryCode2": "BF",
+        "timeZone": "Greenwich Standard Time",
+        "utcOffset": "(UTC)",
+        "description": "Monrovia, Reykjavik"
+    },
+    {
+        "countryName": "Burundi",
+        "countryCode2": "BI",
+        "timeZone": "South Africa Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Harare, Pretoria"
+    },
+    {
+        "countryName": "Cabo Verde",
+        "countryCode2": "CV",
+        "timeZone": "Cape Verde Standard Time",
+        "utcOffset": "(UTC-01:00)",
+        "description": "Cabo Verde Is."
+    },
+    {
+        "countryName": "Cambodia",
+        "countryCode2": "KH",
+        "timeZone": "SE Asia Standard Time",
+        "utcOffset": "(UTC+07:00)",
+        "description": "Bangkok, Hanoi, Jakarta"
+    },
+    {
+        "countryName": "Cameroon",
+        "countryCode2": "CM",
+        "timeZone": "W. Central Africa Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "West Central Africa"
+    },
+    {
+        "countryName": "Canada",
+        "countryCode2": "CA",
+        "timeZone": "Eastern Standard Time",
+        "utcOffset": "(UTC-05:00)",
+        "description": "Eastern Time (US & Canada)"
+    },
+    {
+        "countryName": "Cayman Islands",
+        "countryCode2": "KY",
+        "timeZone": "SA Pacific Standard Time",
+        "utcOffset": "(UTC-05:00)",
+        "description": "Bogota, Lima, Quito, Rio Branco"
+    },
+    {
+        "countryName": "Central African Republic",
+        "countryCode2": "CF",
+        "timeZone": "W. Central Africa Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "West Central Africa"
+    },
+    {
+        "countryName": "Chad",
+        "countryCode2": "TD",
+        "timeZone": "W. Central Africa Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "West Central Africa"
+    },
+    {
+        "countryName": "Chile",
+        "countryCode2": "CL",
+        "timeZone": "Pacific SA Standard Time",
+        "utcOffset": "(UTC-03:00)",
+        "description": "Santiago"
+    },
+    {
+        "countryName": "China",
+        "countryCode2": "CN",
+        "timeZone": "China Standard Time",
+        "utcOffset": "(UTC+08:00)",
+        "description": "Beijing, Chongqing, Hong Kong, Urumqi"
+    },
+    {
+        "countryName": "Christmas Island",
+        "countryCode2": "CX",
+        "timeZone": "SE Asia Standard Time",
+        "utcOffset": "(UTC+07:00)",
+        "description": "Bangkok, Hanoi, Jakarta"
+    },
+    {
+        "countryName": "Cocos (Keeling) Islands",
+        "countryCode2": "CC",
+        "timeZone": "Myanmar Standard Time",
+        "utcOffset": "(UTC+06:30)",
+        "description": "Yangon (Rangoon)"
+    },
+    {
+        "countryName": "Colombia",
+        "countryCode2": "CO",
+        "timeZone": "SA Pacific Standard Time",
+        "utcOffset": "(UTC-05:00)",
+        "description": "Bogota, Lima, Quito, Rio Branco"
+    },
+    {
+        "countryName": "Comoros",
+        "countryCode2": "KM",
+        "timeZone": "E. Africa Standard Time",
+        "utcOffset": "(UTC+03:00)",
+        "description": "Nairobi"
+    },
+    {
+        "countryName": "Congo",
+        "countryCode2": "CG",
+        "timeZone": "W. Central Africa Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "West Central Africa"
+    },
+    {
+        "countryName": "Congo (DRC)",
+        "countryCode2": "CD",
+        "timeZone": "W. Central Africa Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "West Central Africa"
+    },
+    {
+        "countryName": "Cook Islands",
+        "countryCode2": "CK",
+        "timeZone": "Hawaiian Standard Time",
+        "utcOffset": "(UTC-10:00)",
+        "description": "Hawaii"
+    },
+    {
+        "countryName": "Costa Rica",
+        "countryCode2": "CR",
+        "timeZone": "Central America Standard Time",
+        "utcOffset": "(UTC-06:00)",
+        "description": "Central America"
+    },
+    {
+        "countryName": "Côte d'Ivoire",
+        "countryCode2": "CI",
+        "timeZone": "Greenwich Standard Time",
+        "utcOffset": "(UTC)",
+        "description": "Monrovia, Reykjavik"
+    },
+    {
+        "countryName": "Croatia",
+        "countryCode2": "HR",
+        "timeZone": "Central European Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Sarajevo, Skopje, Warsaw, Zagreb"
+    },
+    {
+        "countryName": "Cuba",
+        "countryCode2": "CU",
+        "timeZone": "Eastern Standard Time",
+        "utcOffset": "(UTC-05:00)",
+        "description": "Eastern Time (US & Canada)"
+    },
+    {
+        "countryName": "Curaçao",
+        "countryCode2": "CW",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Cyprus",
+        "countryCode2": "CY",
+        "timeZone": "E. Europe Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "E. Europe"
+    },
+    {
+        "countryName": "Czech Republic",
+        "countryCode2": "CZ",
+        "timeZone": "Central Europe Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Belgrade, Bratislava, Budapest, Ljubljana, Prague"
+    },
+    {
+        "countryName": "Democratic Republic of Timor-Leste",
+        "countryCode2": "TL",
+        "timeZone": "Tokyo Standard Time",
+        "utcOffset": "(UTC+09:00)",
+        "description": "Osaka, Sapporo, Tokyo"
+    },
+    {
+        "countryName": "Denmark",
+        "countryCode2": "DK",
+        "timeZone": "Romance Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Brussels, Copenhagen, Madrid, Paris"
+    },
+    {
+        "countryName": "Djibouti",
+        "countryCode2": "DJ",
+        "timeZone": "E. Africa Standard Time",
+        "utcOffset": "(UTC+03:00)",
+        "description": "Nairobi"
+    },
+    {
+        "countryName": "Dominica",
+        "countryCode2": "DM",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Dominican Republic",
+        "countryCode2": "DO",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Ecuador",
+        "countryCode2": "EC",
+        "timeZone": "SA Pacific Standard Time",
+        "utcOffset": "(UTC-05:00)",
+        "description": "Bogota, Lima, Quito, Rio Branco"
+    },
+    {
+        "countryName": "Egypt",
+        "countryCode2": "EG",
+        "timeZone": "Egypt Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Cairo"
+    },
+    {
+        "countryName": "El Salvador",
+        "countryCode2": "SV",
+        "timeZone": "Central America Standard Time",
+        "utcOffset": "(UTC-06:00)",
+        "description": "Central America"
+    },
+    {
+        "countryName": "Equatorial Guinea",
+        "countryCode2": "GQ",
+        "timeZone": "W. Central Africa Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "West Central Africa"
+    },
+    {
+        "countryName": "Eritrea",
+        "countryCode2": "ER",
+        "timeZone": "E. Africa Standard Time",
+        "utcOffset": "(UTC+03:00)",
+        "description": "Nairobi"
+    },
+    {
+        "countryName": "Estonia",
+        "countryCode2": "EE",
+        "timeZone": "FLE Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius"
+    },
+    {
+        "countryName": "Ethiopia",
+        "countryCode2": "ET",
+        "timeZone": "E. Africa Standard Time",
+        "utcOffset": "(UTC+03:00)",
+        "description": "Nairobi"
+    },
+    {
+        "countryName": "Falkland Islands (Islas Malvinas)",
+        "countryCode2": "FK",
+        "timeZone": "SA Eastern Standard Time",
+        "utcOffset": "(UTC-03:00)",
+        "description": "Cayenne, Fortaleza"
+    },
+    {
+        "countryName": "Faroe Islands",
+        "countryCode2": "FO",
+        "timeZone": "GMT Standard Time",
+        "utcOffset": "(UTC)",
+        "description": "Dublin, Edinburgh, Lisbon, London"
+    },
+    {
+        "countryName": "Fiji Islands",
+        "countryCode2": "FJ",
+        "timeZone": "Fiji Standard Time",
+        "utcOffset": "(UTC+12:00)",
+        "description": "Fiji"
+    },
+    {
+        "countryName": "Finland",
+        "countryCode2": "FI",
+        "timeZone": "FLE Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius"
+    },
+    {
+        "countryName": "France",
+        "countryCode2": "FR",
+        "timeZone": "Romance Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Brussels, Copenhagen, Madrid, Paris"
+    },
+    {
+        "countryName": "French Guiana",
+        "countryCode2": "GF",
+        "timeZone": "SA Eastern Standard Time",
+        "utcOffset": "(UTC-03:00)",
+        "description": "Cayenne, Fortaleza"
+    },
+    {
+        "countryName": "French Polynesia",
+        "countryCode2": "PF",
+        "timeZone": "Hawaiian Standard Time",
+        "utcOffset": "(UTC-10:00)",
+        "description": "Hawaii"
+    },
+    {
+        "countryName": "French Southern and Antarctic Lands",
+        "countryCode2": "TF",
+        "timeZone": "West Asia Standard Time",
+        "utcOffset": "(UTC+05:00)",
+        "description": "Ashgabat, Tashkent"
+    },
+    {
+        "countryName": "Gabon",
+        "countryCode2": "GA",
+        "timeZone": "W. Central Africa Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "West Central Africa"
+    },
+    {
+        "countryName": "Gambia, The",
+        "countryCode2": "GM",
+        "timeZone": "Greenwich Standard Time",
+        "utcOffset": "(UTC)",
+        "description": "Monrovia, Reykjavik"
+    },
+    {
+        "countryName": "Georgia",
+        "countryCode2": "GE",
+        "timeZone": "Georgian Standard Time",
+        "utcOffset": "(UTC+04:00)",
+        "description": "Tbilisi"
+    },
+    {
+        "countryName": "Germany",
+        "countryCode2": "DE",
+        "timeZone": "W. Europe Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
+    },
+    {
+        "countryName": "Ghana",
+        "countryCode2": "GH",
+        "timeZone": "Greenwich Standard Time",
+        "utcOffset": "(UTC)",
+        "description": "Monrovia, Reykjavik"
+    },
+    {
+        "countryName": "Gibraltar",
+        "countryCode2": "GI",
+        "timeZone": "W. Europe Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
+    },
+    {
+        "countryName": "Greece",
+        "countryCode2": "GR",
+        "timeZone": "GTB Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Athens, Bucharest"
+    },
+    {
+        "countryName": "Greenland",
+        "countryCode2": "GL",
+        "timeZone": "Greenland Standard Time",
+        "utcOffset": "(UTC-03:00)",
+        "description": "Greenland"
+    },
+    {
+        "countryName": "Grenada",
+        "countryCode2": "GD",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Guadeloupe",
+        "countryCode2": "GP",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Guam",
+        "countryCode2": "GU",
+        "timeZone": "West Pacific Standard Time",
+        "utcOffset": "(UTC+10:00)",
+        "description": "Guam, Port Moresby"
+    },
+    {
+        "countryName": "Guatemala",
+        "countryCode2": "GT",
+        "timeZone": "Central America Standard Time",
+        "utcOffset": "(UTC-06:00)",
+        "description": "Central America"
+    },
+    {
+        "countryName": "Guernsey",
+        "countryCode2": "GG",
+        "timeZone": "GMT Standard Time",
+        "utcOffset": "(UTC)",
+        "description": "Dublin, Edinburgh, Lisbon, London"
+    },
+    {
+        "countryName": "Guinea",
+        "countryCode2": "GN",
+        "timeZone": "Greenwich Standard Time",
+        "utcOffset": "(UTC)",
+        "description": "Monrovia, Reykjavik"
+    },
+    {
+        "countryName": "Guinea-Bissau",
+        "countryCode2": "GW",
+        "timeZone": "Greenwich Standard Time",
+        "utcOffset": "(UTC)",
+        "description": "Monrovia, Reykjavik"
+    },
+    {
+        "countryName": "Guyana",
+        "countryCode2": "GY",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Haiti",
+        "countryCode2": "HT",
+        "timeZone": "Eastern Standard Time",
+        "utcOffset": "(UTC-05:00)",
+        "description": "Eastern Time (US & Canada)"
+    },
+    {
+        "countryName": "Heard Island and McDonald Islands",
+        "countryCode2": "HM",
+        "timeZone": "Mauritius Standard Time",
+        "utcOffset": "(UTC+04:00)",
+        "description": "Port Louis"
+    },
+    {
+        "countryName": "Honduras",
+        "countryCode2": "HN",
+        "timeZone": "Central America Standard Time",
+        "utcOffset": "(UTC-06:00)",
+        "description": "Central America"
+    },
+    {
+        "countryName": "Hong Kong SAR",
+        "countryCode2": "HK",
+        "timeZone": "China Standard Time",
+        "utcOffset": "(UTC+08:00)",
+        "description": "Beijing, Chongqing, Hong Kong, Urumqi"
+    },
+    {
+        "countryName": "Hungary",
+        "countryCode2": "HU",
+        "timeZone": "Central Europe Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Belgrade, Bratislava, Budapest, Ljubljana, Prague"
+    },
+    {
+        "countryName": "Iceland",
+        "countryCode2": "IS",
+        "timeZone": "Greenwich Standard Time",
+        "utcOffset": "(UTC)",
+        "description": "Monrovia, Reykjavik"
+    },
+    {
+        "countryName": "India",
+        "countryCode2": "IN",
+        "timeZone": "India Standard Time",
+        "utcOffset": "(UTC+05:30)",
+        "description": "Chennai, Kolkata, Mumbai, New Delhi"
+    },
+    {
+        "countryName": "Indonesia",
+        "countryCode2": "ID",
+        "timeZone": "SE Asia Standard Time",
+        "utcOffset": "(UTC+07:00)",
+        "description": "Bangkok, Hanoi, Jakarta"
+    },
+    {
+        "countryName": "Iran",
+        "countryCode2": "IR",
+        "timeZone": "Iran Standard Time",
+        "utcOffset": "(UTC+03:30)",
+        "description": "Tehran"
+    },
+    {
+        "countryName": "Iraq",
+        "countryCode2": "IQ",
+        "timeZone": "Arabic Standard Time",
+        "utcOffset": "(UTC+03:00)",
+        "description": "Baghdad"
+    },
+    {
+        "countryName": "Ireland",
+        "countryCode2": "IE",
+        "timeZone": "GMT Standard Time",
+        "utcOffset": "(UTC)",
+        "description": "Dublin, Edinburgh, Lisbon, London"
+    },
+    {
+        "countryName": "Israel",
+        "countryCode2": "IL",
+        "timeZone": "Israel Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Jerusalem"
+    },
+    {
+        "countryName": "Italy",
+        "countryCode2": "IT",
+        "timeZone": "W. Europe Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
+    },
+    {
+        "countryName": "Jamaica",
+        "countryCode2": "JM",
+        "timeZone": "SA Pacific Standard Time",
+        "utcOffset": "(UTC-05:00)",
+        "description": "Bogota, Lima, Quito, Rio Branco"
+    },
+    {
+        "countryName": "Jan Mayen",
+        "countryCode2": "SJ",
+        "timeZone": "W. Europe Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
+    },
+    {
+        "countryName": "Japan",
+        "countryCode2": "JP",
+        "timeZone": "Tokyo Standard Time",
+        "utcOffset": "(UTC+09:00)",
+        "description": "Osaka, Sapporo, Tokyo"
+    },
+    {
+        "countryName": "Jersey",
+        "countryCode2": "JE",
+        "timeZone": "GMT Standard Time",
+        "utcOffset": "(UTC)",
+        "description": "Dublin, Edinburgh, Lisbon, London"
+    },
+    {
+        "countryName": "Jordan",
+        "countryCode2": "JO",
+        "timeZone": "Jordan Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Amman"
+    },
+    {
+        "countryName": "Kazakhstan",
+        "countryCode2": "KZ",
+        "timeZone": "Central Asia Standard Time",
+        "utcOffset": "(UTC+06:00)",
+        "description": "Astana"
+    },
+    {
+        "countryName": "Kenya",
+        "countryCode2": "KE",
+        "timeZone": "E. Africa Standard Time",
+        "utcOffset": "(UTC+03:00)",
+        "description": "Nairobi"
+    },
+    {
+        "countryName": "Kiribati",
+        "countryCode2": "KI",
+        "timeZone": "UTC+12",
+        "utcOffset": "(UTC+12:00)",
+        "description": "Coordinated Universal Time+12"
+    },
+    {
+        "countryName": "Korea",
+        "countryCode2": "KR",
+        "timeZone": "Korea Standard Time",
+        "utcOffset": "(UTC+09:00)",
+        "description": "Seoul"
+    },
+    {
+        "countryName": "Kosovo",
+        "countryCode2": "XK",
+        "timeZone": "Central European Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Sarajevo, Skopje, Warsaw, Zagreb"
+    },
+    {
+        "countryName": "Kuwait",
+        "countryCode2": "KW",
+        "timeZone": "Arab Standard Time",
+        "utcOffset": "(UTC+03:00)",
+        "description": "Kuwait, Riyadh"
+    },
+    {
+        "countryName": "Kyrgyzstan",
+        "countryCode2": "KG",
+        "timeZone": "Central Asia Standard Time",
+        "utcOffset": "(UTC+06:00)",
+        "description": "Astana"
+    },
+    {
+        "countryName": "Laos",
+        "countryCode2": "LA",
+        "timeZone": "SE Asia Standard Time",
+        "utcOffset": "(UTC+07:00)",
+        "description": "Bangkok, Hanoi, Jakarta"
+    },
+    {
+        "countryName": "Latvia",
+        "countryCode2": "LV",
+        "timeZone": "FLE Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius"
+    },
+    {
+        "countryName": "Lebanon",
+        "countryCode2": "LB",
+        "timeZone": "Middle East Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Beirut"
+    },
+    {
+        "countryName": "Lesotho",
+        "countryCode2": "LS",
+        "timeZone": "South Africa Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Harare, Pretoria"
+    },
+    {
+        "countryName": "Liberia",
+        "countryCode2": "LR",
+        "timeZone": "Greenwich Standard Time",
+        "utcOffset": "(UTC)",
+        "description": "Monrovia, Reykjavik"
+    },
+    {
+        "countryName": "Libya",
+        "countryCode2": "LY",
+        "timeZone": "E. Europe Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "E. Europe"
+    },
+    {
+        "countryName": "Liechtenstein",
+        "countryCode2": "LI",
+        "timeZone": "W. Europe Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
+    },
+    {
+        "countryName": "Lithuania",
+        "countryCode2": "LT",
+        "timeZone": "FLE Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius"
+    },
+    {
+        "countryName": "Luxembourg",
+        "countryCode2": "LU",
+        "timeZone": "W. Europe Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
+    },
+    {
+        "countryName": "Macao SAR",
+        "countryCode2": "MO",
+        "timeZone": "China Standard Time",
+        "utcOffset": "(UTC+08:00)",
+        "description": "Beijing, Chongqing, Hong Kong, Urumqi"
+    },
+    {
+        "countryName": "Macedonia, Former Yugoslav Republic of",
+        "countryCode2": "MK",
+        "timeZone": "Central European Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Sarajevo, Skopje, Warsaw, Zagreb"
+    },
+    {
+        "countryName": "Madagascar",
+        "countryCode2": "MG",
+        "timeZone": "E. Africa Standard Time",
+        "utcOffset": "(UTC+03:00)",
+        "description": "Nairobi"
+    },
+    {
+        "countryName": "Malawi",
+        "countryCode2": "MW",
+        "timeZone": "South Africa Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Harare, Pretoria"
+    },
+    {
+        "countryName": "Malaysia",
+        "countryCode2": "MY",
+        "timeZone": "Singapore Standard Time",
+        "utcOffset": "(UTC+08:00)",
+        "description": "Kuala Lumpur, Singapore"
+    },
+    {
+        "countryName": "Maldives",
+        "countryCode2": "MV",
+        "timeZone": "West Asia Standard Time",
+        "utcOffset": "(UTC+05:00)",
+        "description": "Ashgabat, Tashkent"
+    },
+    {
+        "countryName": "Mali",
+        "countryCode2": "ML",
+        "timeZone": "Greenwich Standard Time",
+        "utcOffset": "(UTC)",
+        "description": "Monrovia, Reykjavik"
+    },
+    {
+        "countryName": "Malta",
+        "countryCode2": "MT",
+        "timeZone": "W. Europe Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
+    },
+    {
+        "countryName": "Man, Isle of",
+        "countryCode2": "IM",
+        "timeZone": "GMT Standard Time",
+        "utcOffset": "(UTC)",
+        "description": "Dublin, Edinburgh, Lisbon, London"
+    },
+    {
+        "countryName": "Marshall Islands",
+        "countryCode2": "MH",
+        "timeZone": "UTC+12",
+        "utcOffset": "(UTC+12:00)",
+        "description": "Coordinated Universal Time+12"
+    },
+    {
+        "countryName": "Martinique",
+        "countryCode2": "MQ",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Mauritania",
+        "countryCode2": "MR",
+        "timeZone": "Greenwich Standard Time",
+        "utcOffset": "(UTC)",
+        "description": "Monrovia, Reykjavik"
+    },
+    {
+        "countryName": "Mauritius",
+        "countryCode2": "MU",
+        "timeZone": "Mauritius Standard Time",
+        "utcOffset": "(UTC+04:00)",
+        "description": "Port Louis"
+    },
+    {
+        "countryName": "Mayotte",
+        "countryCode2": "YT",
+        "timeZone": "E. Africa Standard Time",
+        "utcOffset": "(UTC+03:00)",
+        "description": "Nairobi"
+    },
+    {
+        "countryName": "Mexico",
+        "countryCode2": "MX",
+        "timeZone": "Central Standard Time (Mexico)",
+        "utcOffset": "(UTC-06:00)",
+        "description": "Guadalajara, Mexico City, Monterrey"
+    },
+    {
+        "countryName": "Micronesia",
+        "countryCode2": "FM",
+        "timeZone": "West Pacific Standard Time",
+        "utcOffset": "(UTC+10:00)",
+        "description": "Guam, Port Moresby"
+    },
+    {
+        "countryName": "Moldova",
+        "countryCode2": "MD",
+        "timeZone": "GTB Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Athens, Bucharest"
+    },
+    {
+        "countryName": "Monaco",
+        "countryCode2": "MC",
+        "timeZone": "W. Europe Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
+    },
+    {
+        "countryName": "Mongolia",
+        "countryCode2": "MN",
+        "timeZone": "Ulaanbaatar Standard Time",
+        "utcOffset": "(UTC+08:00)",
+        "description": "Ulaanbaatar"
+    },
+    {
+        "countryName": "Montenegro",
+        "countryCode2": "ME",
+        "timeZone": "Central European Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Sarajevo, Skopje, Warsaw, Zagreb"
+    },
+    {
+        "countryName": "Montserrat",
+        "countryCode2": "MS",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Morocco",
+        "countryCode2": "MA",
+        "timeZone": "Morocco Standard Time",
+        "utcOffset": "(UTC)",
+        "description": "Casablanca"
+    },
+    {
+        "countryName": "Mozambique",
+        "countryCode2": "MZ",
+        "timeZone": "South Africa Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Harare, Pretoria"
+    },
+    {
+        "countryName": "Myanmar",
+        "countryCode2": "MM",
+        "timeZone": "Myanmar Standard Time",
+        "utcOffset": "(UTC+06:30)",
+        "description": "Yangon (Rangoon)"
+    },
+    {
+        "countryName": "Namibia",
+        "countryCode2": "NA",
+        "timeZone": "Namibia Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Windhoek"
+    },
+    {
+        "countryName": "Nauru",
+        "countryCode2": "NR",
+        "timeZone": "UTC+12",
+        "utcOffset": "(UTC+12:00)",
+        "description": "Coordinated Universal Time+12"
+    },
+    {
+        "countryName": "Nepal",
+        "countryCode2": "NP",
+        "timeZone": "Nepal Standard Time",
+        "utcOffset": "(UTC+05:45)",
+        "description": "Kathmandu"
+    },
+    {
+        "countryName": "Netherlands",
+        "countryCode2": "NL",
+        "timeZone": "W. Europe Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
+    },
+    {
+        "countryName": "New Caledonia",
+        "countryCode2": "NC",
+        "timeZone": "Central Pacific Standard Time",
+        "utcOffset": "(UTC+11:00)",
+        "description": "Solomon Is., New Caledonia"
+    },
+    {
+        "countryName": "New Zealand",
+        "countryCode2": "NZ",
+        "timeZone": "New Zealand Standard Time",
+        "utcOffset": "(UTC+12:00)",
+        "description": "Auckland, Wellington"
+    },
+    {
+        "countryName": "Nicaragua",
+        "countryCode2": "NI",
+        "timeZone": "Central America Standard Time",
+        "utcOffset": "(UTC-06:00)",
+        "description": "Central America"
+    },
+    {
+        "countryName": "Niger",
+        "countryCode2": "NE",
+        "timeZone": "W. Central Africa Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "West Central Africa"
+    },
+    {
+        "countryName": "Nigeria",
+        "countryCode2": "NG",
+        "timeZone": "W. Central Africa Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "West Central Africa"
+    },
+    {
+        "countryName": "Niue",
+        "countryCode2": "NU",
+        "timeZone": "UTC-11",
+        "utcOffset": "(UTC-11:00)",
+        "description": "Coordinated Universal Time-11"
+    },
+    {
+        "countryName": "Norfolk Island",
+        "countryCode2": "NF",
+        "timeZone": "Central Pacific Standard Time",
+        "utcOffset": "(UTC+11:00)",
+        "description": "Solomon Is., New Caledonia"
+    },
+    {
+        "countryName": "North Korea",
+        "countryCode2": "KP",
+        "timeZone": "Korea Standard Time",
+        "utcOffset": "(UTC+09:00)",
+        "description": "Seoul"
+    },
+    {
+        "countryName": "Northern Mariana Islands",
+        "countryCode2": "MP",
+        "timeZone": "West Pacific Standard Time",
+        "utcOffset": "(UTC+10:00)",
+        "description": "Guam, Port Moresby"
+    },
+    {
+        "countryName": "Norway",
+        "countryCode2": "NO",
+        "timeZone": "W. Europe Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
+    },
+    {
+        "countryName": "Oman",
+        "countryCode2": "OM",
+        "timeZone": "Arabian Standard Time",
+        "utcOffset": "(UTC+04:00)",
+        "description": "Abu Dhabi, Muscat"
+    },
+    {
+        "countryName": "Pakistan",
+        "countryCode2": "PK",
+        "timeZone": "Pakistan Standard Time",
+        "utcOffset": "(UTC+05:00)",
+        "description": "Islamabad, Karachi"
+    },
+    {
+        "countryName": "Palau",
+        "countryCode2": "PW",
+        "timeZone": "Tokyo Standard Time",
+        "utcOffset": "(UTC+09:00)",
+        "description": "Osaka, Sapporo, Tokyo"
+    },
+    {
+        "countryName": "Palestinian Authority",
+        "countryCode2": "PS",
+        "timeZone": "Egypt Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Cairo"
+    },
+    {
+        "countryName": "Panama",
+        "countryCode2": "PA",
+        "timeZone": "SA Pacific Standard Time",
+        "utcOffset": "(UTC-05:00)",
+        "description": "Bogota, Lima, Quito, Rio Branco"
+    },
+    {
+        "countryName": "Papua New Guinea",
+        "countryCode2": "PG",
+        "timeZone": "West Pacific Standard Time",
+        "utcOffset": "(UTC+10:00)",
+        "description": "Guam, Port Moresby"
+    },
+    {
+        "countryName": "Paraguay",
+        "countryCode2": "PY",
+        "timeZone": "Paraguay Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Asuncion"
+    },
+    {
+        "countryName": "Peru",
+        "countryCode2": "PE",
+        "timeZone": "SA Pacific Standard Time",
+        "utcOffset": "(UTC-05:00)",
+        "description": "Bogota, Lima, Quito, Rio Branco"
+    },
+    {
+        "countryName": "Philippines",
+        "countryCode2": "PH",
+        "timeZone": "Singapore Standard Time",
+        "utcOffset": "(UTC+08:00)",
+        "description": "Kuala Lumpur, Singapore"
+    },
+    {
+        "countryName": "Pitcairn Islands",
+        "countryCode2": "PN",
+        "timeZone": "Pacific Standard Time",
+        "utcOffset": "(UTC-08:00)",
+        "description": "Pacific Time (US & Canada)"
+    },
+    {
+        "countryName": "Poland",
+        "countryCode2": "PL",
+        "timeZone": "Central European Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Sarajevo, Skopje, Warsaw, Zagreb"
+    },
+    {
+        "countryName": "Portugal",
+        "countryCode2": "PT",
+        "timeZone": "GMT Standard Time",
+        "utcOffset": "(UTC)",
+        "description": "Dublin, Edinburgh, Lisbon, London"
+    },
+    {
+        "countryName": "Puerto Rico",
+        "countryCode2": "PR",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Qatar",
+        "countryCode2": "QA",
+        "timeZone": "Arab Standard Time",
+        "utcOffset": "(UTC+03:00)",
+        "description": "Kuwait, Riyadh"
+    },
+    {
+        "countryName": "Reunion",
+        "countryCode2": "RE",
+        "timeZone": "Mauritius Standard Time",
+        "utcOffset": "(UTC+04:00)",
+        "description": "Port Louis"
+    },
+    {
+        "countryName": "Romania",
+        "countryCode2": "RO",
+        "timeZone": "GTB Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Athens, Bucharest"
+    },
+    {
+        "countryName": "Russia",
+        "countryCode2": "RU",
+        "timeZone": "Russian Standard Time",
+        "utcOffset": "(UTC+03:00)",
+        "description": "Moscow, St. Petersburg, Volgograd (RTZ 2)"
+    },
+    {
+        "countryName": "Rwanda",
+        "countryCode2": "RW",
+        "timeZone": "South Africa Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Harare, Pretoria"
+    },
+    {
+        "countryName": "Saint Barthélemy",
+        "countryCode2": "BL",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Saint Helena, Ascension and Tristan da Cunha",
+        "countryCode2": "SH",
+        "timeZone": "Greenwich Standard Time",
+        "utcOffset": "(UTC)",
+        "description": "Monrovia, Reykjavik"
+    },
+    {
+        "countryName": "Saint Kitts and Nevis",
+        "countryCode2": "KN",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Saint Lucia",
+        "countryCode2": "LC",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Saint Martin (French part)",
+        "countryCode2": "MF",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Saint Pierre and Miquelon",
+        "countryCode2": "PM",
+        "timeZone": "Greenland Standard Time",
+        "utcOffset": "(UTC-03:00)",
+        "description": "Greenland"
+    },
+    {
+        "countryName": "Saint Vincent and the Grenadines",
+        "countryCode2": "VC",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Samoa",
+        "countryCode2": "WS",
+        "timeZone": "Samoa Standard Time",
+        "utcOffset": "(UTC+13:00)",
+        "description": "Samoa"
+    },
+    {
+        "countryName": "San Marino",
+        "countryCode2": "SM",
+        "timeZone": "W. Europe Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
+    },
+    {
+        "countryName": "São Tomé and Príncipe",
+        "countryCode2": "ST",
+        "timeZone": "Greenwich Standard Time",
+        "utcOffset": "(UTC)",
+        "description": "Monrovia, Reykjavik"
+    },
+    {
+        "countryName": "Saudi Arabia",
+        "countryCode2": "SA",
+        "timeZone": "Arab Standard Time",
+        "utcOffset": "(UTC+03:00)",
+        "description": "Kuwait, Riyadh"
+    },
+    {
+        "countryName": "Senegal",
+        "countryCode2": "SN",
+        "timeZone": "Greenwich Standard Time",
+        "utcOffset": "(UTC)",
+        "description": "Monrovia, Reykjavik"
+    },
+    {
+        "countryName": "Serbia",
+        "countryCode2": "RS",
+        "timeZone": "Central Europe Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Belgrade, Bratislava, Budapest, Ljubljana, Prague"
+    },
+    {
+        "countryName": "Seychelles",
+        "countryCode2": "SC",
+        "timeZone": "Mauritius Standard Time",
+        "utcOffset": "(UTC+04:00)",
+        "description": "Port Louis"
+    },
+    {
+        "countryName": "Sierra Leone",
+        "countryCode2": "SL",
+        "timeZone": "Greenwich Standard Time",
+        "utcOffset": "(UTC)",
+        "description": "Monrovia, Reykjavik"
+    },
+    {
+        "countryName": "Singapore",
+        "countryCode2": "SG",
+        "timeZone": "Singapore Standard Time",
+        "utcOffset": "(UTC+08:00)",
+        "description": "Kuala Lumpur, Singapore"
+    },
+    {
+        "countryName": "Sint Maarten (Dutch part)",
+        "countryCode2": "SX",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Slovakia",
+        "countryCode2": "SK",
+        "timeZone": "Central Europe Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Belgrade, Bratislava, Budapest, Ljubljana, Prague"
+    },
+    {
+        "countryName": "Slovenia",
+        "countryCode2": "SI",
+        "timeZone": "Central Europe Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Belgrade, Bratislava, Budapest, Ljubljana, Prague"
+    },
+    {
+        "countryName": "Solomon Islands",
+        "countryCode2": "SB",
+        "timeZone": "Central Pacific Standard Time",
+        "utcOffset": "(UTC+11:00)",
+        "description": "Solomon Is., New Caledonia"
+    },
+    {
+        "countryName": "Somalia",
+        "countryCode2": "SO",
+        "timeZone": "E. Africa Standard Time",
+        "utcOffset": "(UTC+03:00)",
+        "description": "Nairobi"
+    },
+    {
+        "countryName": "South Africa",
+        "countryCode2": "ZA",
+        "timeZone": "South Africa Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Harare, Pretoria"
+    },
+    {
+        "countryName": "South Georgia and the South Sandwich Islands",
+        "countryCode2": "GS",
+        "timeZone": "UTC-02",
+        "utcOffset": "(UTC-02:00)",
+        "description": "Coordinated Universal Time-02"
+    },
+    {
+        "countryName": "South Sudan",
+        "countryCode2": "SS",
+        "timeZone": "E. Africa Standard Time",
+        "utcOffset": "(UTC+03:00)",
+        "description": "Nairobi"
+    },
+    {
+        "countryName": "Spain",
+        "countryCode2": "ES",
+        "timeZone": "Romance Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Brussels, Copenhagen, Madrid, Paris"
+    },
+    {
+        "countryName": "Sri Lanka",
+        "countryCode2": "LK",
+        "timeZone": "Sri Lanka Standard Time",
+        "utcOffset": "(UTC+05:30)",
+        "description": "Sri Jayawardenepura"
+    },
+    {
+        "countryName": "Sudan",
+        "countryCode2": "SD",
+        "timeZone": "E. Africa Standard Time",
+        "utcOffset": "(UTC+03:00)",
+        "description": "Nairobi"
+    },
+    {
+        "countryName": "Suriname",
+        "countryCode2": "SR",
+        "timeZone": "SA Eastern Standard Time",
+        "utcOffset": "(UTC-03:00)",
+        "description": "Cayenne, Fortaleza"
+    },
+    {
+        "countryName": "Svalbard",
+        "countryCode2": "SJ",
+        "timeZone": "W. Europe Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
+    },
+    {
+        "countryName": "Swaziland",
+        "countryCode2": "SZ",
+        "timeZone": "South Africa Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Harare, Pretoria"
+    },
+    {
+        "countryName": "Sweden",
+        "countryCode2": "SE",
+        "timeZone": "W. Europe Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
+    },
+    {
+        "countryName": "Switzerland",
+        "countryCode2": "CH",
+        "timeZone": "W. Europe Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
+    },
+    {
+        "countryName": "Syria",
+        "countryCode2": "SY",
+        "timeZone": "Syria Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Damascus"
+    },
+    {
+        "countryName": "Taiwan",
+        "countryCode2": "TW",
+        "timeZone": "Taipei Standard Time",
+        "utcOffset": "(UTC+08:00)",
+        "description": "Taipei"
+    },
+    {
+        "countryName": "Tajikistan",
+        "countryCode2": "TJ",
+        "timeZone": "West Asia Standard Time",
+        "utcOffset": "(UTC+05:00)",
+        "description": "Ashgabat, Tashkent"
+    },
+    {
+        "countryName": "Tanzania",
+        "countryCode2": "TZ",
+        "timeZone": "E. Africa Standard Time",
+        "utcOffset": "(UTC+03:00)",
+        "description": "Nairobi"
+    },
+    {
+        "countryName": "Thailand",
+        "countryCode2": "TH",
+        "timeZone": "SE Asia Standard Time",
+        "utcOffset": "(UTC+07:00)",
+        "description": "Bangkok, Hanoi, Jakarta"
+    },
+    {
+        "countryName": "Togo",
+        "countryCode2": "TG",
+        "timeZone": "Greenwich Standard Time",
+        "utcOffset": "(UTC)",
+        "description": "Monrovia, Reykjavik"
+    },
+    {
+        "countryName": "Tokelau",
+        "countryCode2": "TK",
+        "timeZone": "Tonga Standard Time",
+        "utcOffset": "(UTC+13:00)",
+        "description": "Nuku'alofa"
+    },
+    {
+        "countryName": "Tonga",
+        "countryCode2": "TO",
+        "timeZone": "Tonga Standard Time",
+        "utcOffset": "(UTC+13:00)",
+        "description": "Nuku'alofa"
+    },
+    {
+        "countryName": "Trinidad and Tobago",
+        "countryCode2": "TT",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Tunisia",
+        "countryCode2": "TN",
+        "timeZone": "W. Central Africa Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "West Central Africa"
+    },
+    {
+        "countryName": "Turkey",
+        "countryCode2": "TR",
+        "timeZone": "Turkey Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Istanbul"
+    },
+    {
+        "countryName": "Turkmenistan",
+        "countryCode2": "TM",
+        "timeZone": "West Asia Standard Time",
+        "utcOffset": "(UTC+05:00)",
+        "description": "Ashgabat, Tashkent"
+    },
+    {
+        "countryName": "Turks and Caicos Islands",
+        "countryCode2": "TC",
+        "timeZone": "Eastern Standard Time",
+        "utcOffset": "(UTC-05:00)",
+        "description": "Eastern Time (US & Canada)"
+    },
+    {
+        "countryName": "Tuvalu",
+        "countryCode2": "TV",
+        "timeZone": "UTC+12",
+        "utcOffset": "(UTC+12:00)",
+        "description": "Coordinated Universal Time+12"
+    },
+    {
+        "countryName": "U.S. Minor Outlying Islands",
+        "countryCode2": "UM",
+        "timeZone": "UTC-11",
+        "utcOffset": "(UTC-11:00)",
+        "description": "Coordinated Universal Time-11"
+    },
+    {
+        "countryName": "Uganda",
+        "countryCode2": "UG",
+        "timeZone": "E. Africa Standard Time",
+        "utcOffset": "(UTC+03:00)",
+        "description": "Nairobi"
+    },
+    {
+        "countryName": "Ukraine",
+        "countryCode2": "UA",
+        "timeZone": "FLE Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius"
+    },
+    {
+        "countryName": "United Arab Emirates",
+        "countryCode2": "AE",
+        "timeZone": "Arabian Standard Time",
+        "utcOffset": "(UTC+04:00)",
+        "description": "Abu Dhabi, Muscat"
+    },
+    {
+        "countryName": "United Kingdom",
+        "countryCode2": "GB",
+        "timeZone": "GMT Standard Time",
+        "utcOffset": "(UTC)",
+        "description": "Dublin, Edinburgh, Lisbon, London"
+    },
+    {
+        "countryName": "United States",
+        "countryCode2": "US",
+        "timeZone": "Eastern Standard Time",
+        "utcOffset": "(UTC-06:00)",
+        "description": "Eastern Time (US & Canada)"
+    },
+    {
+        "countryName": "United States",
+        "countryCode2": "US",
+        "timeZone": "Central Standard Time",
+        "utcOffset": "(UTC-06:00)",
+        "description": "Central Time (US & Canada)"
+    },
+    {
+        "countryName": "United States",
+        "countryCode2": "US",
+        "timeZone": "Mountain Standard Time",
+        "utcOffset": "(UTC-07:00)",
+        "description": "Mountain Time (US & Canada)"
+    },
+    {
+        "countryName": "United States",
+        "countryCode2": "US",
+        "timeZone": "Pacific Standard Time",
+        "utcOffset": "(UTC-08:00)",
+        "description": "Pacific Time (US & Canada)"
+    },
+    {
+        "countryName": "United States",
+        "countryCode2": "US",
+        "timeZone": "Alaska Standard Time",
+        "utcOffset": "(UTC-09:00)",
+        "description": "Alaska Time (US & Canada)"
+    },
+    {
+        "countryName": "United States",
+        "countryCode2": "US",
+        "timeZone": "Hawaii Standard Time",
+        "utcOffset": "(UTC-11:00)",
+        "description": "Hawaii Time (US & Canada)"
+    },
+    {
+        "countryName": "Uruguay",
+        "countryCode2": "UY",
+        "timeZone": "Montevideo Standard Time",
+        "utcOffset": "(UTC-03:00)",
+        "description": "Montevideo"
+    },
+    {
+        "countryName": "Uzbekistan",
+        "countryCode2": "UZ",
+        "timeZone": "West Asia Standard Time",
+        "utcOffset": "(UTC+05:00)",
+        "description": "Ashgabat, Tashkent"
+    },
+    {
+        "countryName": "Vanuatu",
+        "countryCode2": "VU",
+        "timeZone": "Central Pacific Standard Time",
+        "utcOffset": "(UTC+11:00)",
+        "description": "Solomon Is., New Caledonia"
+    },
+    {
+        "countryName": "Vatican City",
+        "countryCode2": "VA",
+        "timeZone": "W. Europe Standard Time",
+        "utcOffset": "(UTC+01:00)",
+        "description": "Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
+    },
+    {
+        "countryName": "Vietnam",
+        "countryCode2": "VN",
+        "timeZone": "SE Asia Standard Time",
+        "utcOffset": "(UTC+07:00)",
+        "description": "Bangkok, Hanoi, Jakarta"
+    },
+    {
+        "countryName": "Virgin Islands, U.S.",
+        "countryCode2": "VI",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Virgin Islands, British",
+        "countryCode2": "VG",
+        "timeZone": "SA Western Standard Time",
+        "utcOffset": "(UTC-04:00)",
+        "description": "Georgetown, La Paz, Manaus, San Juan"
+    },
+    {
+        "countryName": "Wallis and Futuna",
+        "countryCode2": "WF",
+        "timeZone": "UTC+12",
+        "utcOffset": "(UTC+12:00)",
+        "description": "Coordinated Universal Time+12"
+    },
+    {
+        "countryName": "Yemen",
+        "countryCode2": "YE",
+        "timeZone": "Arab Standard Time",
+        "utcOffset": "(UTC+03:00)",
+        "description": "Kuwait, Riyadh"
+    },
+    {
+        "countryName": "Zambia",
+        "countryCode2": "ZM",
+        "timeZone": "South Africa Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Harare, Pretoria"
+    },
+    {
+        "countryName": "Zimbabwe",
+        "countryCode2": "ZW",
+        "timeZone": "South Africa Standard Time",
+        "utcOffset": "(UTC+02:00)",
+        "description": "Harare, Pretoria"
+    }
+]
