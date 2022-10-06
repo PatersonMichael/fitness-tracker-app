@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { IUserInfo } from "../@types/IUserInfo";
 import { IErrorResponse } from "../@types/IValidationErrorDetails";
 import displayValidationErrors from "../validators/displayValidationErrors";
+import Head from "next/head";
 
 function SignUp() {
     const initialValues: IUserInfo = {
@@ -90,6 +91,9 @@ function SignUp() {
 
     return (
         <div>
+            <Head>
+                <title>Sign Up - Fitness Tracker App</title>
+            </Head>
             <div className="container mx-auto flex flex-col items-center">
                 {/* <pre>{JSON.stringify(formValues, undefined, 2)}</pre> */}
                 <div className="text-primary font-Poppins font-bold text-[48px] mt-[41px]">
