@@ -44,7 +44,6 @@ Value, Weight Unit, Date
 
 Lose .5 lbs per week, Lose 1 lb per week, Lose 2 lbs per week, Maintain weight, Gain .5 lbs per week, Gain 1 lb per week, Gain 2 lbs per week
 
-
 ## 🦊 Considerations
 
 Should the weight measurements and similar be stored to express each of the unit types? For example, if the user has a weight of 185 pounds, should we store the weight in pounds, kilograms, and stone? Or should we just store the weight in pounds along with the unit type and convert to the other units as needed?
@@ -97,9 +96,9 @@ Should the time zone be stored in the preference as the object, or just the id?
 
 ```json
 {
-  "type": "weight",
-  "value": 185,
-  "unit": "pounds",
+  "pounds": 185,
+  "kilograms": 83.91,
+  "stone": 13.21,
   "date": "2022-03-14T18:30:12.293Z"
 }
 ```
