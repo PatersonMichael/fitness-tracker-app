@@ -4,7 +4,7 @@
 
 ### ⚖️ Weight Unit
 
-Pounds, Kilograms, Stone
+Pounds, Kilograms, Stones
 
 ### 🪜 Height Unit
 
@@ -77,16 +77,22 @@ Should the time zone be stored in the preference as the object, or just the id?
       "centimeters": 182.88
     },
     "startingWeight": {
+      "startDate": "2022-03-14T18:30:12.293Z",
       "pounds": 190,
       "kilograms": 86.18,
-      "stone": 13.85,
-      "date": "2022-03-14T18:30:12.293Z"
+      "stone": 13.85
     },
     "currentWeight": {
-      "pounds": 185,
-      "kilograms": 83.91,
-      "stone": 13.21,
-      "date": "2022-09-14T07:30:00.200Z"
+      "startDate": "2022-03-14T18:30:12.293Z",
+      "pounds": 187,
+      "kilograms": 84.82,
+      "stone": 13.55
+    },
+    "goalWeight": {
+      "weeklyGoal": "example - lose 1 lb per week",
+      "pounds": 175,
+      "kilograms": 79.38,
+      "stones": 12.34
     }
   }
 }
@@ -96,9 +102,10 @@ Should the time zone be stored in the preference as the object, or just the id?
 
 ```json
 {
+  "userProfileId": "6320f7a2cb396657bf6b51dd",
+  "measurementDate": "2022-03-14T18:30:12.293Z",
   "pounds": 185,
   "kilograms": 83.91,
-  "stone": 13.21,
-  "date": "2022-03-14T18:30:12.293Z"
+  "stones": 13.21
 }
 ```
