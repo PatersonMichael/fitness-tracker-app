@@ -77,19 +77,19 @@ Should the time zone be stored in the preference as the object, or just the id?
       "centimeters": 182.88
     },
     "startingWeight": {
-      "startDate": "2022-03-14T18:30:12.293Z",
+      "measurementDate": "2022-03-14T18:30:12.293Z",
       "pounds": 190,
       "kilograms": 86.18,
       "stone": 13.85
     },
     "currentWeight": {
-      "startDate": "2022-03-14T18:30:12.293Z",
+      "measurementDate": "2022-03-14T18:30:12.293Z",
       "pounds": 187,
       "kilograms": 84.82,
       "stone": 13.55
     },
     "goalWeight": {
-      "weeklyGoal": "example - lose 1 lb per week",
+      "weeklyGoal": "[example] lose 1 lb per week",
       "pounds": 175,
       "kilograms": 79.38,
       "stones": 12.34
