@@ -1,0 +1,42 @@
+{
+    "_id": "11b5fae0-c76b-4a7d-bcef-6ba7cad7439f",
+    "colName": "Health Check",
+    "created": "2022-09-15T23:42:31.195Z",
+    "sortNum": 10000,
+    "folders": [],
+    "requests": [
+        {
+            "_id": "5dd22c5c-87b3-439f-a3fa-ede46df492e5",
+            "colId": "11b5fae0-c76b-4a7d-bcef-6ba7cad7439f",
+            "containerId": "",
+            "name": "GET healthcheck",
+            "url": "http://localhost:8088/api/healthcheck",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2022-09-15T23:42:31.196Z",
+            "modified": "2022-09-27T18:54:23.391Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "Content-Type",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "application/json"
+                },
+                {
+                    "type": "json-query",
+                    "custom": "json.serverStatus",
+                    "action": "equal",
+                    "value": "Running"
+                }
+            ]
+        }
+    ]
+}

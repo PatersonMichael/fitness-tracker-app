@@ -1,0 +1,48 @@
+{
+    "_id": "bb3148ac-217f-42e9-bd55-92e88e05d760",
+    "colName": "Authentication",
+    "created": "2022-09-15T23:48:41.227Z",
+    "sortNum": 20000,
+    "folders": [],
+    "requests": [
+        {
+            "_id": "abcd07f9-f3bb-47e2-9aea-6551dbbe5b58",
+            "colId": "bb3148ac-217f-42e9-bd55-92e88e05d760",
+            "containerId": "",
+            "name": "POST authentication",
+            "url": "http://localhost:8088/api/authentication",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2022-09-15T23:48:41.228Z",
+            "modified": "2022-10-02T00:34:44.982Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"emailAddress\": \"someone@example.org\",\n  \"password\": \"Some$Password123\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "token"
+                },
+                {
+                    "type": "set-env-var",
+                    "custom": "json.token",
+                    "action": "setto",
+                    "value": "{{token}}"
+                }
+            ],
+            "docs": "Upon successful execution, the jwt will be set to the {{token}} environment variable."
+        }
+    ]
+}
